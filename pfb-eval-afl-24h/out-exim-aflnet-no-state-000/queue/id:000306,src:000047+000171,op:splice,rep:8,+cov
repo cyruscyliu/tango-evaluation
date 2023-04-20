@@ -1,18 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO `ocalhost
-MAIL FÿOM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-EHLO localhost
-MAIL FROM:<>
-RCPT TO:<Ubuntu> DAJA
-abcõ	.MAILT localhHELO
-MAIL FROM'<ubuntu@ubuntu>
-RCP­ _Ou>
-RCPT TO:<ubuntu@}b
-ýTOabc
-.

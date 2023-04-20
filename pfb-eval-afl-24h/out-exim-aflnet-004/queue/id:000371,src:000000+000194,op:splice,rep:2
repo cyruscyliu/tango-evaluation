@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<
-fAIL FTOM?ÿQ@3T[[suÿû.NOOP
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>DATA
-abc

@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATAlocalhost
-MADATAIL FROM:<uÿÿÿu@ubuntu>
-RCPT TO:(UTHbb÷
-.
-QUITf.

@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT Tocavhost
-MAIL FROM:<ubuntl@ubuntu>¸
-HELP T:<ubuntÿð
-DATA
-abc
-AUTHUIT
-DATA

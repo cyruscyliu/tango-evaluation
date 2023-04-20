@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:
-DATA
-@ubLLLLLLLLLLLLLLlhohost
-MAIL FROM:<ubuntu@ubuntu>
-DATA
-abc
-.

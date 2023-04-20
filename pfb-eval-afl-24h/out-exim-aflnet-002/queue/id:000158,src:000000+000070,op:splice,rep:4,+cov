@@ -1,8 +1,0 @@
-]HLO localho¿t
-MAIL FROM:<ubunk7@ubuntu>
-RCPT TO:<ubuntu@ubMAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

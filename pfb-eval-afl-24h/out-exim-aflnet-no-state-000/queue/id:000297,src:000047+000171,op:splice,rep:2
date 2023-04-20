@@ -1,16 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubc
-.
-EHLO localhost
-MAIL FROM:<ubuntu@uBDATu>
-RCPT TJ:<Ubuntu@ubuntu> DAJA
-abcõ	.MAILT localhost
-MAIL FROM'<ubuntu@ubuntu>
-RCPT TO:<ubuntu@}bÿntu>
-DATA
-ýTOabc
-.

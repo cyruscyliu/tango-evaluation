@@ -1,6 +1,0 @@
-Q?‡‡§£Q?‡‡§£‡‡LSET‡¨íú‡‡LSET‡¨íúk‡‡MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

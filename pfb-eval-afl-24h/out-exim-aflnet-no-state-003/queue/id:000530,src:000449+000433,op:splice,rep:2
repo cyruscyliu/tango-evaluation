@@ -1,17 +1,0 @@
-EHLO localhost
-MAIL FROM:host
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<u\untu@ubuntu>
-EHLO localMost
-MAIL FROM:<buAUTHst
-MAIL FROM:<\bntu@ubuntu>
-RCPT Tp:<ubuntu@ubuntu>d
-ntu>
- CPT TO:<ubuntu@ubucATAATA
-aÿ@
-
-aÿ@
-.
-QUIT
-.
-BDAT 10

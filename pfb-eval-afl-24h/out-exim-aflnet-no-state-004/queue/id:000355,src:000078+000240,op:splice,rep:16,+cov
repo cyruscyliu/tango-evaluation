@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DHLO l€calhoct
-MUIL FRM:<ubuntuäubuntutfÀubtu>
-BDAT 90
-0
-.	
-BDAT 5

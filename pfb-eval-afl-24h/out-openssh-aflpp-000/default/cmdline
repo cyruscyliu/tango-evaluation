@@ -1,8 +1,0 @@
-./sshd
--d
--e
--p
-22
--r
--f
-sshd_config

@@ -1,6 +1,0 @@
-EHLO localhosO localh{stõs
-M,IL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.

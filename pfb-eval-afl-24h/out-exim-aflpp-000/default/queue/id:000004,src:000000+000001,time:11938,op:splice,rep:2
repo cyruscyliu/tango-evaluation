@@ -1,4 +1,0 @@
-EHLO localhost
-MAu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DEHLO localhostMAIL FROM

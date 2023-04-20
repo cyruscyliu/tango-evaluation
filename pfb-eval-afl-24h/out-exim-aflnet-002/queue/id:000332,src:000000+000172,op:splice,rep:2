@@ -1,8 +1,0 @@
-EHLO localhost
-EHLO loc
-abaaaaaaaaaaaaaaaaaaaaaaaaaaaat
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

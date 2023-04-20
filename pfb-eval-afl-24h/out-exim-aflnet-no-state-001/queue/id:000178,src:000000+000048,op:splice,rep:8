@@ -1,10 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DaTA
-abalEost€MAIL FROMIL FROM
-\A
-.
-QUIT
-.
-QUIT

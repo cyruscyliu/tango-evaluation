@@ -1,5 +1,0 @@
-EHLO localhost
-MAIL Fbun
-DATA
-abc
-.

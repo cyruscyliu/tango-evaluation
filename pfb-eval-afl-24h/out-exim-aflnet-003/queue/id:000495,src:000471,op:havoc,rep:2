@@ -1,6 +1,0 @@
-EHLO lo--HHHHHHH.HHHHHHHHHHHHHHHwtMAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntÿuuntu>
-DATA
-abc
-.
-QUIT

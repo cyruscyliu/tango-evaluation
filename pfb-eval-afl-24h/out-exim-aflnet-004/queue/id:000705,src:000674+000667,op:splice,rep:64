@@ -1,13 +1,0 @@
-EHLO localhost
-EHNO localhost
-MAIL FROM:<ubu4calhostIL FROM:<ubu4calhosthost
-MAIL FROM:<ubuntu.ubuntu>
-RCPT TO:<ubuntu@ROM:<ubuntu.ubuntu>
-RCPT TO:<ubuntu@ubuntu>OM:<ubu4calhosthost
-MAIL FROM:<ubuntu.ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abLO localhoPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPRPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPntu@ubuntu
-RCPT TO:NOOPQUItubuL|u>
-DATA
-MAIL FROM:host

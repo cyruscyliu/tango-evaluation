@@ -1,6 +1,0 @@
-EHLO Ù½ÙÙÙÙÑÛÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙbunthosÿ
-MAIL FROM:<ubuntuGubuntu>RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

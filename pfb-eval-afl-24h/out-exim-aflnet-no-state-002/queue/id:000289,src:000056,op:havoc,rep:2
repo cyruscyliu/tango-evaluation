@@ -1,7 +1,0 @@
-EHLO loñalhMst
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<buŠt†@u>
-DATA
-abc
-.
-QUIT

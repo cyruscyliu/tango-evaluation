@@ -1,9 +1,0 @@
-EHMO L Rÿÿÿÿ}OM:<ubuntu@ubuntu>
-RCPT TO:Ÿubunt“@HELOubdnŽu>HoXt
-MAI
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

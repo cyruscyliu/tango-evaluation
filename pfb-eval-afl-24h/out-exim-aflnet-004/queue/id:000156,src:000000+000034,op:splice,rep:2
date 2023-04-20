@@ -1,7 +1,0 @@
-EHLO localhosO localh{stõs
-MAIL FROM:<ubuntllllllllllllllllllllllllllllllntu>
-DATA
-abcDATA
-QUIT
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>

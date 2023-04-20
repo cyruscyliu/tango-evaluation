@@ -1,8 +1,0 @@
-EHLO ‡ocalhomt
-MAIL FROM:<ubuntu@†bunt}>RMAILTO:<pbunt|@ubuEHLOntu>
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

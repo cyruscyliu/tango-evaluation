@@ -1,6 +1,0 @@
-EHLO localhM:<ubuntu@ub‡ntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-awc
-.
-QUIT

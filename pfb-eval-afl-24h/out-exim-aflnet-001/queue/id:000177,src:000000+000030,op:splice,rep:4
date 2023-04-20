@@ -1,5 +1,0 @@
-EHLO      aQ
-ETt
-MAIL FROM:<ubuntu@ubuntu>*RCPT TO:<ubuntu@ubuntz>
-DATA
-abc

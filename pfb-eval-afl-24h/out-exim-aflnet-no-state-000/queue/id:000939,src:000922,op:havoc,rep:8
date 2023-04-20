@@ -1,18 +1,0 @@
-EHLO localhost
-MAIL FROM:<uruntu@ubuntu>
-RCPT TO:<ubuntu@ubuntubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATAüabc
-.
-QUIO.................M:<uruntu@ubuntu>
-RCPT TO:<ubuntu@ubuntubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIO..........................@ubun.........@ubun
-RCPT TO:<ubuntu@ubuntu>
-EHLO loc%%%%%%%%%%%%%%alhost
-MAIL FROM:<u.buntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA

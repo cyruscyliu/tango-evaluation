@@ -1,12 +1,0 @@
-EHLO localhost
-HELO Focalhost
-MAIL FRcalhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntn@ubuntu>
-BDLO localhu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT localhRCPTntu>
-BDAT 1L F;N0
-..
-
-BDAT 5

@@ -1,11 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT 10
-.ÆÆÆÆÆ
- 
-DATA FROM'<UITÿÿATA FROM'<UITÿÿÿHu•tuIL F.OM'<UITM
-DATA FROM'<UITÿHu•tuIL F.OM'<UITM
-DATA FROM'<UIT
-DATA
-QUIT

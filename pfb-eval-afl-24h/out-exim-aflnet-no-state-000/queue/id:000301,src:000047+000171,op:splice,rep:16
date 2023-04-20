@@ -1,17 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localhost
-MAIL FROM:<u…untuZubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-EHLO localhost
-MAIL FROM:<ubuntu@uBHELPATu>
-QÿúT T?:<UbuRSETntu@
-abcõ	.RAILT localhost
-MAIL FbOM'<ubantu@ubuntu>
-RCPT TO:<ubuntu}bÿntu>
-DA@AöýTOabc
-.

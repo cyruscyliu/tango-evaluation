@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubAUTHЦntuFROM.@ubuntu>
-BDAT 10
-,икА€иииииииииичииииииииииииииииииии»иииииииииииииииииииAUTHииЋиииЁи≈иииииииимиииииибиииияиииии
-ЋииииииииииииииииииииMAILиияиииии
-BDAT 5
-QUIT

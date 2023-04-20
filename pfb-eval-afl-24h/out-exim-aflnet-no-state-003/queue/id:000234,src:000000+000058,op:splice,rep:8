@@ -1,11 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO locaFROMlhost
-MAIL FROM: uiuntu@ubunROMlhost
-tu>
-RCPT TO:<uuntu@ubuntu>
-cATHELPA
-aÿQUITÿ@
-.
-QUIT.

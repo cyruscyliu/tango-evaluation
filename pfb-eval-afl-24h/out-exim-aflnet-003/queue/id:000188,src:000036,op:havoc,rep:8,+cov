@@ -1,7 +1,0 @@
-EHLO …ocalh†st
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<@BDATÿunt*.
-DATA
-abc
-.
-QUIT

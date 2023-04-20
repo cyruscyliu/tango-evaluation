@@ -1,7 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-acalhost
-MAIL FROM:<ubuntu@uuntu>
-RCPT HELPQUITtu@Vbuntu>

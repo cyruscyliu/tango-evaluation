@@ -1,10 +1,0 @@
-EHLO local€ost
-MAIL FdM:<ubulhostJMAIL FRO>HELP:<ubuntu@ubuKtRSETu>
-RCPT¬TO:<ubun†u@úbunnubuntu@
-MAIL FROM:<Ubuntu@utu>
-RCPT TO:<ubRCPT@ubuntu>
-BDAT 15
-.
-BDAT 5
-RCPT TO:<ubuntu@ubuntu>
-DATA

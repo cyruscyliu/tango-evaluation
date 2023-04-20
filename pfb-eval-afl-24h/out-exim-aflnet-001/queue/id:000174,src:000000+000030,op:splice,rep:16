@@ -1,8 +1,0 @@
-				EHLO      aQAUTH&&&&&&&%&&&&&&&&&&&&&&&&&&&&<ubunhu@ubuntuO0<uunhu@usunth>
-DAT
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

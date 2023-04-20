@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO::<ubuntuPu>
-RCPT TO:\<ubuntuPu>
-RCPT TO:CPT TO::<ubuntuPu>
-RCPT TO:\<ubuntuPu>
-RCPT TO:\uhost
- CPTMAIL FPOM:<ubRntu@ubuntuEHLO l.=èÿ==D locBDATalh5st

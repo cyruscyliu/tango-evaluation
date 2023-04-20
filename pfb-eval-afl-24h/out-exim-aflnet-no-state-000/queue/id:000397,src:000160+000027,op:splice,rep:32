@@ -1,7 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-NObut============0==NOOP>>=======0==NOOP======X==t>
- 
-DATA

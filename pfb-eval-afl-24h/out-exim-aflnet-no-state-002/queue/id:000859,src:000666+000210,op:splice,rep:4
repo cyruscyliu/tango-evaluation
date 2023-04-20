@@ -1,8 +1,0 @@
-EHLO localhost
-˜AIL FROM:host
-MAIL FROM:<ub                                                                                                                                                               NOOP                                                                                                                                                                                                                                                                                                                                 C                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            untu@ubuntu>
-RCPT TO:<u`u@ubuntu>
-RCP 5
-QUIT
-abc.
-QUIT

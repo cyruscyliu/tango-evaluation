@@ -1,7 +1,0 @@
-EHLO localhost
-MA.L FROM:<ubulhost
-MAIL FRu@RCPTbuntubuntu@.
-BDAT 5
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc

@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:2ubustHELPIL FRDM<ubuntu@u}uuntu>
-RCPT TO:<ubuutu@b otu>
-DATA
-abc
-.RSETT
-DATA
-abc

@@ -1,6 +1,0 @@
-AIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QEHLO localh

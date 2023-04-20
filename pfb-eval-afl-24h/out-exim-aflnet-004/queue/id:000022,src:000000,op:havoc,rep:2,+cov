@@ -1,4 +1,0 @@
-EHLO lo
-O localh
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>

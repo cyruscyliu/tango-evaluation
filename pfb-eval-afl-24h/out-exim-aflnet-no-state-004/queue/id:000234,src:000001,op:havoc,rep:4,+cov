@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCZT <ubuntuu>
- TO:<uTO:<T<ubuntuu>
- TO:<ubuntuu>
-BDAT 10
-.
-BDAT 5
-QUIT

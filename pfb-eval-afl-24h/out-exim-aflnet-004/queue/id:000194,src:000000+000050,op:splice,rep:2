@@ -1,10 +1,0 @@
-EHLO localhost
-MAIL FSOM?ÿQU3T[[suÿû.NOOP
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT
-RCPT TO:<ubuntu@ubuntu>
-DATA

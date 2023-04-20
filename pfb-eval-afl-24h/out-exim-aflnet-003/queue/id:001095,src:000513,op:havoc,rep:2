@@ -1,7 +1,0 @@
-RSET l]calNOÿP
-MAIL FROM:<ubuntu@ubu.ntu>
-RCPT TO:<ubuntu@ubuntu>l]calNOOP
-MAIL FROM:<ubuntu@ubu.ntu>
-RCPT TO:
-abc
-.

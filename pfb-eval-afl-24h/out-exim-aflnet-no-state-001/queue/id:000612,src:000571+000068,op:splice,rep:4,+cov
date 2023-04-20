@@ -1,13 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntŽ@ubuntu>
-EHLO localhst
-MAIL FROM:AUTHõô"EHLO.
-BDAT localhost
-MAIL FROM:<ebuntu@ubuntu>
-RBPT TO:<ubuntŽ@ubuntu>
-EHLO localhst
-MAIL FROM:AUT\
-MAITAbuntu@ublntu>
-DATA
-ak

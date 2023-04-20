@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:.<ubust
-MAIL FROFROMst
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:.<ubust
-MAIL localhost
-M\IL FNOOP<:<QUITtu@ubuntu>

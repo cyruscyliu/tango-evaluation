@@ -1,9 +1,0 @@
-EHLO locaHELOt
-MAIL FROM:<ubuntu@ubuHELOntu>
-RCPT TO:<ubuntu@ubunt
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

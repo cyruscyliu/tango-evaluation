@@ -1,6 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RChT u>tDATA
-abc
-.
-QUIT

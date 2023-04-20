@@ -1,7 +1,0 @@
-EHLO localhost
-ÿÿÿÿRCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-BDAT localhost
-MAIL FjOM:<ubuntu@ubuntu>

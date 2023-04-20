@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCP ÔO:<ubuntu@ubuntu>DATO localhost0SETL FROM:<ubuntu@ubBDAT>
-RCPT TO:<ubuntu@[B.A]bROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu\ubuntu>
-AUTH`localhost
-MAIL;FROM:<ubunTO@ubunku>
-RCPT TO:<ubAUTH1ubuntu>
-DATA

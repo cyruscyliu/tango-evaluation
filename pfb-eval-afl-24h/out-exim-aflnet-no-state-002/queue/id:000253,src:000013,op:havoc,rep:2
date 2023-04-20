@@ -1,5 +1,0 @@
-EHLO localhost
-MAIL FROM:<u:<ubuntu@ubuntu>
-DATAc
-.
-QUIT

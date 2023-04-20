@@ -1,6 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-pENOFROMDATA
-abc
-.
-QUIT

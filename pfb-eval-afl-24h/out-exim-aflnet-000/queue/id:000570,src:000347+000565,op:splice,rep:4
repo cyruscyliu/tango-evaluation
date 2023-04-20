@@ -1,9 +1,0 @@
-EHLO loc
-RCPT TostO lo
-BDalhost
-EHLO localhost
-EHLO LO localhost
-EHLO localhost
-Mlhost
-EHLO LO localhost
-EHLO localhost

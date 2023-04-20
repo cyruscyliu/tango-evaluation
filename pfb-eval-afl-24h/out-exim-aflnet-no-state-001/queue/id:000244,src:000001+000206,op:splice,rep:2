@@ -1,11 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-@D								ù						ñ				ÿ€!ÿHEL0	.
-BDAT 5±QUIT
-.
-BDAT 5
-QUIT

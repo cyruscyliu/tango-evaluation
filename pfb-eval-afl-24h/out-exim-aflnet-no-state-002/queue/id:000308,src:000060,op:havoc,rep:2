@@ -1,7 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubu`tu@LLLLLLLLubuntu>
-RCPT TO:<MAILu9untu@ubuntu>
-DATA
-abc
-.
-QUIT

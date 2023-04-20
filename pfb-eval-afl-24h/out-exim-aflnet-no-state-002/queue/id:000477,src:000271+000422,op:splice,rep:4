@@ -1,10 +1,0 @@
-EHLO localhost
-HELO Focalhost
-MAIL FROM:<ubuntu@ubuntu8
-EHLO l.=èÿ=======Œcalhost
-EHLO localh5st
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@FROaROMubuqQUIT
-abc
-RCPT RCPTTO:<ubuntu@ÿuntg>
-BDAT 10

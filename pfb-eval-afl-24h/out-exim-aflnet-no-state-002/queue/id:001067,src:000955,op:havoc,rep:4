@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT 20÷
-.
-
-B
-IILO lokalhost
-MAIL  localhost

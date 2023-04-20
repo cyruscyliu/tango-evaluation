@@ -1,10 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATAÿabalhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ub™ntu@ubuntu>
-QUITBDAT###PTÂHELO
-QUIT
-.
-QUIT

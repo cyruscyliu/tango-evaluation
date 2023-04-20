@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abst0
-MAIL;FROM:OMubun>ðQCPT s<ubunttuAUTH>ðQCPT s<ubuntu@FROMubuntMAu>ðQCPT sO:ubuntuu>
-RCPT s>Â.
-QUIT

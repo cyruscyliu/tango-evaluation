@@ -1,9 +1,0 @@
-EHLO local€ÿø
-MAIL FROM:<u>
-tu@ubuntu>
-RCPT-TO:<ubuntu@ubuxtu>
-MAIL FROM:<ubuntuRubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.

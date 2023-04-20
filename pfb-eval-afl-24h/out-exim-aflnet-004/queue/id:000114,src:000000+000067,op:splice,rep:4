@@ -1,9 +1,0 @@
-EHLO loccalhM:<ubuntu@ebuntu>alhM:<ubuntu@ubuntu>
-gCPT TO:<ubuntu@ubuntu>
-DATACPT TO:<ubuntu
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

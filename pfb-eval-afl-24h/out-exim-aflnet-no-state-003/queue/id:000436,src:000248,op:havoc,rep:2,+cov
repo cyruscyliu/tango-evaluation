@@ -1,7 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubunDATAtu@ubuntu>
-RCPHELOT TO:<ubuntu@ubuntu>
-BDAT 10
-.
-BDAT 5
-QUIT

@@ -1,3 +1,0 @@
-EHLO localhloclhost
-MAIL FROM:<ub’ntu@ubuntu>
-RCPT TO:<ubuntu@zbuntu>

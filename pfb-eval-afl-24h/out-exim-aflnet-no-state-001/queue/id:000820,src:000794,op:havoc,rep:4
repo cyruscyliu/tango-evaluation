@@ -1,10 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubMAIL>
-DATAPT TO:<ubuntu@ubuntu>
-DATA
-:HLO localhost
-TO:<ubROM:HELOntu"uuntu>'RCPT TO:<ubBDATPT TO:<ubBDAT
-:HLO localhost
-TO:<ubROM:HELOntu"uuntu>'RC^T TO:<ub*
-gUIT

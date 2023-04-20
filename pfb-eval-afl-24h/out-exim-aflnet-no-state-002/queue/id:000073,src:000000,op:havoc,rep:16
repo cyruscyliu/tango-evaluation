@@ -1,7 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RK uNOOP>=
-PP>=
-PT uNOT uNOOP>
-DATA
-abc

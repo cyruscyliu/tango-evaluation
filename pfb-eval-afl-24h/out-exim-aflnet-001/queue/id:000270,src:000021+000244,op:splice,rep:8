@@ -1,14 +1,0 @@
-EHLO lbc~lht
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-EHLOEHLO lbc~lht
-MAIN FROMa IQUOX
-#öabcf( lbc~l
-.
- lbcDATA
-MAIN Fÿÿÿÿ IQUOG
-#öabcf(
-.
-QUIT
-.

@@ -1,12 +1,0 @@
-EHLO localhloclhost
-MAIL FROM:<ubuHELPntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-aAUTHFROMUIT
-M\I TO:<ubuntu@ubuntu>
-DATAPT TOMAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

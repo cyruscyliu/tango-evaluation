@@ -1,9 +1,0 @@
-EHc^^QUIT^^jo loc
-Š:loc
-c
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

@@ -1,8 +1,0 @@
-EHLO …ocalh†st
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntuROM:ATA
-HELP
-.
-QMAILUIT
-DATA
-abc

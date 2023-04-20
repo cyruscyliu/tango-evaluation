@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:jhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:unou>
-RCPT TO:7ubuutu@ub n<u`u@ubuntu>
-RCPT TO:7ubuutu@ub ÿu>
-DATA

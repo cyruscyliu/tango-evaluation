@@ -1,11 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QIT localhost
-MAIL FROM:<ubunty@ubuntu>RCPT TO:<uRCPTu@ubuntu
-abc
-.
-LOFC5qILNeILNNOOP[eýú

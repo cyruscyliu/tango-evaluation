@@ -1,10 +1,0 @@
-EHLO localhost
-MAIñññññññññññññññññññññññññññññññññññññññññññññññññññññL FROM:<ubulhostDATAL FRO>:<ubuntu@ubuKtRSETu>
-RCPT TO:<ubunÜu@ubuntu>˙êbuntubuntu@
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT 1
-.ıBDAT 5
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc

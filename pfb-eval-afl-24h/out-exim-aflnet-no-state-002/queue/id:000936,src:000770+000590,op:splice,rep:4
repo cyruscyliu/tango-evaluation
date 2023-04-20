@@ -1,15 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<u`u@ubuntu>
-RCPT TO:7ubuutu@ub ntu>
-DATA
-abc
-.
-QHLO localhost
-MAIL FRcalhost
-MAIL FROM:<ubuntu@aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaubuntu>
-RCPT TO:<ubuntn@ubuntu>
-BDAT 10
-£THhost
-MAIL FROM:<ubuntu@ubuntu>
-MAILRCPT TO:<MAILu9untu@ubuntu>

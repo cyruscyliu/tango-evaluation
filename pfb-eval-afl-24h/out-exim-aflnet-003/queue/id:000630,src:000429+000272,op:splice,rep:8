@@ -1,18 +1,0 @@
-HELO
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@buntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abcý
-.ò	QUITù>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-MAIL FROM:<ubuTOntq@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATAQUIT
-MAIL FROÍ:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc

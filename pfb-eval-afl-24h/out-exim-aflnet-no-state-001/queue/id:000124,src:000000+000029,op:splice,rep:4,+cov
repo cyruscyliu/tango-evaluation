@@ -1,11 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATAlocalhost
-MAIL FROM:<uÿÿÿu@ubuntu>
-RCPT TO:<
-
-u>
-AUTHHELO
-aÿc
-.

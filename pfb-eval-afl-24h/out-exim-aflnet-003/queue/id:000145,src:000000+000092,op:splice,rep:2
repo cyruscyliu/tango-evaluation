@@ -1,8 +1,0 @@
-EHLO l]calhost
-MAIL FROM:<ubuntq@ubuntu>ubuntu@ubuntu>
-DATAQUIT
-MAIL FROM:<ÿÿÿÿtu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.

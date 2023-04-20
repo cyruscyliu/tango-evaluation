@@ -1,8 +1,0 @@
-HELP
-MAIL lbc~lht
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-dA£:(RSET+10
- 
-BDAT 5

@@ -1,9 +1,0 @@
-EHLH 2ocalhM:<u…untU@ubuntu>
-RCPT TOP<ubuntu@.
-FROM
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

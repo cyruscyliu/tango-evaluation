@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:\ubust
-MAIL bROM:<ubun_uFROMntu>
-RCPT aO:SuQUIT
-DATA
-abc
-.
-QUIT

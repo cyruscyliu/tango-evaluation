@@ -1,9 +1,0 @@
-EjLO lolalhomtRCPT TB:
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@uMuntu>
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

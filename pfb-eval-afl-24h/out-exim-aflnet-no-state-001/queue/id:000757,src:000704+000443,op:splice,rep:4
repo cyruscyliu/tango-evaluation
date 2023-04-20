@@ -1,17 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localhost
-MAIL FROM:<ubun\u@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localBDAThost
-MAIL FROM:<ubuniV@ubuntu>
-RCPT TO:<ubuntu@ubEHLO O:<ubuntu@ubun
-RCPT TO:Dubuntu@ubyntu>
-RCPT TO:<ubuntu@ubuntuu@ubuntu>
-RCPT TO:<u                                      
-BDAT 
-QUIT

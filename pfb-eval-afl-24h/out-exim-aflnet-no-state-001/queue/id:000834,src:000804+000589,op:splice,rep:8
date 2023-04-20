@@ -1,20 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localhost
-MAIL FROM:<ubun\u@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localhost
-MAIL FROM:<êbuntu@ubuntu>
-RCPT TO:<ubunYu@ubuntu>
-EHLO localhost
-MAIL FROM:<ubunt÷@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-@D								˘				˘			ggggggggggggggggggggggggggggggègggM:<uLQUITMhost					˘				˘			ggggggggggggggggggggggLQUITMhost
-HELO 
-HELO Fu
-HELO ROM:<uTMhost
-EHLO localhost
-MAIL FRO.:<ubunmuTO@ubuntu>
-RCPT TOubuntu@ubuntu>
-EHLO localhost

@@ -1,24 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubu{stõs
-MAIL FROM:<ubuntu@ubBDATuntu>
-RCPT TO:<ubuntu@nbuntu>
-DATA
-abc
-.
-QUIg
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubL FROM:<ubuntu@ubu{stõs
-MAIL FROM:<ubuntu@ubBDATuntu>
-RCPT TO:<ubuntu@nbuntu>
-DATA
-abc
-.
-QUIg
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<
-DATA
-abc
-.
-QUIT
-RCPT TO:<ubuntu@ubuntu>
-DATA

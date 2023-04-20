@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL Focelhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@((((44444:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@[buntu>
-DATA
-abc
-.
-EHLO localhost

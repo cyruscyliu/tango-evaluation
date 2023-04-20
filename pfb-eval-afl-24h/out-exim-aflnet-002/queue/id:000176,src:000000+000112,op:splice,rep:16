@@ -1,7 +1,0 @@
-EHLO  Tubuntuntu>tu>:<ubuntDb’n4u@ubuntu>tu>
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

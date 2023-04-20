@@ -1,9 +1,0 @@
-EHLO localhost
-M?ÿQU3T[[suÿûÇ.NOOP
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntuU<ubuntuUIT
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

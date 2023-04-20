@@ -1,13 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localhost
-MAIL FROM:<ubuntu@uÿÿÿÿu>
-RCPT TO:<ubuntuKubuntu>
-cATAATA
-aÿ@
-
-aÿ@
-.
-QUIT
-.

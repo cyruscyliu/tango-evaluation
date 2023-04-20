@@ -1,6 +1,0 @@
-E;YO lo.calhosDATAAIL FROM:<ubunte@ubuntu>
-RCPT TO:<ubuntu@ubuntuBDATTO>
-DATA
-abc
-.RSET
-EHLO localhost

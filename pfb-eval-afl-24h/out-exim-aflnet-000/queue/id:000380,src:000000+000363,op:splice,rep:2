@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubulhost
-MAIL FRO>:<ubuntu@ubu€tRSETu>
-RCPT TO:<ubun†u@úbuntubuntu:<ubuntu@ubuntu>
-BDAT 10
-.
-BDAT 5
-RCPT TO:<ubuntu@ubuntu>
-DATA

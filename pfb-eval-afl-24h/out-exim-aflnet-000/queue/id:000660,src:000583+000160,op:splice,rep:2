@@ -1,15 +1,0 @@
-EHLO l]EHLO l]cal^oRSEcabbbbbbbbbRCPT T
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubu.tu>
-MAIL FROM:<ubuntu@bbbRCPT T
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubu.tu>
-MAIL FROM:<ubuntu@ubuntAUTHRCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.ubuntAUTHRCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT
-RCPT-TO:<ubyntu@ub“xtu>

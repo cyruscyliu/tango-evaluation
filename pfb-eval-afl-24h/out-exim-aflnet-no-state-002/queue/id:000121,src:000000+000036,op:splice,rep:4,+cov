@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:.<ubust
-MAIL FROM:HELPntu@ubuntu>
-RCPT TO:<ubuutu@ub ntu>dDATA
-abc
-.
-QUIT!

@@ -1,13 +1,0 @@
-EH>>MO local€ø,MAIL 6ROM:<ubuvt@ubuntu>
-RCPT-TOLOu@ubuxtu>
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

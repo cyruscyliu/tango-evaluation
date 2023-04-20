@@ -1,12 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ub>
-RCPT TO:<untu@untu>
-RCPT TO:<untu@wbuntu>O:<untu@MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<untu@wbuntu>
-RCPT TO:<ubuYtu@ub*ntu>
-RSET
-abc
-.
-QUIT
-DATA
-DATA

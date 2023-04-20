@@ -1,6 +1,0 @@
-EHLO localhost
-MAIL FiOM:<ubunpu@ubuntu>
-RCPT TO:<@buntu@ubuntuW
-DATA
-abc
-.EHLO localhost

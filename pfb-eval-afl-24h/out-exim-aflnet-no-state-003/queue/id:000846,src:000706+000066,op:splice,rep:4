@@ -1,12 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localMost
-MAIL FRHELPost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubXntu>
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntuAUTH>
-DATA
-.OM:
-.

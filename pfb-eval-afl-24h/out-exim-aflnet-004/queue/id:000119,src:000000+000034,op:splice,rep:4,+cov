@@ -1,9 +1,0 @@
-EHLO localhosO locaIh{stRCPTõs
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@u uIL FROM:<ubuntu@ubuntu>
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

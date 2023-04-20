@@ -1,14 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BNAT localhL FROM:<ubunu@ubuntu>
-RCPT TO:<ub”ntu@ubun-u>
-DATA
-a`c.
-QUIT
-.
-BDAT 5
-QUIO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT 110clh ‘>a%DA<ubcntu@ubuntu>

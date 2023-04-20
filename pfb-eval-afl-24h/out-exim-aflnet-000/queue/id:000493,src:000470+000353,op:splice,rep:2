@@ -1,14 +1,0 @@
-EHLO localhloclhost
-MAIL FROM:<ub’ntu@ubuntu>
-RCPT TO:<ubuntu@zbuntu>
-HELO localÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁtu>
-HELO TOÿÿÿuntuIT
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abcÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁtu>
-HELO TOÿÿÿuntuIT
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abcRSET
-.
-QUIT

@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubukt
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<u<ubuntu@ubuntu>
-RCPT TO:<ubuQUIT
-DATA
-abc

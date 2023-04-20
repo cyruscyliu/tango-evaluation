@@ -1,7 +1,0 @@
-EHLO lbc~lht
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntuosht
-MAIu>
-RCPT TO:<ubunL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>DATA
-abc

@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-<unM:<ubuntu@ubuntu>
-RCPT TO:@TD:"ntu>
-RCPT TO:<ubuntu@ubu<MAIL@wbuntu>T TO:"ubCPTD:"ntu>OM:<ubuntbCPTD:"ntu>
-RCPT TO:<ubuntu@ubuntu>
-
-abc

@@ -1,9 +1,0 @@
-EHLO l]calhostù<AIL FROM:<ubuntq@ubuntu>
-RCPT?TO:<ubuntu@ubuntu>
-DATAQUIT
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc.
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>

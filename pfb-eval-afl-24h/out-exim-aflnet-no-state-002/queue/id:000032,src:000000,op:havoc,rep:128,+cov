@@ -1,6 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-EHLO$DATA
-abc
-.
-QUIT

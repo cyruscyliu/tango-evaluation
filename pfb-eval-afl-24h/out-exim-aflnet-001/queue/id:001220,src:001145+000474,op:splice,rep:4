@@ -1,13 +1,0 @@
-HELP
-MAIL lbc~lht
-MAIL FROM:<ust
-EHLO locIlhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT :0tu>
-BDAT :0
-.
-BDAT 5
-QUOM:<uMAILuntu=ubuntu>
-RCPT u=ubuntu>
-RCPT TODATA%<u€ÿEHLOntu@ubuntu>ÿ

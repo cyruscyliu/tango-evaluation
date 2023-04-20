@@ -1,7 +1,0 @@
-EHLO ÙÙÙÙÙÙÑÛÙÿÙÙÙÙÙÙÙÙÙÙÙÙÙÙhosÿ
-MAIL FROM:<ubun\u@ubuntu>
-RCPT TOHELP:<ubuntu@ubuntu>
-DATA
-abc
-.
-ÑUIT

@@ -1,12 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DHLO localhost
-MAIL FROMPT TO:ÿu@ubuntu>
-RCPT TO:ÿubuntu@ubtu>
-BDAT 10
-..
-BDAT 5
-QUISï
-abc
-.

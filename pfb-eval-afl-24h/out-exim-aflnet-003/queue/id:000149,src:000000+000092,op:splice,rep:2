@@ -1,13 +1,0 @@
-EHLO l]calhost
-eAIL FROM:<ubuntq@ubuntu>IT
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

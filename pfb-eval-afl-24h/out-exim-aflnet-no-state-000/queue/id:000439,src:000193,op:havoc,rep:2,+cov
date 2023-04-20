@@ -1,8 +1,0 @@
-E3LO localhost
-MAIL FROM:<ubuntRCPTu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-EHLO localhost
-MAIL FROM:<xbuntu@u-ubuntu>

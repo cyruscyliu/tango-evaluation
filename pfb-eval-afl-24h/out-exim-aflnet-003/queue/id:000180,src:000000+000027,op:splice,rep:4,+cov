@@ -1,9 +1,0 @@
-EHLO wt
-MAIL FROM:<uruntu@ubuntu> 
-RCPT TO:<ubuntu@ubuntu>
-UIT
-abc
-.
-QUIT
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>

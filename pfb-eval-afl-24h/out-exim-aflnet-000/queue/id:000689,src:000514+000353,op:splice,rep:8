@@ -1,8 +1,0 @@
-HELP lolalNOOPhomtMAIOM:<ubuntu@ubxntu>
-HELP
-NOOP
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

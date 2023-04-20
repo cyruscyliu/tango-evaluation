@@ -1,6 +1,0 @@
-EHLO localhost
-MAILM:<uu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT 10
-.
-BDATQUIT

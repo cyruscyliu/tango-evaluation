@@ -1,27 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT 4444
-.
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-EHDTAm†LOFC:<utu‡ubuSET<ufuntuxubun€ÿ>ÿÿBDITROME FROM:èbunta@ubuntu>
-RC.RSET:<ufuntuxubmn€ÿ>ÿÿBDATROMEHcOÐÐÐÐÐ@abem„L TO:<ubZn@m‹L TOBDApd%'C:RC
-RC.RdET:<ufunt.T T£:<Tu€uÿÿÿubun¤OO‚ü
-MAIL FROM:<ubuntutu>
-BDAT 10
-BDAT.
-BDAT 5
-QUIT
-€UIT loCal
-
-
-
-
-
-st
-MAIL FROM:<ubuntu@ubuntu>

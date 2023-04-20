@@ -1,7 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT 110cyhot
-MAIL"FROM:>
-RC
-MAIL"0ROM:<ubuntu@ubuntu>

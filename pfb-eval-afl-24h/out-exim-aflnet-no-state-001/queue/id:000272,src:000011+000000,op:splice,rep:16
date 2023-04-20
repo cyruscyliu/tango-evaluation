@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-NOOw.bQUITnpu>
-RCPT TB:<uSuntu@ubEHLO>
-DATA
-abc	.
-

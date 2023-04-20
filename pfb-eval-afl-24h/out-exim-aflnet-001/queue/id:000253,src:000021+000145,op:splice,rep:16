@@ -1,12 +1,0 @@
-EHLO lbc~lht
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abcO Ù»ÙÙÙüÙÙÑÛÙÙÙ×ÙÙÙTOÙÙÙÙÙÙÙhomÿ
-MgIL FR@d:<[buntu@ubuÄtu>
-RCPT TO:<ub‰ntu@ÙÑÛÙÙÙÙÙÙÙÙRCÔBÙÙÙÙubuntu>d
-DATA
-a
-.
-.
-QUIT

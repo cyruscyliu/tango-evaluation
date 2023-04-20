@@ -1,12 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-BDAT 10d4žBDAT MAIL FROM:<ubuntu@ubuAITO:<ubun>
-RCPT:TO:<untu@MAIL FROM:<ubuntu@ubuntu>RCPT TO:<untubuntu>
-R:PT TO:<ubuYtu@ub*ntu>.
-RSET
-abc
-.
-QUIT
-DATA
-DATA

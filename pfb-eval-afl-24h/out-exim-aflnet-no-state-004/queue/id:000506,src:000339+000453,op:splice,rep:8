@@ -1,18 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-aULO local
-MAIL FROM:<ubuntu@ubunubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-ROM:<ubuntu@ubuntu>RCPT TO:<ubu@ubuntu>
-RCPT TO:<ubost
-MAIL FROM:<ubuntu@ubTntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc

@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATAlocMlhost
-BDAT FROubuntu>
-RCPT TO:<ubuntu@u untu>
-AUTH
-aÿc
-.

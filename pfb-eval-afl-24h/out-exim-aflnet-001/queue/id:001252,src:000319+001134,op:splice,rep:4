@@ -1,8 +1,0 @@
-HELP
-EHLO ----~buntu@ubuntu>
-MAIL FROM:.uGbu
-MAIL FROM:.ÿÜTOOMtu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.

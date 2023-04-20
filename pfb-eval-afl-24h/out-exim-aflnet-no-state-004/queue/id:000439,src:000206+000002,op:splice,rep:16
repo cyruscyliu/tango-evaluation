@@ -1,7 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-a\LO localhosRSETt
-MARL @ROM:<ubuM:<ubTOntu@u]uNOOPnu>
-DATA

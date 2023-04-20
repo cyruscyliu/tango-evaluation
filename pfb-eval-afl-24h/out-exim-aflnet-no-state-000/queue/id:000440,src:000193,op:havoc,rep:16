@@ -1,6 +1,0 @@
-EHLO 'ƒcalhost
-bAILBDATM:<ubustu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.

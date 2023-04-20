@@ -1,6 +1,0 @@
-EHLO lbc~lht
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-NNOBDAT_Ë.
-QUIT

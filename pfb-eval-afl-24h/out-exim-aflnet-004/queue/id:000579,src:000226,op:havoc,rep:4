@@ -1,12 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@IL FROM:<ubfELOlhortJost
-MaIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu\ubuntu>
-DATAT
-RCPT TO:<ubuntu@ubuntu>
-DATE
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

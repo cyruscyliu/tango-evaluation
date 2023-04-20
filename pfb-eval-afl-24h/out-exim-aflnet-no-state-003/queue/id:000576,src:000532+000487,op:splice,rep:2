@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-@P.HLO localhost
-MAIL FRO TO:<ubuntuSubuntu>
-BDAT 70alhost
-MAIL FROM:<˜buntu@ubATHuntu>
-RCPT TO:<ubuntu@ubuntu>

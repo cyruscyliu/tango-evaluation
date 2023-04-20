@@ -1,14 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-EHLO localMost
-MAIL FROM:<\buAUTHntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-ntu>
-RCPT TO:<ubuntu@ubucATAATA
-aÿ@
-
-aÿ@
-.
-QUIT
-.

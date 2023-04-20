@@ -1,8 +1,0 @@
-EHLO ÙÙÙÙÙÙÑÛÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙhosÿ
-MAIL FROM:<ubun•u@ubuntu>
-RCPT TO:<ubuntu@ubuntUIT
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.

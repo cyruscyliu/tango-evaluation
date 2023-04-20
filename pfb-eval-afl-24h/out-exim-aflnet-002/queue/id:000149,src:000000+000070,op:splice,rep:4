@@ -1,7 +1,0 @@
-EHLO localhoAt
-MAIL F:<ubuntu@ubuntu>
-RCPT TO:<ubuntuntu@ubuntu>
-DQUITATAMAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc

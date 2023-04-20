@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROC?ÿQU3T[[suÿû.NOOP
-MAIL FROM:<ubuntu@…bƒntu>
-RCPT TO:<ubuntu@ubuntu>DATA
-abc
-U3ÿ[[suÿû.NOOP
-MAIL FROM:<ubuntu@ubun.
-QUIT‚

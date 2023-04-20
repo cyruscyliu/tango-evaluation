@@ -1,13 +1,0 @@
-EHLO lbc~lht
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-EHLO lbc~lht
-MAIL FROM:<ubuntu@ubHELOuntu>
-RCDATAO <uO lbc~lht
-MAIL FROM
-a I%UOX
-#öabcf(
-.QUIT
-.
-QUIT

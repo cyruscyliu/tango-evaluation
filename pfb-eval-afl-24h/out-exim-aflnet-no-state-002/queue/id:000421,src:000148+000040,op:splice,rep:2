@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-EHLO l.===ÿÿ======7=======Œcalhost
-EHLO localh5st
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@FROMubuqtu>
-DATA
-aROMubuqQUIT
-abc

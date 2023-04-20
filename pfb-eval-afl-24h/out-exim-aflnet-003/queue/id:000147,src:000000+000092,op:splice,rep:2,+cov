@@ -1,8 +1,0 @@
-EHLO l]ialhost
-MAIL FROM:<ubuntq@ubuntu>
-RCPT TO:<ubuntu@ub FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-MAIL FROM:<ubuntu@ubuntu>

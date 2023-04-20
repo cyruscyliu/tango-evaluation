@@ -1,6 +1,0 @@
-EHLO TOl]MAILcalhost
-MAIL FROM:<ubuntq@T TO:<ubuntuubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.

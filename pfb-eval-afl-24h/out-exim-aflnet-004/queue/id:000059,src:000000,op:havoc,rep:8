@@ -1,6 +1,0 @@
-EH locHELOsttsttkkMAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

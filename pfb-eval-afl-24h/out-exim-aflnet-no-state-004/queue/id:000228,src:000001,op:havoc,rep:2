@@ -1,7 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:CPT TO:<RSETtu@u
-BDAT 10
-.
-BDAT 5
-QUIT

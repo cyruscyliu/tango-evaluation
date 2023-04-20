@@ -1,8 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-rCPT @OLO"yCGTVHL¨EHLO 
-"yCGT7HLO 
-DATA
-abc
-.
-QUIT

@@ -1,14 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QAU@Hloc lZost
-MAIL FROM:á"EHLOROM:<ujunÃÚáááãáá""""""áëÍáááO lRSLOROM:<ujunÃÚáááãáá""""""áëÍáááO lRSE@"áëÍáÍáááO lRSE@"áÍáááO loc lhos…
-MAIL FRSETROMF<ubntááO loc lhos…
-MAIL FROME@"áëÍáÍáááO lRSE@"áÍáááO loc lhos…
-MAIL FROMF<ubntááO loc lhos…
-MAIL FROMF<uaðntu.6........HHLPO
-RCPT TON<ubuntu@ububunwu>
-ÑT

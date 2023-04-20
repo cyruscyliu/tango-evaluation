@@ -1,14 +1,0 @@
-Ld
-RCPT TO:<ubuntu@ubuntu>
-DDATAUIT
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abd
-.
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

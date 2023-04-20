@@ -1,21 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATO localhost
-MGIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DHLO locaShosT TO:ÿubuntu@ubtu>
-BDAT 10
-
-
-t@ubtu>
-BDAT NOOP10
-ÿÿRCPTT 5
-KUIT
-.

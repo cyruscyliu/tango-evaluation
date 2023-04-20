@@ -1,16 +1,0 @@
-EHLO l{calNOOP+
-MAIL FROM:<uS@ubu.ntu>
-RCPT TO:BuåunQUGT
-RCPT TO:<ubuntu@ubuntu>
-HEL;AUTH FROM:ntu>
-RCPT TO:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-RCPT TO:<ubutu>
-RCPT TO:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-ˆ„ôRCPT+AUTHü)&Îˆ„ôRCPT)IL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-.

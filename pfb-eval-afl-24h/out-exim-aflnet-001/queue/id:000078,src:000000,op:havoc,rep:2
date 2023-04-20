@@ -1,7 +1,0 @@
-EHLO Socalhost
-RSETMAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

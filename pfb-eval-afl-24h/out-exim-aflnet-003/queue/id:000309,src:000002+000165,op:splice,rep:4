@@ -1,6 +1,0 @@
-EHLO localh stlh st
-MAIL FROM:\ubunu@ubunabc
-.
-MAIL FROM:<ubbuntuY
-MAIL FROM:<ubuntu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>

@@ -1,6 +1,0 @@
-EHLO locaO<Žoclhost
-MAIL FROM:<
-RCPT TO:<AUTHtu@ubuntu>
-DATA
-abc
-.

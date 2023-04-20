@@ -1,8 +1,0 @@
-EHLO loCPT'''''''''''''''ocalyÅwt
-MAIL FROM:<ubun.tu@ubuntu>
-RCPT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT
-MAIL FROM:<ubuntu@ubuntu>

@@ -1,7 +1,0 @@
-EHLO lo alho¿t
-MAIL FROM:<ubuntu@ubuntu>
-R-PT TO:<ubuntu@ubuntu>
-DATA
-abc
-.
-QUIT

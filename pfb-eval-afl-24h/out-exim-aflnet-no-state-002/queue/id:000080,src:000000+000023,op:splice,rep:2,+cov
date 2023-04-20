@@ -1,9 +1,0 @@
-EHLO localhost
-MAIL FROM:<ubuntu@ubuntu>
-RCPT Tocalhost
-MAIL FROM:<ubuntu@ubunta>
-HELP T:<ubuntÿð
-DATA
-abc
-.
-QUITMAIL
