@@ -2,7 +2,6 @@
 
 target=$1
 dir_of_raw_bytes=$2
-dir_of_pcaps=$(basename $2).pcap
 
 if [ -z ${target} ]; then
     echo "target is missing"
@@ -15,8 +14,6 @@ if [ -z ${dir_of_raw_bytes} ]; then
     echo "usage: $0 target dir_of_raw_bytes"
     exit 1
 fi
-
-echo "converting raw bytes in ${dir_of_raw_bytes} to ${dir_of_pcaps}"
 
 if [ ${target} == 'forked-daapd' ]; then
     script=specs/daapd/nyx_net_spec.py
@@ -51,6 +48,7 @@ fi
 
 dest_dir=pcaps_to_replay
 rm -rf $dest_dir && mkdir $dest_dir
+echo "converting raw bytes in ${dir_of_raw_bytes} to ${dest_dir}"
 
 # let's go
 for run in $(seq 0 10); do
@@ -61,10 +59,10 @@ for run in $(seq 0 10); do
     nyx_aggressive=pfb-eval-nyx-24h/out-${target}-aggressive-00${run}/corpus/normal
     nyx_balanced=pfb-eval-nyx-24h/out-dcmtk-${target}-00${run}/corpus/normal
 
-    python ${script} ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run}
-    python ${script} ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run}
-    python ${script} ${aflnet_no_state} ${dest_dir}/out-${target}-aflnet_no_state-00${run}
-    python ${script} ${nyx} ${dest_dir}/out-${target}-nyx-00${run}
-    python ${script} ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run}
-    python ${script} ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run}
+    python3 ${script} ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run}
+    python3 ${script} ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run}
+    python3 ${script} ${aflnet_no_state} ${dest_dir}/out-${target}-aflnet_no_state-00${run}
+    python3 ${script} ${nyx} ${dest_dir}/out-${target}-nyx-00${run}
+    python3 ${script} ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run}
+    python3 ${script} ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run}
 done
