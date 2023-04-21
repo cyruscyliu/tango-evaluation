@@ -1,28 +1,12 @@
-import sys, os 
-sys.path.insert(1, os.getenv("NYX_INTERPRETER_BUILD_PATH"))
-sys.path.insert(1, os.getenv("TANGO_PATH"))
-
-from tango.net import PCAPInput
-from tango.core import TransmitInstruction
-
-class FMT(object):
-    def __init__(self):
-        self.protocol = 'tcp'
-        self.port = 2022
-
-
-def to_pcap(aflnet_raw_pathname, inp):
-    pathname = aflnet_raw_pathname + '.tpcap'
-    new_inp = PCAPInput(file=pathname, fmt=FMT())
-    import ipdb; ipdb.set_trace()
-    new_inp.dump(inp, name='openssh-seed-0')
-    print('dump to {}'.format(pathname))
-
+import sys, os
+sys.path.insert(1, '../..')
+sys.path.insert(1, '../../tango')
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
 from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
+from dump import to_pcap
 
 import jinja2
 
@@ -36,13 +20,13 @@ s.interpreter_user_data_type = "socket_state_t*"
 
 # TODO these might be fucky as fuck! check the count-X lines in those C files
 with open("send_code.include_pkt.c") as f:
-    send_code_pkt = f.read() 
+    send_code_pkt = f.read()
 
 with open("send_code.include_pkt_mac.c") as f:
-    send_code_pkt_mac = f.read() 
+    send_code_pkt_mac = f.read()
 
 with open("send_code.include_string.c") as f:
-    send_code_string = f.read() 
+    send_code_string = f.read()
 
 d_byte = s.data_u8("u8", generators=[limits(0x0, 0xff)])
 
@@ -73,7 +57,7 @@ import struct
 import pyshark
 import glob
 
-def split_packets(data):   
+def split_packets(data):
     i = 0
     res = []
 
@@ -84,7 +68,7 @@ def split_packets(data):
     i = header_end
 
     while i+6 <= len(data):
-        length,pad_length,msg = struct.unpack(">IBB",data[i:i+6])  
+        length,pad_length,msg = struct.unpack(">IBB",data[i:i+6])
         content_len = length-2+6
         if not (msg >= 20 and msg <= 49):
             # print("add MAC length")
@@ -120,27 +104,20 @@ def stream_to_bin(path,stream):
             instructions.append(ins)
     b.write_to_file(path+".bin")
 
-"""
-# convert existing pcaps
-for path in glob.glob("pcaps/*.pcap"):
-    b = Builder(s)
-    cap = pyshark.FileCapture(path, display_filter="tcp.dstport eq 5158")
+def main():
+    if len(sys.argv) != 3:
+        print('missing the source of raw bytes and the destination directory')
+        exit(1)
 
-    #ipdb.set_trace()
-    stream = b""
-    for pkt in cap:
-        #print("LEN: ", repr((pkt.tcp.len, int(pkt.tcp.len))))
-        if int(pkt.tcp.len) > 0:
-            stream+=pkt.tcp.payload.binary_value
-    stream_to_bin(path, stream)
-    cap.close()
-"""
+    src = sys.argv[1]
+    dst = sys.argv[2]
 
-# convert afl net samples
-for path in glob.glob("raw_streams/*.raw"):
-    b = Builder(s)
-    with open(path,mode='rb') as f:
-        instructions.clear()
-        stream_to_bin(path, f.read())
-        to_pcap(path, instructions)
+    for testcase in os.listdir(src):
+        b = Builder(s)
+        with open(os.path.join(src, testcase), mode='rb') as f:
+            instructions.clear()
+            stream_to_bin(os.path.join(src, testcase), f.read())
+            to_pcap(os.path.join(dst, testcase), instructions)
 
+if __name__ == '__main__':
+    main()
