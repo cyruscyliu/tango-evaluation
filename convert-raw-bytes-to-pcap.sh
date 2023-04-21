@@ -1,7 +1,6 @@
 #!/bin/bash
 
 target=$1
-dir_of_raw_bytes=$2
 
 if [ -z ${target} ]; then
     echo "target is missing"
@@ -9,60 +8,55 @@ if [ -z ${target} ]; then
     exit 1
 fi
 
-if [ -z ${dir_of_raw_bytes} ]; then
-    echo "dir_of_raw_bytes is missing"
-    echo "usage: $0 target dir_of_raw_bytes"
-    exit 1
-fi
-
 if [ ${target} == 'forked-daapd' ]; then
-    script=specs/daapd/nyx_net_spec.py
+    working_dir=specs/daapd
 elif [ ${target} == 'tinydtlS' ]; then
-    script=specs/dtls/nyx_net_spec.py
+    working_dir=specs/dtls
 elif [ ${target} == 'bftpd' ]; then
-    script=specs/ftp/nyx_net_spec.py
+    working_dir=specs/ftp
 elif [ ${target} == 'proftpd' ]; then
-    script=specs/ftp/nyx_net_spec.py
+    working_dir=specs/ftp
 elif [ ${target} == 'live555' ]; then
-    script=specs/rtsp/nyx_net_spec.py
+    working_dir=specs/rtsp
 elif [ ${target} == 'openssl' ]; then
-    script=specs/tls/nyx_net_spec.py
+    working_dir=specs/tls
 elif [ ${target} == 'dcmtk' ]; then
-    script=specs/dicom/nyx_net_spec.py
+    working_dir=specs/dicom
 elif [ ${target} == 'kamailio' ]; then
-    script=specs/sip/nyx_net_spec.py
+    working_dir=specs/sip
 elif [ ${target} == 'lightftp' ]; then
-    script=specs/ftp/nyx_net_spec.py
+    working_dir=specs/ftp
 elif [ ${target} == 'pureftpd' ]; then
-    script=specs/ftp/nyx_net_spec.py
+    working_dir=specs/ftp
 elif [ ${target} == 'dnsmasq' ]; then
-    script=specs/dns/nyx_net_spec.py
+    working_dir=specs/dns
 elif [ ${target} == 'openssh' ]; then
-    script=specs/ssh/nyx_net_spec.py
+    working_dir=specs/ssh
 elif [ ${target} == 'exim' ]; then
-    script=specs/smtp/nyx_net_spec.py
+    working_dir=specs/smtp
 else
     echo "usage: $0 target dir_of_raw_bytes"
     exit 1
 fi
 
-dest_dir=pcaps_to_replay
+dest_dir=$(realpath pcaps_to_replay)
 rm -rf $dest_dir && mkdir $dest_dir
-echo "converting raw bytes in ${dir_of_raw_bytes} to ${dest_dir}"
 
 # let's go
 for run in $(seq 0 10); do
-    aflnet=pfb-eval-afl-24h/out-${target}-aflnet-00${run}/queue
-    aflpp=pfb-eval-afl-24h/out-${target}-aflpp-00${run}/default/queue
-    aflnet_no_state=pfb-eval-afl-24h/out-${target}-aflnet-no-state-00${run}/queue
-    nyx=pfb-eval-nyx-24h/out-${target}-00${run}/corpus/normal
-    nyx_aggressive=pfb-eval-nyx-24h/out-${target}-aggressive-00${run}/corpus/normal
-    nyx_balanced=pfb-eval-nyx-24h/out-dcmtk-${target}-00${run}/corpus/normal
+    aflnet=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-00${run}/queue)
+    aflpp=$(realpath pfb-eval-afl-24h/out-${target}-aflpp-00${run}/default/queue)
+    aflnet_no_state=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-no-state-00${run}/queue)
+    nyx=$(realpath pfb-eval-nyx-24h/out-${target}-00${run}/corpus/normal)
+    nyx_aggressive=$(realpath pfb-eval-nyx-24h/out-${target}-aggressive-00${run}/corpus/normal)
+    nyx_balanced=$(realpath pfb-eval-nyx-24h/out-dcmtk-${target}-00${run}/corpus/normal)
 
-    python3 ${script} ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run}
-    python3 ${script} ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run}
-    python3 ${script} ${aflnet_no_state} ${dest_dir}/out-${target}-aflnet_no_state-00${run}
-    python3 ${script} ${nyx} ${dest_dir}/out-${target}-nyx-00${run}
-    python3 ${script} ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run}
-    python3 ${script} ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run}
+    cd ${workding_dir}
+
+    echo python3 nyx_net_spec.py ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run}
+    echo python3 nyx_net_spec.py ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run}
+    echo python3 nyx_net_spec.py ${aflnet_no_state} ${dest_dir}/out-${target}-aflnet_no_state-00${run}
+    echo python3 nyx_net_spec.py ${nyx} ${dest_dir}/out-${target}-nyx-00${run}
+    echo python3 nyx_net_spec.py ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run}
+    echo python3 nyx_net_spec.py ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run}
 done
