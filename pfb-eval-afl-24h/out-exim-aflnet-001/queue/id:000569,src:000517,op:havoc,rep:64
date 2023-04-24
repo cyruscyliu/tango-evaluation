@@ -1,0 +1,8 @@
+HELP
+HELP MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+asasc-
+c
+.
+AUTH

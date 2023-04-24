@@ -1,0 +1,7 @@
+EHLO locaçhosO localh{stıs
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

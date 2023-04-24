@@ -1,0 +1,11 @@
+EHL@localhost
+EHLO locIlhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT :0
+.
+BDAT 5
+QUIT
+TOMAIL FROM:<uMAILuntu=ubuntu>
+RCPT u=ubuntu>
+RCPT TO%<ubuEHLOntu@ubuntu>

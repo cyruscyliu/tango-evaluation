@@ -1,0 +1,6 @@
+EHLO loTalhosO lcalh{stõs
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>

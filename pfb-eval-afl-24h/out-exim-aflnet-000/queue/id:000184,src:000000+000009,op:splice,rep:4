@@ -1,0 +1,6 @@
+EHLO lVcuntu@ubuntu>
+DATAabc
+.
+QUITbuntu>
+RCPT TO:<ubuntu@TOuntu>
+DATA

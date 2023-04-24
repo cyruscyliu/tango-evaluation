@@ -1,0 +1,6 @@
+EHLO l]calhost
+RCPT TO:<ubuntu@ubuntt>
+DATAQUIT
+MAIL FROM:<ubunoÉ@ubuntu>*RCPT TO:<ubu
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>

@@ -1,0 +1,6 @@
+EHLO,localhML<ubuntu@ubuntu>
+RCPT T9:<ubuntu@ubuntu>MAILtu>
+RCPT T9:<ubu
+DATA abc
+.
+QBDKT

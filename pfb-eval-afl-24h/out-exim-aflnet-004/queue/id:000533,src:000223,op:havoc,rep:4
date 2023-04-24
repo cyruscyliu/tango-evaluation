@@ -1,0 +1,13 @@
+EHLO localhost
+NOOP ÿÿÿÿ:hosRSETõs
+MAIL FROM:<ubuntu@ubBDATuntu>
+RCPT TO:<ubuntu@nbuntu>
+DATA
+abc
+.
+QUIg
+MAIL FROM:<uvuntu@ubuntu>
+RCPT TO:<ubuntu@u
+MAIL FROM:<uvuntu@ubunUIT
+RCPT TO:<ubuntu@ubuntu>
+DATA

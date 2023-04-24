@@ -1,0 +1,14 @@
+EHLO localhost
+HELO FocaQhost
+MAIL FROM:<ubunntu@ubuntu>
+RCPT TO:<u`u@ubuntu>
+RCPT eeeeeeetu>
+RCPT TO:<ubuntu@ubeeetu>
+RCPT TO:<ubuntu@ubItu>
+RCPT TO:7ubuutu@u
+EOM:<ubuntu@ubuntu>
+RCPT TO:<u`u@ubuntu>
+R TO:7ubuutu@ub ntu>
+DATA
+abc
+.

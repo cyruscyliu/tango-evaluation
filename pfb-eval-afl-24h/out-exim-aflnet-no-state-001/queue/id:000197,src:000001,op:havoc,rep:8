@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDN#UTN#UTH
+K
+.
+BDAT 5

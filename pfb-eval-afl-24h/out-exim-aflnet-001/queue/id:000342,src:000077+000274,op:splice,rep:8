@@ -1,0 +1,12 @@
+HELP
+MAIL lbc~lht
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DT TO:<ubuntu@uQUITÿ
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+dA£:ù.
+QUIT
+RCPT TO:<ubuntu@ubuntu>
+DATA

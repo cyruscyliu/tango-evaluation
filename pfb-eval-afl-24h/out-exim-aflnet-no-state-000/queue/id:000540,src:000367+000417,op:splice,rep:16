@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubunH_LPbumòu>
+D FROM:<cXO localhost
+MAIL FROM:<ubunHu>
+
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.

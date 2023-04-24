@@ -1,0 +1,9 @@
+EHLO localhomt
+MAIL FROM:<ubRSET@ubuntu>
+RCPT kO:<uuuuuuuuuuubuntudubuntu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DEO;OMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<u"untu@ubuntu>
+abc
+.

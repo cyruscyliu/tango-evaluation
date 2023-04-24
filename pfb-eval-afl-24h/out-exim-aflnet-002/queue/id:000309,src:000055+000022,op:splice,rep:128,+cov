@@ -1,0 +1,6 @@
+EHLO locиииї
+NOOP RCPTRCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

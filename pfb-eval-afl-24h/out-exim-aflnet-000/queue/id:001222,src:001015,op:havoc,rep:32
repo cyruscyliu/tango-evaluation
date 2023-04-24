@@ -1,0 +1,6 @@
+EHLO  o.........................AUTH..............ÿ.....untu@ubuxtu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+MAIL.
+MAIL FROM:<ubuntu@ubuntu>

@@ -1,0 +1,10 @@
+EHLO localhost
+HELO FocaQhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<uRCPTbuntu@ubuntu>
+BDAT 10
+.
+JBDAT 5
+QUIT
+RCPT RCPTTO:<ubuntu@ÿuntg>
+BDAT 10

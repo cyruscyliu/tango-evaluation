@@ -1,0 +1,10 @@
+EHLO localhost
+HELO Focalhost
+MAIL FROM:<ubuntu@=======Œcalhost
+EHLO localh5st
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntuDDDDDDDDDDDDDDDDDDDDDDDDDDDDD@FROMubuqtu>
+DATA
+aROMubuqQUIT
+abc
+RCPT RCPTTO:<ubuntu@ÿuntg>

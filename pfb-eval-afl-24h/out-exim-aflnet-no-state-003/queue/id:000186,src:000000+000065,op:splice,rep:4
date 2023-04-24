@@ -1,0 +1,12 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATABlocalhost
+MAIL FROM:<ubuttu@ubunAlocalhost
+MAIL FROM:<ububuntu@ubunAln
+DATA
+abc}}}}}}}}f}
+.
+QUIT
+.
+QUIT

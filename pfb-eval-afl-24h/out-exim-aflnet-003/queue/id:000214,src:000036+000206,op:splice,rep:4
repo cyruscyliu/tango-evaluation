@@ -1,0 +1,14 @@
+EHLO …ocalh†st
+MAIL FROM:<ubuntu@ubuntu>
+RCLO …ocalh†st
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ub@ubuntu>
+RCPT TO:<ubuntu@ubuOtu>
+DATA
+abcCLO …ocalh†st
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ub@ubuntu>
+RCPT TO:<ubuntu@ubh†st
+8AIL FROM:<ubuntu@ubuntu>T
+DATA
+abc

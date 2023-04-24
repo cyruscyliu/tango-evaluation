@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT localHELAIL5FROM:<ubuntu@ubuntu>
+RCPT TO:ntu>
+RCPT TO:<ubuntu@ubLNNOOP[eýú

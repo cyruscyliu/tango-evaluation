@@ -1,0 +1,10 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+EHLO locahâHLO localhost
+BDATMHÅLO≤ROM:ost
+BDATMHEL6≤7OM:<ubuntCPT TO:<ubu@u
+Ätu>RCPP TO:<ubu¯EMAILLO≤ROM:<ubuntÙ

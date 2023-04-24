@@ -1,0 +1,6 @@
+EHLO localhosO lBDATocalh{stõ‡
+MAIL FROM:<ubuntY@ubuntuU
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.

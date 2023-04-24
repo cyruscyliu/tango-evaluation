@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLO localMostMOIL FRHELPost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ub"ntu@ubXntu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntuAUTH>
+DATA

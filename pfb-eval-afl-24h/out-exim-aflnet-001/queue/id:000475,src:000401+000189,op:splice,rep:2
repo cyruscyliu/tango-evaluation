@@ -1,0 +1,11 @@
+HELP
+MAIL FROMÙÙÑÛÙÙÙÙÙÙÙÙÙÙÙÏ¾ÙÙÙhosÿ
+MAI FROM:<ubuntu
+MAIL FROM:<ubuntu@ubuntu>
+NOOP TOºMAIL<ubuntu@ÙÙÙÙÙÙÙÙÙÙÙÙÙhosÿ
+MAIL FRCPT<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abcû	.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>

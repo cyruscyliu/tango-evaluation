@@ -1,0 +1,7 @@
+EHLO localhosO lRCPTh{ssñõs
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DA\A/
+abc
+.
+QUIT

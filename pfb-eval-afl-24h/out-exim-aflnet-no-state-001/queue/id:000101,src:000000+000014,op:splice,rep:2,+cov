@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DAEHLOabalhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ÿÿtu>
+RCPTBDAT###PTÂ#!Â.
+QUIT
+.

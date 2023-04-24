@@ -1,0 +1,8 @@
+E®LO locaO<loclhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubunttu>
+DATA
+DATA
+abc
+.
+QUIT

@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QRIT locaKXntu ÿ
+EXLORCTuubNOOP>ÿbuntu>ÿ
+EHLORCPT TO:HENOTOu@ubuntu>

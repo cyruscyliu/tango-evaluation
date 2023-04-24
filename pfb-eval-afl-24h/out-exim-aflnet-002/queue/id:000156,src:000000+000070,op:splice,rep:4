@@ -1,0 +1,6 @@
+EHLO loéalhoøt
+MAIL FROM:<ubuétu@ubuntu>TA
+abc
+.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>

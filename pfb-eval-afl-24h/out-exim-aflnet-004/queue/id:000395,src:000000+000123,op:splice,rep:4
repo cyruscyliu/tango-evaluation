@@ -1,0 +1,10 @@
+EHLO localhost
+MALO ]ocalhosO localh{sèıs
+MAIL FROM:<ubuntuubundu>
+RCPT TO:<uiunt‚@ubuntu>ubundu>
+RCPT TO:<uiunt‚@DATAOM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

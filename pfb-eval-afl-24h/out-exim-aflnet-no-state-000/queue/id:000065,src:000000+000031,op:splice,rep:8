@@ -1,0 +1,10 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT l.ocalhost
+MAIL FŠŠŠŠŠ‰ŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠŠRUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUOM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@{buntu>ùCATA
+aDeýú

@@ -1,0 +1,7 @@
+EHLO Yocalhost
+MAIL FROM:<ubuntu@ubunu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+a(UTHbb÷
+.
+QUIT

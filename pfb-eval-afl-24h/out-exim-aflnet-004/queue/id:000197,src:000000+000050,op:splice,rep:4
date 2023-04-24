@@ -1,0 +1,12 @@
+EHLO localhost
+MAIL FROO?ÿQU3T[[suÿû.NOOP
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubunts@ubuntu>
+DATA
+aM?ÿQU3T[[suÿû.NOOP
+MAIL FROM:<ubuntu@ubuntu>
+RbT[
+.
+QUIT
+RCPT TO:<ubuntu@ubuntu>
+DATA

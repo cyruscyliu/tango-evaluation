@@ -1,0 +1,10 @@
+EHLO lolalhomt
+MAIL FROM:<ubuntu@ubuntu>
+omt
+MAIL FROM:<ubuntu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

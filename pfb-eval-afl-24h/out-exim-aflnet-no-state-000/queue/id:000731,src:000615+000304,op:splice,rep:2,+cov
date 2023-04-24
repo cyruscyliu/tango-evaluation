@@ -1,0 +1,39 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIO localhost
+MAIL FROM:<ubuntu............................@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLO localhost
+MAIL FROM:<u.buntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+EHLO localhost
+MAIL FROM:<uiuntu@ubuntu>
+RCPT TO:<ubuntu@ubtntu>
+DATA
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLO localhost
+MAIL FROM:<ubntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+EHLO localhost
+MAIL FROM:<ubuntu@uBDATu>
+RCPT TO:<Ubuntu@ubuntu> DAJA
+abcõ	IMAILT loc_lhost
+MAIL FROM'<uFuntu@ubuntu>
+RCPT TO:<ubuntu@}bÿntu>
+DATA
+ýTOabc
+.
+.&
+MAIL FROM:<ubuntu@ubuntu>

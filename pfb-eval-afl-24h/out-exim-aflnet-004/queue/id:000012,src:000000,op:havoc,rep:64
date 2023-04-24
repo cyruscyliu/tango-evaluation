@@ -1,0 +1,6 @@
+;A.9Eqô÷HELOOMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

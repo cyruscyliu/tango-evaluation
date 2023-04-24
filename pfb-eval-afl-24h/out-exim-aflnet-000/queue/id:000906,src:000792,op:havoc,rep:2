@@ -1,0 +1,6 @@
+EHLO loJ.......RSETMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUInô

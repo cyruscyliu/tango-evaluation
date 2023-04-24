@@ -1,0 +1,5 @@
+EHLO localhost
+MAIR FROM:<ubuntu@ubuntu>€
+RCPT TO:<ubuntu@ubuntu>
+HELO 10÷
+.

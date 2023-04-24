@@ -1,0 +1,8 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ub FRO?:hst
+MAIL FROM:@uZuntuBubunROM0<ubuCP> TO:<ub|ntu@uost
+MAIL FROM:@uZuntuBubunROM0<ubuCP> TO:<ub|ntu@ubuntu>
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>JRCPT TO:<ubuntu@ubuntu>
+DATA
+abc

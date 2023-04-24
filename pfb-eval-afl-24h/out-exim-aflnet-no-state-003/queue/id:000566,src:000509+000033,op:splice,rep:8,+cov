@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLO localMost
+MAIL FROM:<\
+RCPT T1uauftu>
+T0 T1uauftuMecc
+.
+QUIT{ntÿÿÿRCPT TO:<ubuntu@ubucAuntu>

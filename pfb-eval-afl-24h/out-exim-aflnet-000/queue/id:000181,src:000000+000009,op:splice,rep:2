@@ -1,0 +1,9 @@
+EHLO locaO<loclhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuniu@ubuntu>
+DATA
+ab
+.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>

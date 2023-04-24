@@ -1,0 +1,10 @@
+EHLO localhost
+MAIL Focelhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@((((44444)))))))):<ubuntu@ubuntu>
+RCPT TO:<ubunROM:>ubuntu@ub\ntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLO localhost
+MAIL FROM:RCPT TO:<ubunQbuntu>ZDATA
+abc
+.

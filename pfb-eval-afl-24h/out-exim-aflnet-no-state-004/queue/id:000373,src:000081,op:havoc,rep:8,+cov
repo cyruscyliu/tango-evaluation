@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL FqVH:Bubunt
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+BDAT localhost

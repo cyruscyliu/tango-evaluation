@@ -1,0 +1,12 @@
+EHLO MAIL FROMÙÙÑÛÙÙÙÙÙÙÙÙÙÙÙÏ¾ÙÙÙhosÿ
+MAI FROM:<ust
+EHLO locIlhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<_____________________________________________________________ubuntu@ubuntu>
+BDAT 10
+.
+BDAT 5
+QUIT
+MAIL FROM:<ubuntu@ubuntu>
+NOOP TOº<uMAILu@ubunt><ubuntu@ubuntu>
+NOOPMAIL FROM:<ubuntu@ubuntu>

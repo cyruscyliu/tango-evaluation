@@ -1,0 +1,5 @@
+EHLO localhost
+ROMFFFFFFFFFFFF
+A* FROM
+RCPT TO:<ubuntu@ubuntu>
+DATA

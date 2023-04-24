@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+NHLFROMcalhost
+McIL FRÓM:<u\untu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+.
+BDAT 5
+QUIT

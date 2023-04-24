@@ -1,0 +1,19 @@
+EHLO lost
+MAIL FROM:<u.buntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+EHLO localhost
+MAIL FROM:<uiuntu@ubuntu>
+RCPT TO:<ubuntu@ubtntu>
+DATA
+EHLO localhost
+MAIL FROM:<ubuQUITntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLO localhost
+MAIL FROM:<ubntu@ubuntu>
+RCPT TO:<ubtu>
+RCPT TO:<BDATubuntu@ubuntu>
+BDAT 10calhost
+õ

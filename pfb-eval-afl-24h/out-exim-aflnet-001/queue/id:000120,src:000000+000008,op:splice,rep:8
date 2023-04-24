@@ -1,0 +1,7 @@
+EOM:<ubuntw@ubuntu>
+RCPT TO:HLO ÙÙÙÙÙÙÑÛÙÙÙÙÙÙÙÙÙÙÙÙÙÙRCPTLÿ
+MAIL FROM:<ubuntw@ubuntu>
+RCPT TO:<ubuntu@ubuntu>ŠDAT
+abcóú.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>

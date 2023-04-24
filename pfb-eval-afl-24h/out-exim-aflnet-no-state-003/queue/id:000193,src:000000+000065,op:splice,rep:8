@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATAlocalhust
+MA	L FROM:<ubuntu@ubunQu>
+RCPT TO:@ubun4u@?buntu>úDATA
+abc}}}}}}}}f}
+.
+_UIT

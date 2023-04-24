@@ -1,0 +1,8 @@
+EHLO ÙÙÙÙÙhosÿ
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@uHELPbuntu>
+DATB
+abc
+.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>

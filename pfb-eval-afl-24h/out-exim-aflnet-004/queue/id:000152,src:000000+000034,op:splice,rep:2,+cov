@@ -1,0 +1,8 @@
+EHLO localhosO localh{stõs
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubunAUTHbuntu>
+DATE
+abc
+.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>

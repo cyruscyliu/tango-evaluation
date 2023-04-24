@@ -1,0 +1,13 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIO localhost
+MHLO localhost
+MAIL FROM:<ubuntu>(DATA
+abc
+.
+QUIT죠좋좋좋좋좋좋좋핷AIL좋좋좋HELP좋
+RCPT TO:<ubuntu@ubuntu>

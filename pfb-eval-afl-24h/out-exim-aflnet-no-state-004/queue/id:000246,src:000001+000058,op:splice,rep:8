@@ -1,0 +1,8 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+R/PT TO:<uhost
+MAIL FROM:<ubuntu@QUITtu>
+RCPT TOR<ubuntu@ubuntO:<uhost
+MAIL FROM:<ubunu>
+DATA
+abc

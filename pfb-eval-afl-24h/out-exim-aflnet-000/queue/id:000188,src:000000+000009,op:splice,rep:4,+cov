@@ -1,0 +1,6 @@
+EHLO locaO<l.clhost
+/AIL FROM:<t
+MAIL FROM:<@ubuntu>
+DATA
+abc
+.

@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubAUTH–ntuFROM.@ubuntu>
+BDAT 10
+.
+BDAT 5
+QUIT

@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubDATAuntu>
+RCPT TO:<ubuLtu@uLuntu>
+BDAT 10
+QUIT.
+BDAT 5
+QUIT

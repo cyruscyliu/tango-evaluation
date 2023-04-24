@@ -1,0 +1,10 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATAlHELOhost
+MAIL FROM:<ubuntu@ubuntuHELO>
+RCPT TO:<ubuntu@ubuntu>
+AUTH
+aÿc
+.
+QUIT

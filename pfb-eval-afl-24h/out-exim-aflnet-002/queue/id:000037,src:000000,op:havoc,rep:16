@@ -1,0 +1,7 @@
+h"....3......I.........êˇtP....3......I.....@...êˇtPPT
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

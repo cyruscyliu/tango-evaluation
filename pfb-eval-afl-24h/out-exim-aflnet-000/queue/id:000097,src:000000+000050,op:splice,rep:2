@@ -1,0 +1,8 @@
+EHL localhomt
+MAIL FROM:<ubuntu@uT TO:<ubuntu@ubuntuuntu@ubuntu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

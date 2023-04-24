@@ -1,0 +1,15 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BNAT localhL FROM:<ubunu@ubuntu>
+RCPT TO:<ub”ntu@ubun-u>
+DATA
+a`c.
+QUIT
+.
+BDAT 5
+QULO localhost
+MAIL FROM:<ubuntu@ubuntu>
+rCPT TO:<ubuntu@ubuntu>
+DATA
+EHLO l|calhost

@@ -1,0 +1,14 @@
+NOOPEHLO l]calhost
+MAIL FR@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@OM:<ubun:<uduntu@ubuntu>
+DATAQUIT
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

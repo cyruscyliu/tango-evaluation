@@ -1,0 +1,30 @@
+start_time        : 1680546904
+last_update       : 1680559756
+fuzzer_pid        : 10
+cycles_done       : 243
+execs_done        : 65280
+execs_per_sec     : 5.13
+paths_total       : 268
+paths_favored     : 25
+paths_found       : 267
+paths_imported    : 0
+max_depth         : 10
+cur_path          : 251
+pending_favs      : 0
+pending_total     : 176
+variable_paths    : 262
+stability         : 87.74%
+bitmap_cvg        : 2.59%
+unique_crashes    : 15
+unique_hangs      : 0
+last_path         : 1680559730
+last_crash        : 1680558281
+last_hang         : 0
+execs_since_crash : 5697
+exec_timeout      : 360
+afl_banner        : dnsmasq
+afl_version       : 2.56b
+target_mode       : default
+command_line      : /home/ubuntu/aflnet/afl-fuzz -d -i /home/ubuntu/experiments/in-dns -o out-dnsmasq-aflnet-no-state -N tcp://127.0.0.1/5353 -P DNS -D 10000 -K ./dnsmasq
+slowest_exec_ms   : 248
+peak_rss_mb       : not available while afl is running

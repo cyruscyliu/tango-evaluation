@@ -1,0 +1,7 @@
+EHLO locHE>
+BDAT<ubuntu@ubuntu>
+DATALPst
+MAIL FROM:<ubuntu@ubuntu>
+BDAT<ubuntu@ubuntu>
+DATA
+abc

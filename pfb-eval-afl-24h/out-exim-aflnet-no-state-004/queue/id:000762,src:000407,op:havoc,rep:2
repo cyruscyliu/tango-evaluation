@@ -1,0 +1,23 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+EHLO localDATaLOst
+MAIL FROM:Cýúúúúú<ubunuu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+EHLO OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOlocalhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubu
+abc
+.
+EHLO localhost
+MAIL FROM:<RSETubuntu@ubuntu>HELOOUPT TO:<ubuntu@ubun8CPTtu>
+DATA
+abc
+.
+ubuntu>OUPT TO:<ubuntu@ubuQHbOùnocalhoÒhˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆˆ
+MOM*Fub@ubutu9

@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL ubuntu@ubuntu>
+eHLO localhst
+MAIL FROM:
+MAIL FROM:<ubu+" 5
+QUIT
+QUIT

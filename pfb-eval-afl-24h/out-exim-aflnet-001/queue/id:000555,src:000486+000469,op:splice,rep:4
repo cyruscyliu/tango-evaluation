@@ -1,0 +1,10 @@
+EHLO lbc~lht
+MAIL FROM:h:host
+EHLO locIlhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT 10!.
+BDAT 5
+QUST
+MAIL FROM:<uMAILuntu=ubuntu>
+RT u=uTuntu>RCPT TO%<ubuEHLOntu@ubuntu>

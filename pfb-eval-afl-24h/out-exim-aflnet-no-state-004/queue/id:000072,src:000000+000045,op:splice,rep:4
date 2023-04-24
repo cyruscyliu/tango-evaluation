@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUITlocalhost
+MAIL FROM:#ubuntu@ubuntu>
+RCeT TO:<ubrntu@ubuntu>

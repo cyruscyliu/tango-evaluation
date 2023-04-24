@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+HELP T:<ubuntÿð
+DATA
+abc
+.
+QUIT

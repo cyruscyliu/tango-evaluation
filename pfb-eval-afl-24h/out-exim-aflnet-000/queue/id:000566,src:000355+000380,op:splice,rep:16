@@ -1,0 +1,12 @@
+EHLO localhomt
+MAIL localhost
+MAIL FROM:<ubulhostTu>
+RROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntuê
+BDAT 10
+zzzzzzczzzzzzzzzzzzzvzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzÿÿÿ€zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzezzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz|z.
+BDAT 5
+RCPT TO:<ubuntu@ubuntu>
+DATADAT 5
+RCPT TO:<ubunt/@ubunttu@ubuntu>
+DATA

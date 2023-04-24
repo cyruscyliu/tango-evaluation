@@ -1,0 +1,10 @@
+EHLO localhloc
+MAILbbbbbbbbbbbbbbbbbbbbbbbb >:<ubuntu@ubuKtRSETu>
+RCPT TO:<ubun†u@úbuntubuntu@BDAT
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT 10
+.,BDAT 5
+RCPT-TO:<ubuntu@ubuxtu>
+MAIL FROM:<ubuntu@uNOOPbuntu>
+RCPT TO:<ubuntu@ubuntu>

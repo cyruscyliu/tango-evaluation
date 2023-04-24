@@ -1,0 +1,7 @@
+ENOWPHLO localho¿t
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+-ù
+QUITMAIL FROM:<ubuntu@ubuntu>

@@ -1,0 +1,8 @@
+EHLO localhost
+MALO l]EVLO l]cal^o55555555555555
+D_@A
+RSET
+.
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc

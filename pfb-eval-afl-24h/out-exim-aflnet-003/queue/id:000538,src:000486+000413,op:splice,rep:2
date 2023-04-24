@@ -1,0 +1,13 @@
+EHLO l
+MAIL FROM:<ubuntq@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATAQUIT
+MAIL FROM:<ubuntŸ@ubuntu>
+RCPT TO:<ubuntu@ubuntuP
+EHLO localhoOP
+MAIL FROM:<ubuntu@ubu.ntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+ûûûûüûûûûûûûûûüûûûûûûûûûûûéûûûûûûûûûûûûûûûûûûûûûûûûûûûû{ûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûùûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûAUTHûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûûý.
+QUIT
+DATA

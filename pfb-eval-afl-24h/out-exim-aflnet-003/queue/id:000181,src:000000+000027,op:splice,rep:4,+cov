@@ -1,0 +1,9 @@
+EHLO loCPwt
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuÿÿÿ
+DATA
+abc
+.
+QUITMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA

@@ -1,0 +1,6 @@
+EHLO          at&F&&&&&&&&&&&untu>
+DATA TO:<ubunWu@uTA
+abc
+f
+QUIT
+MAIL FROM:<ubuntu@ubuntu>

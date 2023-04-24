@@ -1,0 +1,11 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubun>
+RCP:<ubun>
+RCPT TO:<ntu>
+RCPT TOT TO:<ntu>
+RCPT TO:<ubun>UIT
+EHLL localh<ubuntu@ubuntu>
+EHLL lTbuntu>
+BDAT 10Ó
+.ÎBDAT 5

@@ -1,0 +1,7 @@
+EHELOloc]lhost
+MAIL FROM:host<ubuntu@ubunt >
+RCPT TO:<ubuntu@ubun‹u>
+BDAO localhost
+MAIL FROM:<ubuntu>
+RCPT TO:<ubuntu@ubu~tu>ît
+MAIL FROM:<ubuntu@ubunt>

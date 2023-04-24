@@ -1,0 +1,9 @@
+EHLO lbc~lht
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+EHLO lbc~FROMlhtä,MAIL FROM:<TOubunt££££££££££££Ž£££££¦££££££££££££££££££££££ÿ££ ££££££££££££££££££££££££££££££££££££££f(
+.HLa lbc~UOXFROXFR(
+.HLO lbc~UOXFROXFRCAUTHPT.
+.
+QUIT

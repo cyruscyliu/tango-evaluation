@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL F pM:>ubuitu@ubuntu>
+RYPT TO:<ubuntu@ub€ntz>
+BDAT 1\
+.
+BDAT 5
+QUIT

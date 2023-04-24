@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QEIT locaMAILlhost
+MAIL FROM:<ubuntu@ubunu>
+RCPT TO:<ubuntu@AUTH‡bH=LPuntu>ô

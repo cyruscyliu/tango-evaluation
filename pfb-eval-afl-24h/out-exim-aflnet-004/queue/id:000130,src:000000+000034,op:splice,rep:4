@@ -1,0 +1,6 @@
+EHLO lo_alhosO localh{stõs
+MAIL FROM:<uMAILb ntu@ubuntu>
+RCPT TO:<ubuntu@u"untu>
+DATA
+abc
+.

@@ -1,0 +1,14 @@
+EHLO localhost
+MAIO doalhost
+MAIL FROM:UutAUTH
+MAIL FROM:UubuntíO.buntíO.
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT localhost
+MAIL FROM:<ubuntu@ub>
+RCPT TO:<ubuntu@ubuntu>
+EHLO localMost
+MAIL FROM:Q\
+RCPT T1uauftu>
+T0 T1uauftuMecc
+.

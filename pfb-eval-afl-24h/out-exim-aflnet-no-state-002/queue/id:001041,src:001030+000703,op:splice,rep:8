@@ -1,0 +1,45 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT 10
+TO:úã[,
+abc
+bcAHELP
+ÿüÿ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ß
+
+
+
+
+
+
+
+
+
+
+
+
+buntu@ubuntu>
+QUIT

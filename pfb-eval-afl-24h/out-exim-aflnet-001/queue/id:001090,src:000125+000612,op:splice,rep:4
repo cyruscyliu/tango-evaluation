@@ -1,0 +1,8 @@
+EHLO  lbc~lhost
+EHLO locI.......................................................................................................................................................
+MAIL FROM:<ubuntu@ubuntu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuTtu@ubungu>DATA
+abc
+.
+QUIT

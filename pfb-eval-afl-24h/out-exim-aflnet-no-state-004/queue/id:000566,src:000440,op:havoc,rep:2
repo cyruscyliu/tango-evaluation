@@ -1,0 +1,8 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+wBLMA`Lt:RCPoNOﬁP]unÅATA
+wBLMA`Lt:RCPoNO
+.
+EHLO localh\st

@@ -1,0 +1,14 @@
+EHLO ÙÙÙÙÙÙÑÛÙÙÙ%ROM:<ubuStu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUITRSET
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

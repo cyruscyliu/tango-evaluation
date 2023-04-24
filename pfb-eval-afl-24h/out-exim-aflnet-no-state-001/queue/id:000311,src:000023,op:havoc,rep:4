@@ -1,0 +1,7 @@
+EHLO lohost
+MAIL NROcalhost
+MAIL NROM:=uHLO localhost
+RCPT TO:<ubuntu@ubuntu>
+DATA
+a(UTHbb÷
+.

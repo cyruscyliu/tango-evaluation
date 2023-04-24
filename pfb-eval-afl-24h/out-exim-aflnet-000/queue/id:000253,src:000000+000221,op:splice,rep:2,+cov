@@ -1,0 +1,7 @@
+EHLO localhloclhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@uHELPu>
+DATA
+eAUTHM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+MAIL FROM:<ubuntu@ub_ntu>

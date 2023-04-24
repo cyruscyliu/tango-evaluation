@@ -1,0 +1,8 @@
+EHLO localhomt
+MAIL FROM:NOOPntu@ubuntu>
+RCPT TO:<ucuMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

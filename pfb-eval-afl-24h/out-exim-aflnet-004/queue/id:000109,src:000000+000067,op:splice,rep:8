@@ -1,0 +1,9 @@
+EHL  ubuntu>IRCPT TO.<ubuntu@uXunt˜>
+DATA
+tbIT
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

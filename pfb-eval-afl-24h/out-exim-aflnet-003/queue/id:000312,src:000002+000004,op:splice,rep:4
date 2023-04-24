@@ -1,0 +1,6 @@
+EHLO localAUTHh host
+MAIL FROM:<ubuO localh u>
+RCPT TO:<ubunNOOPbuntu>
+DATA
+abc
+.

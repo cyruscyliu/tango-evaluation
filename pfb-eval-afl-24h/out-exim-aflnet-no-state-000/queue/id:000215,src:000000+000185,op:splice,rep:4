@@ -1,0 +1,35 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT localhost
+MAIL FROM:ccbuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLO
+abc
+.3
+EHLO HDLOlhst
+MAIL FR:<ubuntOM:<EHLOubunMAILbunsu>
+RCPTTO:<ubuntu@ubuWtuDDDDDDDDDDDDDDDDDDDDDDø
+TO*
+
+
+ö	Š	ø
+ÿÿÿ
+
+
+
+
+
+
+
+
+AUTH=@c.

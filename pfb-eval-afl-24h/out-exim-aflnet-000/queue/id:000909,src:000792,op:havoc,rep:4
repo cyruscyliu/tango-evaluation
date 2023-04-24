@@ -1,0 +1,6 @@
+EHLO lo...4..J../íMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUInô

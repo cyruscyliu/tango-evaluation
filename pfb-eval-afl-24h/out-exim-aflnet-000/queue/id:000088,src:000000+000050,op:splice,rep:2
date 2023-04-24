@@ -1,0 +1,5 @@
+EH=O localhomt
+MAIL FROM:<ubuntu@ubuntu>FROM
+RCPT TO:<ubuntu@ubuntu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>

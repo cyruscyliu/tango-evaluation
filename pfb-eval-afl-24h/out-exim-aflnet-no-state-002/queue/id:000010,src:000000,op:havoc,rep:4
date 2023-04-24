@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+ÿPDARSETTA:<ubuntu@ubuntw>
+DATA
+abc
+.
+QUIT

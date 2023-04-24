@@ -1,0 +1,7 @@
+EHLO localho¿t
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuQUITntu>"DATA
+abc
+.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>

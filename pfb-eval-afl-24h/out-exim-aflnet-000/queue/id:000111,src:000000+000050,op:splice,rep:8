@@ -1,0 +1,10 @@
+EHLO locat
+MAIL(F0OM:<ubuntu@ubuntu>
+R>
+RCPT TORS?????<<ubHLOuntu@ubuntu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

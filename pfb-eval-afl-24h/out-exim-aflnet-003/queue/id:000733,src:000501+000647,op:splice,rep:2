@@ -1,0 +1,27 @@
+AUTH
+HELP
+NOOP PO:<ubunt@uè´´´´´´´´´´´´´´´´´´´´Æ´”´´´´´´´FROM´´´´´´A
+HELP
+NOOP PO:<ubunt@´´´´´´´´€Æ´”´´´´´´´´´´´´´A
+HELP
+NOOP PO:<ubunt@uèntu>
+NOOP:<ubunt@uè´´´´´´´´´´´´´´´´´´´´Æ´”´´´´´´´FROM´´´´´´A
+HELP
+NOOj PO:<ubunt@´´´´´´´´€Æ´”´´´´´´´´´´´´´A
+HELP
+NOOP PO:<ubunt@uèntu>
+NOOP
+ubc
+.
+QUIT
+MAIL FROM:<ubuntu@ubuntu
+MAIL FROM:<ub€ÿtu@ubuntu>
+MAIL FROM:<ubuntq@ubuntu>
+ubc
+.
+QUIT
+MAIL FROM:<ubuntu@ubuntu
+MAIL FROM:<ub€ÿtu@ubuntu>
+MAIL FROM:<ubuntq@ubuntu>
+NOOP
+ubc

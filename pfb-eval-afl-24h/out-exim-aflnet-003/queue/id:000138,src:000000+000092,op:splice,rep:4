@@ -1,0 +1,8 @@
+EHLÿ l]calhost
+MAIL FROM:<ubuTOntq@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATAQUIT
+MAIL FROÍ:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc

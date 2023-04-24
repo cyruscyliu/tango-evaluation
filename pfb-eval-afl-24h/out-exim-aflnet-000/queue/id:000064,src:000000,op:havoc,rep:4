@@ -1,0 +1,6 @@
+EHLO l]EHLO l]cal^oRSEcal^oRSETMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

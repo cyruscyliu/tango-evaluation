@@ -1,0 +1,11 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DALO localhost
+MAIL F9OM:<ubuntu@ubuntu>
+DATA
+FROM:@
+FROM:@u€‘ntm@ŽbQMI::::::::::::::::::::::::::::::::ŽbQMI::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::u>
+abc
+QUIT localhost
+MAIL FROM:<ubuntu@ubuntu>

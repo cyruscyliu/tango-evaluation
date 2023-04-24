@@ -1,0 +1,8 @@
+EHLO localhost
+MAIL FRc`lhost
+MAIL FROM:<ubuntu@ubu{stõs
+MAIL FROM:<ubuntu@ub<DATuntu>
+RCPT TO:<utõs
+MAIL FROM:<ubuntu@ub<DATuntu>
+RCPT TO:<ubuntu@nbuntu>
+DATA

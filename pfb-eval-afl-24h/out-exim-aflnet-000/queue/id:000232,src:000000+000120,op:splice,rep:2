@@ -1,0 +1,14 @@
+EHLO local€ÿø
+MAIL FROM:^ubuvtu@ubuntu>
+RCPT-TO:<ubuntu@ubuxtu>
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuitu@ubuntu>
+DATA
+abc
+.
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

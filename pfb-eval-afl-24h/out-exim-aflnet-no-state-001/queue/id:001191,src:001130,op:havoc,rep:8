@@ -1,0 +1,11 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubunte^ubuntu>
+BDAT 17DRCPTATNOOPdÿÿÿunDA10cþlQUI-ònt<ubuntu>
+BDAO localho†t.
+BDAT :<ubunte@ubuntu>
+BDAT 5
+CUI
+MAIL1ROM:<ubuRSETntu@u€
+DATA
+ bbc

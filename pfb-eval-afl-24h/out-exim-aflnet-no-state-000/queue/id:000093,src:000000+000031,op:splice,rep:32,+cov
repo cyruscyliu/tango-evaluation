@@ -1,0 +1,10 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QhIT$t
+?AIL F.OM:Juvunt@qbuntu>ñRC%%%EHLO%hhhhhhhhhahhhhhhhnqnnnnnnn^onnqnnnÿnnn^nnnnnnnbuntu>
+DATA4
+aP¿eýú

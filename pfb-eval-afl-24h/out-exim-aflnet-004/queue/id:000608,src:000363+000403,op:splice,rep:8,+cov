@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubu{stõøMAIL FROQ:AIL YROM:Jubuntu@ubu{stõMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLOßQocalhost
+MAIL FROM:<ub¶ntu@ubuntu>
+RCPT TO:@
+z<ubuntu@ubuntu>
+RCPT TO:<ubHELPuntu@ubuntu>
+EHLOßQocalhost

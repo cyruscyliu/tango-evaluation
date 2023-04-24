@@ -1,0 +1,12 @@
+EHLO localhost
+MAIL loAI- localhost
+MAIL FROM:<ubntu@ubuntu>
+HELP TO:<ubuntuocntu@ubuntu>
+HELP TO:<ubuntu@calhostÿbuntalhost@ubuntu>
+EHLO localmostcalhost
+MAIL FROM:<ubntu@ubuntu>
+HELP TO:<ubuntuocntu@ubuntu>
+HELP%TO:<ubuntu@calhostÿbuntalhost@ubuntu>
+EHLO localmost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>

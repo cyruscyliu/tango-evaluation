@@ -1,0 +1,10 @@
+EHLO localhloclhost
+MAIL FROM:<ub’ntu@ubuntu>
+RCPT TO:<ubuntu@zbuntu>
+HELO localhomt
+MAIL FROM:<ubuntu@ubunôu>
+RCPT TO:<uDATAbuÿÿÿubuntu>
+MAIL FROM:ÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÿÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁÁtu>
+HELO TOÿÿÿuntuIT
+RCmT TO:<ubuntu@ubuntu>
+DATA

@@ -1,0 +1,13 @@
+EHLO localhost
+
+
+
+
+
+
+
+
+
+
+RCPT TO:<ubuntu@ubuntu>
+DATA

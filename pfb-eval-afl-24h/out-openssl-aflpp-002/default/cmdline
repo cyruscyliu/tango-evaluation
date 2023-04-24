@@ -1,0 +1,10 @@
+./apps/openssl
+s_server
+-key
+key.pem
+-cert
+cert.pem
+-4
+-naccept
+1
+-no_anti_replay

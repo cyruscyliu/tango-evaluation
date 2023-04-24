@@ -1,0 +1,9 @@
+EHLO loca†homt
+MAIL FROM:=ubuntu@ubuntuEHLOCPTY:=ubuRtu@ubunZuccccccccccccccccccccccccmt
+MAIL FROM@ubuntuOH
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

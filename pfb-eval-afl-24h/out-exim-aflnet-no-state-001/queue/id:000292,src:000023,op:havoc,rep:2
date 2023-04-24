@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ub’mtu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+a(UTHbb÷
+.
+QUIT

@@ -1,0 +1,3 @@
+EHLO localhost
+BDAT FROMA<ub.
+QUIT

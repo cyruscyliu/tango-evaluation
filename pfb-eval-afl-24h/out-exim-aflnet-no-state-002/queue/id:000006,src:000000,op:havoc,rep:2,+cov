@@ -1,0 +1,6 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCkT TO:<ubuntu@ubuntu>”DATA
+abc
+.
+QUIT

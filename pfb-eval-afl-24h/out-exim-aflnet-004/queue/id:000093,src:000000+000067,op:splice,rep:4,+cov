@@ -1,0 +1,6 @@
+EHLO loÿlhM:<ubuntu@ubuntu>
+RCPT TO:<ubun@u@ubuntu>
+DATAMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc

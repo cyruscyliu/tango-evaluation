@@ -1,0 +1,10 @@
+EHLO localhost
+MAIL FROM:DATuntu>
+RCPT TO:<ubuntu@nbuntu>
+DATA
+a\c
+.untu>
+DATA
+abc
+.
+QUIT

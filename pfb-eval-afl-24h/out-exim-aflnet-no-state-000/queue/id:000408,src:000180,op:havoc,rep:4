@@ -1,0 +1,5 @@
+EHLO localhost
+MAIL FROM><ubuntu@ubuntu>HELO
+RCPT LOuntu>
+:<ubuntu@ubuntu>
+DATA

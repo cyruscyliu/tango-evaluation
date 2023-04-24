@@ -1,0 +1,8 @@
+EHLO localhost
+MIL FROM:<ubuntu@ubu{stõs
+MAIL FROM:<ubuntu@uuntu>
+RCPT TO:<„buntu@nbuntAUTHu>
+DATA
+abcü.
+QUIg
+MAIL eROM:<ubuntq@ubuntu>

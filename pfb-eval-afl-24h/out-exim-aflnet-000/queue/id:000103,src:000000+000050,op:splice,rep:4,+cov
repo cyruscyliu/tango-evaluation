@@ -1,0 +1,8 @@
+EHLO localhomt
+MAIL FROM:<ubuntu@ubuntƒCPT ]O:<ubuntu@ubuntu>FROM
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

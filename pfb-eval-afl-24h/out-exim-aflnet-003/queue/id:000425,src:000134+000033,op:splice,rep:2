@@ -1,0 +1,9 @@
+EHLO l
+MAIL FROM:<ubuntq@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATAQUIT
+MAIL FROM:<ubuntŸ@ubuntu>
+RCPT TO:<ubuntu@ubuntuP
+bATA
+abc+
+.

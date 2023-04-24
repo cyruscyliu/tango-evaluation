@@ -1,0 +1,6 @@
+EHLO localhost
+:ABDATRCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

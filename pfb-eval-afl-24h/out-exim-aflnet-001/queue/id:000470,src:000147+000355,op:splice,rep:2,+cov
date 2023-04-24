@@ -1,0 +1,10 @@
+EHMAILocalhost
+EHLO locIlhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT 10
+d
+BDAT 5
+QUIT
+MAIL FROM:<uMAILuntu=ubuntu>
+RCPT u=ubuntu>

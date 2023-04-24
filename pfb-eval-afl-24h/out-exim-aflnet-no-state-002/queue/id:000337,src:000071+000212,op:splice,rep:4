@@ -1,0 +1,14 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubˆntu@ubuntu.
+DATA
+abcO localhost
+MQIL FROM:<tbuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT 10
+u@ubuntu>
+RCPT.
+
+BDAT 5û	QUIT
+.
+QUIT

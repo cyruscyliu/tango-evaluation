@@ -1,0 +1,8 @@
+EHLO lbc~lht
+MAIL FROM:<ubuntu@ubuntu>
+EHLO  .aPT TM:<ubuntu@ubuntu>lkos 
+MAIL FRSET<ubuntu@Žbuntu>
+RCPT TO:<ubuntuÌu"untu>
+DATA
+abc
+.

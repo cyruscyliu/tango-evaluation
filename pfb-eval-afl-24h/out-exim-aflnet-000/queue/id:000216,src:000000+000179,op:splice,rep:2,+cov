@@ -1,0 +1,8 @@
+EALO localhloclhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+aAUTHFROMUIT
+MAIL FROM:<ubuntu@ubuntu>QUIT
+RCPT TO:<ubuntu@ubuntu>
+MAIL FROM:<ubuntu@ubuntu>

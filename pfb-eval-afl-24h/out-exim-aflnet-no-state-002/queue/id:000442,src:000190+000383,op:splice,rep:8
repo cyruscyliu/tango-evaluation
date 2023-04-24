@@ -1,0 +1,8 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<TOuntu@ubuntu>
+BDATuntu@ubunT TO:7ubuutu@ub ntu>
+DATA
+MRSETFROM:<u€untu@ubuntu>
+RCPT TO:2ubustHELPYL FRDM<ubuntu@u}uuntu>
+RCPT TO:<ubuutu@c

@@ -1,0 +1,19 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIO loc lhost
+MAIL FROM:<ubuntu................."""""""""""""""""""""bunсссссусс"""""""сссссссссссссtu>
+oHLOL FROMLubEHLO>(RCPT TO:<ubunОudubuntu>
+BDAT 0╜
+BDAT.РBDAT 5 QUIT
+АUIT loCal
+
+
+
+
+
+st
+MAIL FROM:<ubuntu@ubuntu>

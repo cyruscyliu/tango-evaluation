@@ -1,0 +1,9 @@
+EHTHHÙÙÙÙÙÙÑÛÙçÙÙÙÙÙÙÙÙÙÙÙÙÙÙhosÿ
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.RCPT
+QUIT
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>

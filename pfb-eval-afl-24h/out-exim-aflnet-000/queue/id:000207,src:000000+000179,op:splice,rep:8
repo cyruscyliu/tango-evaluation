@@ -1,0 +1,7 @@
+EHLO localhloclhost
+MAI5 FROM:<ubuntu@ubuntu>
+RCPT$TO:<ubuntu@ntu>
+RCPT TO:<ubuntu@ubHELO
+MAIL FROM:<ÿuntu@ubuntu>
+RCP> TO:<ubuNOOPubuntu>
+MAIL FROM:<ubuntu@ubuntu>

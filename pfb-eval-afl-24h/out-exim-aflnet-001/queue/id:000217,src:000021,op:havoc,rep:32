@@ -1,0 +1,7 @@
+EHLO lbc~lht
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+t
+TµÉµµµµµµµµATAê8û…¡L5T.
+QUIT

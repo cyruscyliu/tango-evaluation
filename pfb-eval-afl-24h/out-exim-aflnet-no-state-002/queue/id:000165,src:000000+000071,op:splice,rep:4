@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubItu@ubIL RSETFROM:<ubuntu@ubuntPT TO:<ubˆntu@ubuntu.
+DATA
+abc
+.
+DATA
+abc
+.

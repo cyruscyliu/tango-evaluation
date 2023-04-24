@@ -1,0 +1,9 @@
+EHLO locaO<~oclhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@<ubuntu@ubuntu>
+RCPT TO:<ubuMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

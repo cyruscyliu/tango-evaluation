@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DHLO localhoHELPMAIL FROM:<ubuntu@ubuntu>
+RCPT TO:Cubuntu@ub
+DATA
+abc
+.
+QHLOlocalhost

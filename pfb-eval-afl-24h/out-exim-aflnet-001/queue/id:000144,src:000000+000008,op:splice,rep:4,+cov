@@ -1,0 +1,6 @@
+EHLO ÙÙÙÙÙÙÑÛÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙhomÿ
+MAIL FROM:<[buntu@ubuntu>
+RCPT TO:<ub‰ntu@ÙÑÛÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙubuntu>
+DATA
+abc
+.

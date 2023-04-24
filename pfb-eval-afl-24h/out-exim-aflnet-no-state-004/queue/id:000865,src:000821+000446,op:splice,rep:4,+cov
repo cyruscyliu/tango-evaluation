@@ -1,0 +1,8 @@
+EHO localhost
+MAIL FROM:host
+MAIL FROM:<ubuntu@ubuntu>tu@ubuntu6
+DHLO localhost
+MAIL FROM:<ub”ntu@ubuntu>
+RCPT TO:ÿubuntu@ubtu>
+-DAT u@ubthost
+MAIL FROM:<ubuntu@ubuntu>

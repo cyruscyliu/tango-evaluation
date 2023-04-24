@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<u[[[[[[[[[[[[[[[[[[[[[[[[[[buntu@ubunu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+BDAT localhost
+MAIL FjOM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>

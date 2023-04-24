@@ -1,0 +1,12 @@
+EHLO localhloclhost
+MAIL FROM:<ub’ntu@ubuntu>
+RCPT TO:<ubuntu@zbuntu>
+HETO Eocanpt-MAubuntu>
+RCPT TO:<ubuntuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuHELOuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuYuuuuuuu@ubuntu>
+DATAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT
+aAUTHFROMUIT

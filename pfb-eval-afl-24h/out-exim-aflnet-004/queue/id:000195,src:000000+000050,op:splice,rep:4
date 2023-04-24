@@ -1,0 +1,8 @@
+EHLO localhost
+MAIL FROM?ÿQU3T[[suÿû.NOOP
+MAIL FROM:<ubuntubuntu>
+DA@uNOOPu
+RCubuntu>
+DATA
+abc
+.

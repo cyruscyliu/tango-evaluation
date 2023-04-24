@@ -1,0 +1,7 @@
+EHLO localhost
+MAIL FROM:<uHuntu@ubuntu>
+RCPT TO:<MAILu9untu@ubuntu>
+DAjA
+abc
+.
+QUIT

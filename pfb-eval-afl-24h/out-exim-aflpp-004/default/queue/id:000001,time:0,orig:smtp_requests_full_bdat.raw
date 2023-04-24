@@ -1,0 +1,5 @@
+EHLO localhost
+ FROM:<ubuntu@ub>
+RCPT TO:<ubuntu@ubuntu>
+ 10
+.

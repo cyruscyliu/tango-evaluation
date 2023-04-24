@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT 44444444c
+.
+EJLO localhos44
+MAIL FROM:]ubuktu@ubuntu> TO:<ubuntu@ubun¼u>
+DATA
+abc

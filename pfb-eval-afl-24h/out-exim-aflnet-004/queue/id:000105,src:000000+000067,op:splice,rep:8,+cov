@@ -1,0 +1,8 @@
+EHLO localh.MA<ubuntu@ubuntu>
+RCPT TO&<ubuntuUIwa
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+QUIT

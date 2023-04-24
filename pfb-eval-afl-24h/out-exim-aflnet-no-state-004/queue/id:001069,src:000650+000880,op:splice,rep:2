@@ -1,0 +1,16 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubunt
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abc
+.
+EHLO loc----------------------------------------------------------->
+RCPT TO:<ubuntu@ubuntu>
+EHLO localhost
+MAIL FROM:CPT TOttbc	$€ÿRC:<ubuntuMAILntu>
+D TA
+abc
+RCPT TO:<ubuntu@ubuntu>
+DATA

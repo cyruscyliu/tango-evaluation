@@ -1,0 +1,35 @@
+digraph g {
+	node [color=black];
+	edge [color=black];
+	0	 [color=blue];
+	5634	 [color=blue];
+	0 -> 5634 [key=new_edge,
+	color=blue];
+5378 [color=red];
+0 -> 5378 [key=new_edge,
+color=red];
+19568 [color=red];
+0 -> 19568 [key=new_edge,
+color=red];
+5121 [color=blue];
+5634 -> 5121 [key=new_edge,
+color=blue];
+5643 [color=red];
+5634 -> 5643 [key=new_edge,
+color=red];
+6143 [color=blue];
+5121 -> 6143 [key=new_edge,
+color=blue];
+6143 -> 6143 [key=new_edge,
+color=blue];
+5644 [color=red];
+5643 -> 5644 [key=new_edge,
+color=red];
+5646 [color=red];
+5643 -> 5646 [key=new_edge,
+color=red];
+5644 -> 5646 [key=new_edge,
+color=red];
+5646 -> 5378 [key=new_edge,
+color=red];
+}

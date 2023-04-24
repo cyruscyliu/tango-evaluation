@@ -1,0 +1,10 @@
+EHLO lbc~lht
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+aÙÙÙÙÙÙÙÙÙÙÑ¿ÂÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙhom:<ub‰ntu;ÙÑÛÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙu
+RCPT TO:<ub‰ntu@ÙÑÛÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙÙubuntu>
+D%TA
+abc
+.
+.

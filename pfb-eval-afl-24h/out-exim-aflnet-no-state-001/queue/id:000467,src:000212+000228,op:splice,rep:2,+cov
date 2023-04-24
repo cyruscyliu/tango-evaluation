@@ -1,0 +1,6 @@
+EHLO lobuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAO localhost.
+BDAT 5
+QUI
+MAIL1ROM:<ubuRSETntu@u€

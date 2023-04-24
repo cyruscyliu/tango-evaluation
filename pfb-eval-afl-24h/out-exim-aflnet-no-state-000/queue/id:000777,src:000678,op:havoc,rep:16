@@ -1,0 +1,13 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DALO localhost
+MAIL F9OM:<ubuntu@ubuntu>
+DATA
+FROM:.ub–ntuEŽbQUIT>"
+.
+BD%T 5FROM:.ub–ntuEŽbQUIT>"
+
+BD%T 5
+abc	
+.

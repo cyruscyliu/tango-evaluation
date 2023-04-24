@@ -1,0 +1,6 @@
+EHLO ocalhost
+RCPT TO:<ubuntu@ubuntu>
+BDAT 10GalhAT.
+BDAT 5TTTTTTTTTTTTTTTTTTTTTTV
+QUIT
+BDAT O:<ubuntu@ubuntu>

@@ -1,0 +1,10 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DAQA
+abalho€t
+MAIL FROM:<ubuntu@uïuntu>
+RCPT TO:<RCPTEHLObuntu>
+RCPTBDAT%###PTÂ#!Ý.
+TUIT
+.

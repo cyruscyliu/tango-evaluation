@@ -1,0 +1,5 @@
+EHLO localho
+HEMqñ3X QUITù	MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT 10
+.

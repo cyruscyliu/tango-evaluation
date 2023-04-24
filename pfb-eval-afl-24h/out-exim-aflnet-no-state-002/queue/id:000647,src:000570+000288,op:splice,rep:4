@@ -1,0 +1,11 @@
+EHLO localhost
+˜AIL FROM:host
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<u`u@ubuntu>
+RCPT TO:7u"uutu4u†@u>
+DATA
+abc
+.
+QUIT
+MAIL FROM:<ubuntu@ubun•u>:<u`u@ubuntu>
+RCPT TO:7ubuutu@ub ntu>

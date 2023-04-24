@@ -1,0 +1,6 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDAT 110cl×ost
+AROM:.u]untu@u½untu>
+RCPT TC:<ubuntu@ubrntu>

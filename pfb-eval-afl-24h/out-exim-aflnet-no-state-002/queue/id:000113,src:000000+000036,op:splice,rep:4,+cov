@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RFROn:<ubuntu@ubuntu>
+RCPT TO:<ubuutu@ub*ntu>
+RSET
+abc
+.
+QUIT
+DATA

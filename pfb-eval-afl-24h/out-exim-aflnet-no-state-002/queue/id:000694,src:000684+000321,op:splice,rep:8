@@ -1,0 +1,3 @@
+EHLO localhost
+HELO Focaubuntu@ubuntu>
+RCPT TO:<ubuntn@`buntu>

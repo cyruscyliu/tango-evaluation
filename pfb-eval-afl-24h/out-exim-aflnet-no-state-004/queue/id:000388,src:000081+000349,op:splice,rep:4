@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubu
+MAIL FRKM:<ubutu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DHLO localh
+RC:<ubu
+MAIL F 5
+QUITñ
+abc

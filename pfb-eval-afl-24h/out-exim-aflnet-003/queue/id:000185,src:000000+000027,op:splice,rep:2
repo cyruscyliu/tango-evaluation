@@ -1,0 +1,7 @@
+EHÏO loCPT'''''''''''''''ocalyowt
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATA
+abcC.
+QUIT
+MAIL FROM:<ubuntu@ubuntu>

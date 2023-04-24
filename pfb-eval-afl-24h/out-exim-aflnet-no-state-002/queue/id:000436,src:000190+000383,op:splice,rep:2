@@ -1,0 +1,17 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+BDATuntu@ubuntu>
+RCPT TO:<u`u@ubuntu>
+RCPT TO:7ubuutu@ub ntu>
+DATA
+abc
+.
+QHLO lcalhost
+MAIL FROM:<u€unto@ubuntu>
+RCPT TO:2ubustHELPIL FRDM<ubuntu@u}uuntu>
+RCPT TO:<ubuutu@b otu>ÿ
+DATA
+abc
+.RSETT
+QUIT

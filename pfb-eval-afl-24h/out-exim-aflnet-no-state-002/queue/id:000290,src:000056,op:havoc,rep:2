@@ -1,0 +1,7 @@
+EHLO ècalhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<buŠt†@u>
+DATA
+abc
+.
+QUIT

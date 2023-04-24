@@ -1,0 +1,8 @@
+EHLO localhost
+MALO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:"AUTHubunRSETbuntu>
+NOEHLOHLO localh`st
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+EHLO localhhst

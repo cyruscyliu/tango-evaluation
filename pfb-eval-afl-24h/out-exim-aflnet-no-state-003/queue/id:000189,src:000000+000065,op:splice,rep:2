@@ -1,0 +1,9 @@
+EHLO localhost
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntu@ubuntu>
+DATAloca{host
+MAIL FROM:<ubuntu@ubuntu>
+RCPT TO:<ubuntuAlocalhost
+MAIL FROM:<ubuntu@@ubuntu>
+DATA
+abc}}}}}}}}f}

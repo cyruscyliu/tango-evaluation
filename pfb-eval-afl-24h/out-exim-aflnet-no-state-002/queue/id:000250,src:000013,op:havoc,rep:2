@@ -1,0 +1,4 @@
+EHLO localhost
+MAIL FROM:<ubc
+.
+QUIT
