@@ -4,7 +4,7 @@ target=$1
 
 if [ -z ${target} ]; then
     echo "target is missing"
-    echo "usage: $0 target dir_of_raw_bytes"
+    echo "usage: $0 target"
     exit 1
 fi
 
@@ -35,23 +35,23 @@ elif [ ${target} == 'openssh' ]; then
 elif [ ${target} == 'exim' ]; then
     working_dir=specs/smtp
 else
-    echo "usage: $0 target dir_of_raw_bytes"
+    echo "usage: $0 target"
     exit 1
 fi
 
-dest_dir=$(realpath pcaps_to_replay)
-rm -rf $dest_dir && mkdir $dest_dir
+rm -rf pcaps_to_replay && mkdir pcaps_to_replay
+dest_dir=$(realpath ./pcaps_to_replay)
 
 # let's go
-for run in $(seq 0 10); do
+for run in $(seq 0 4); do
     aflnet=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-00${run}/queue)
     aflpp=$(realpath pfb-eval-afl-24h/out-${target}-aflpp-00${run}/default/queue)
     aflnet_no_state=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-no-state-00${run}/queue)
     nyx=$(realpath pfb-eval-nyx-24h/out-${target}-00${run}/corpus/normal)
     nyx_aggressive=$(realpath pfb-eval-nyx-24h/out-${target}-aggressive-00${run}/corpus/normal)
-    nyx_balanced=$(realpath pfb-eval-nyx-24h/out-dcmtk-${target}-00${run}/corpus/normal)
+    nyx_balanced=$(realpath pfb-eval-nyx-24h/out-${target}-00${run}/corpus/normal)
 
-    cd ${workding_dir}
+    pushd ${working_dir}
 
     echo python3 nyx_net_spec.py ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run}
     echo python3 nyx_net_spec.py ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run}
@@ -59,4 +59,6 @@ for run in $(seq 0 10); do
     echo python3 nyx_net_spec.py ${nyx} ${dest_dir}/out-${target}-nyx-00${run}
     echo python3 nyx_net_spec.py ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run}
     echo python3 nyx_net_spec.py ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run}
+
+    popd
 done
