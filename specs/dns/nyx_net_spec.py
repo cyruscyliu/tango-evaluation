@@ -1,5 +1,8 @@
-import sys, os 
-sys.path.insert(1, os.getenv("NYX_INTERPRETER_BUILD_PATH"))
+import sys, os
+sys.path.insert(1, os.path.realpath('../..'))
+sys.path.insert(1, os.path.realpath('../../tango'))
+from tango.core import TransmitInstruction
+from dump import to_pcap
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
@@ -15,7 +18,7 @@ s.includes.append("\"nyx.h\"")
 s.interpreter_user_data_type = "socket_state_t*"
 
 with open("send_code.include.c") as f:
-    send_code = f.read() 
+    send_code = f.read()
 
 d_byte = s.data_u8("u8", generators=[limits(0x0, 0xff)])
 
@@ -35,51 +38,50 @@ n_close = s.node_type("create_tmp_snapshot", code=snapshot_code)
 s.build_interpreter()
 
 import msgpack
+
 serialized_spec = s.build_msgpack()
 with open("nyx_net_spec.msgp","wb") as f:
     f.write(msgpack.packb(serialized_spec))
-
-
-def split_packets(data):   
-    i = 0
-    res = []
-    while i*6 < len(data):
-        tt,content_len = struct.unpack(">2sI",data[i:i+6])  
-        res.append( ["dicom", data[i:i+content_len]] )
-        i+=(content_len+6)
-    return res
-
-
-def stream_to_bin(path,stream):
-    b.packet(stream)
-    b.write_to_file(path+".bin")
-
-
 
 import pyshark
 import glob
 import ipdb
 
-"""
-# convert existing pcaps
-for path in glob.glob("pcaps/*.pcap"):
-    b = Builder(s)
-    cap = pyshark.FileCapture(path, display_filter="udp.dstport eq 53", include_raw=True, use_json=True)
+def split_packets(data):
+    i = 0
+    res = []
+    while i*6 < len(data):
+        tt,content_len = struct.unpack(">2sI",data[i:i+6])
+        res.append( ["dicom", data[i:i+content_len]] )
+        i+=(content_len+6)
+    return res
 
-    #ipdb.set_trace()
-    stream = b""
-    for pkt in cap:
-        #ipdb.set_trace()
-        if int(pkt.udp.length) > 0:
-            data = bytearray.fromhex(pkt.dns_raw.value)
-            print("LEN: ", repr((pkt.udp.length, data)))
-            b.packet(data)
-    b.write_to_file(path+".bin")
-    cap.close()
-"""
+instructions = []
 
-# convert afl net samples
-for path in glob.glob("raw_streams/*.raw"):
-    b = Builder(s)
-    with open(path,mode='rb') as f:
-        stream_to_bin(path, f.read())
+def stream_to_bin(path,stream):
+    nodes = split_packets(stream)
+
+    for (ntype, content) in nodes:
+        ins = TransmitInstruction(content)
+        instructions.append(ins)
+
+def main():
+    if len(sys.argv) != 3:
+        print('missing the source of raw bytes and the destination directory')
+        exit(1)
+
+    src = sys.argv[1]
+    dst = sys.argv[2]
+
+    for testcase in os.listdir(src):
+        if not os.path.isfile(os.path.join(src, testcase)):
+            continue
+        b = Builder(s)
+        print('handle {}'.format(testcase))
+        with open(os.path.join(src, testcase), mode='rb') as f:
+            instructions.clear()
+            stream_to_bin(os.path.join(src, testcase), f.read())
+            to_pcap(os.path.join(dst, testcase), 'udp', 5353, instructions)
+
+if __name__ == '__main__':
+    main()
