@@ -1,11 +1,16 @@
-import sys, os 
-sys.path.insert(1, os.getenv("NYX_INTERPRETER_BUILD_PATH"))
+import sys, os
+sys.path.insert(1, os.path.realpath('../..'))
+sys.path.insert(1, os.path.realpath('../../tango'))
+from tango.core import TransmitInstruction
+from dump import to_pcap
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
 from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
 
+PROTOCOL='tcp'
+PORT=3689
 import jinja2
 
 s = Spec()
@@ -15,13 +20,12 @@ s.includes.append("\"nyx.h\"")
 s.interpreter_user_data_type = "socket_state_t*"
 
 with open("send_code.include.c") as f:
-    send_code = f.read() 
+    send_code = f.read()
 
 with open("send_code_raw.include.c") as f:
-    send_code_raw = f.read() 
+    send_code_raw = f.read()
 
 d_byte = s.data_u8("u8", generators=[limits(0x20, 0x7f)])
-
 
 method="(USER|QUIT|NOOP|PWD|TYPE|PORT|LIST|CDUP|CWD|RETR|ABOR|DELE|PASV|PASS|REST|SIZE|MKD|RMD|STOR|SYST|FEAT|APPE|RNFR|RNTO|OPTS|MLSD|AUTH|PBSZ|PROT|EPSV|HELP|SITE)"
 
@@ -30,10 +34,9 @@ args="( %s)* %s"%(arg,arg)
 
 pkt = method+args
 
-d_bytes = s.data_vec("pkt_content", d_byte, size_range=(0,1<<12), generators=[]) #regex(pkt)]) 
+d_bytes = s.data_vec("pkt_content", d_byte, size_range=(0,1<<12), generators=[]) #regex(pkt)])
 
 n_pkt = s.node_type("packet", interact=True, data=d_bytes, code=send_code)
-#n_pkt = s.node_type("packet_raw", interact=True, data=d_bytes, code=send_code_raw)
 
 snapshot_code="""
 //hprintf("ASKING TO CREATE SNAPSHOT\\n");
@@ -51,50 +54,38 @@ serialized_spec = s.build_msgpack()
 with open("nyx_net_spec.msgp","wb") as f:
     f.write(msgpack.packb(serialized_spec))
 
-
-def split_packets(data):    
-        return [["sip_packet", d] for d in data.split(b"\r\n\r\n")][:-1]
-
 import pyshark
 import glob
+
+def split_packets(data):
+        return [["sip_packet", d] for d in data.split(b"\r\n\r\n")][:-1]
+
+instructions = []
 
 def stream_to_bin(path,stream):
     nodes = split_packets(stream)
 
     for (ntype, content) in nodes:
-        print(repr(content))
-        b.packet(content+b"\r\n\r\n")
-    b.write_to_file(path+".bin")
+        ins = TransmitInstruction(content+b'\r\n\r\n')
+        instructions.append(ins)
 
-def stream_to_bin2(path,stream):
+def main():
+    if len(sys.argv) != 3:
+        print('missing the source of raw bytes and the destination directory')
+        exit(1)
 
-    b.packet_raw(stream.read(4096))
-    b.packet_raw(stream.read(4096))
-    b.write_to_file(path+".bin")
-    return
-    nodes = split_packets(stream)
+    src = sys.argv[1]
+    dst = sys.argv[2]
 
-    for (ntype, content) in nodes:
-        print(repr(content))
-        b.packet2(content)
-    b.write_to_file(path+".bin")
+    for testcase in os.listdir(src):
+        if not os.path.isfile(os.path.join(src, testcase)):
+            continue
+        b = Builder(s)
+        print('handle {}'.format(os.path.join(src,testcase)))
+        with open(os.path.join(src, testcase), mode='rb') as f:
+            instructions.clear()
+            stream_to_bin(os.path.join(src, testcase), f.read())
+            to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
 
-for path in glob.glob("pcaps/*.pcap"):
-    b = Builder(s)
-    raise("FIX PORT")
-    cap = pyshark.FileCapture(path, display_filter="tcp.dstport eq 8554")
-
-    #ipdb.set_trace()
-    stream = b""
-    for pkt in cap:
-        #print("LEN: ", repr((pkt.tcp.len, int(pkt.tcp.len))))
-        if int(pkt.tcp.len) > 0:
-            stream+=pkt.tcp.payload.binary_value
-        stream_to_bin(path, stream)
-    cap.close()
-
-for path in glob.glob("raw_streams/*.raw"):
-    b = Builder(s)
-    with open(path,mode='rb') as f:
-        #stream_to_bin2(path, f)
-        stream_to_bin(path, f.read())
+if __name__ == '__main__':
+    main()

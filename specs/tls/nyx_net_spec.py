@@ -1,31 +1,17 @@
-import sys, os 
-sys.path.insert(1, os.getenv("NYX_INTERPRETER_BUILD_PATH"))
-sys.path.insert(1, os.getenv("TANGO_PATH"))
-
-from tango.net import PCAPInput
+import sys, os
+sys.path.insert(1, os.path.realpath('../..'))
+sys.path.insert(1, os.path.realpath('../../tango'))
 from tango.core import TransmitInstruction
-
-class FMT(object):
-    def __init__(self):
-        self.protocol = 'tcp'
-        self.port = 4433
-
-
-def to_pcap(aflnet_raw_pathname, inp):
-    pathname = aflnet_raw_pathname + '.pcap'
-    new_inp = PCAPInput(file=pathname, fmt=FMT())
-    new_inp.dumpi(inp)
-    print('dump to {}'.format(pathname))
-    new_inp._file.close()
-
+from dump import to_pcap
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
 from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
 
+PROTOCOL='tcp'
+PORT=4433
 import jinja2
-
 
 s = Spec()
 s.use_std_lib = False
@@ -34,7 +20,7 @@ s.includes.append("\"nyx.h\"")
 s.interpreter_user_data_type = "socket_state_t*"
 
 with open("send_code.include_pkt.c") as f:
-    send_code_pkt = f.read() 
+    send_code_pkt = f.read()
 
 d_byte = s.data_u8("u8", generators=[limits(0x0, 0xff)])
 
@@ -63,12 +49,12 @@ import struct
 import pyshark
 import glob
 
-def split_packets(data):   
+def split_packets(data):
     i = 0
     res = []
 
     while i+5 <= len(data):
-        content,version,length, = struct.unpack(">BHH",data[i:i+5])  
+        content,version,length, = struct.unpack(">BHH",data[i:i+5])
         pkt = data[i:i+length+5]
         # print(f"disecting: {repr((content,version,length,pkt))}" )
         res.append( ["tls", pkt] )
@@ -89,26 +75,23 @@ def stream_to_bin(path,stream):
             raise("WTF")
     b.write_to_file(path+".bin")
 
-"""
-# convert existing pcaps
-for path in glob.glob("pcaps/*.pcap"):
-    b = Builder(s)
-    cap = pyshark.FileCapture(path, display_filter="tcp.dstport eq 5158")
+def main():
+    if len(sys.argv) != 3:
+        print('missing the source of raw bytes and the destination directory')
+        exit(1)
 
-    #ipdb.set_trace()
-    stream = b""
-    for pkt in cap:
-        #print("LEN: ", repr((pkt.tcp.len, int(pkt.tcp.len))))
-        if int(pkt.tcp.len) > 0:
-            stream+=pkt.tcp.payload.binary_value
-    stream_to_bin(path, stream)
-    cap.close()
-"""
+    src = sys.argv[1]
+    dst = sys.argv[2]
 
-# convert afl net samples
-for path in glob.glob("raw_streams/*.raw"):
-    b = Builder(s)
-    with open(path,mode='rb') as f:
-        instructions.clear()
-        stream_to_bin(path, f.read())
-        to_pcap(path, instructions)
+    for testcase in os.listdir(src):
+        if not os.path.isfile(os.path.join(src, testcase)):
+            continue
+        b = Builder(s)
+        print('handle {}'.format(os.path.join(src,testcase)))
+        with open(os.path.join(src, testcase), mode='rb') as f:
+            instructions.clear()
+            stream_to_bin(os.path.join(src, testcase), f.read())
+            to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
+
+if __name__ == '__main__':
+    main()

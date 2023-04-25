@@ -1,13 +1,17 @@
-import sys, os 
-sys.path.insert(1, os.getenv("NYX_INTERPRETER_BUILD_PATH"))
+import sys, os
+sys.path.insert(1, os.path.realpath('../..'))
+sys.path.insert(1, os.path.realpath('../../tango'))
+from tango.core import TransmitInstruction
+from dump import to_pcap
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
 from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
 
+PROTOCOL='tcp'
+PORT=5158
 import jinja2
-
 
 s = Spec()
 s.use_std_lib = False
@@ -16,10 +20,10 @@ s.includes.append("\"nyx.h\"")
 s.interpreter_user_data_type = "socket_state_t*"
 
 with open("send_code.include.c") as f:
-    send_code = f.read() 
+    send_code = f.read()
 
 with open("send_code_raw.include.c") as f:
-    send_code_raw = f.read() 
+    send_code_raw = f.read()
 
 d_byte = s.data_u8("u8", generators=[limits(0x0, 0xff)])
 
@@ -44,62 +48,45 @@ serialized_spec = s.build_msgpack()
 with open("nyx_net_spec.msgp","wb") as f:
     f.write(msgpack.packb(serialized_spec))
 
+import pyshark
+import glob
 
-def split_packets(data):   
+def split_packets(data):
     i = 0
     res = []
     while i+6 < len(data):
-        tt,content_len = struct.unpack(">2sI",data[i:i+6])  
+        tt,content_len = struct.unpack(">2sI",data[i:i+6])
         res.append( ["dicom", data[i:i+content_len+6]] )
         print(repr((tt, content_len , data[i:i+content_len])))
         i+=(content_len+6)
     return res
 
-import pyshark
-import glob
+instructions = []
 
 def stream_to_bin(path,stream):
     nodes = split_packets(stream)
 
     for (ntype, content) in nodes:
-        b.packet(content)
-    b.write_to_file(path+"2.bin")
+        ins = TransmitInstruction(content)
+        instructions.append(ins)
 
-def stream_to_bin2(path,stream):
-    nodes = split_packets(stream)
+def main():
+    if len(sys.argv) != 3:
+        print('missing the source of raw bytes and the destination directory')
+        exit(1)
 
-    for (ntype, content) in nodes:
-        b.packet_raw(content)
-    b.write_to_file(path+"1.bin")
+    src = sys.argv[1]
+    dst = sys.argv[2]
 
-def stream_to_bin3(path,stream):
-    nodes = split_packets(stream)
-    #for (ntype, content) in nodes:
-    #    b.packet_raw(content)
-    b.packet_raw(stream)
-    b.write_to_file(path+"2.bin")
+    for testcase in os.listdir(src):
+        if not os.path.isfile(os.path.join(src, testcase)):
+            continue
+        b = Builder(s)
+        print('handle {}'.format(os.path.join(src,testcase)))
+        with open(os.path.join(src, testcase), mode='rb') as f:
+            instructions.clear()
+            stream_to_bin(os.path.join(src, testcase), f.read())
+            to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
 
-# convert existing pcaps
-for path in glob.glob("pcaps/*.pcap"):
-    b = Builder(s)
-    cap = pyshark.FileCapture(path, display_filter="tcp.dstport eq 5158")
-
-    #ipdb.set_trace()
-    stream = b""
-    for pkt in cap:
-        #print("LEN: ", repr((pkt.tcp.len, int(pkt.tcp.len))))
-        if int(pkt.tcp.len) > 0:
-            stream+=pkt.tcp.payload.binary_value
-    stream_to_bin(path, stream)
-    cap.close()
-
-# convert afl net samples
-for path in glob.glob("raw_streams/*.raw"):
-    b = Builder(s)
-    #with open(path,mode='rb') as f:
-    #    stream_to_bin(path, f.read())
-    with open(path,mode='rb') as f:
-        stream_to_bin2(path, f.read())
-    b = Builder(s)
-    with open(path,mode='rb') as f:
-        stream_to_bin3(path, f.read())
+if __name__ == '__main__':
+    main()

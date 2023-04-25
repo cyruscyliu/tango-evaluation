@@ -9,6 +9,8 @@ from spec_lib.data_spec import *
 from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
 
+PROTOCOL='udp'
+PORT=5353
 import jinja2
 
 s = Spec()
@@ -81,7 +83,7 @@ def main():
         with open(os.path.join(src, testcase), mode='rb') as f:
             instructions.clear()
             stream_to_bin(os.path.join(src, testcase), f.read())
-            to_pcap(os.path.join(dst, testcase), 'udp', 5353, instructions)
+            to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
 
 if __name__ == '__main__':
     main()

@@ -1,22 +1,23 @@
 import sys, os
-sys.path.insert(1, '../..')
-sys.path.insert(1, '../../tango')
+sys.path.insert(1, os.path.realpath('../..'))
+sys.path.insert(1, os.path.realpath('../../tango'))
+from tango.core import TransmitInstruction
+from dump import to_pcap
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
 from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
-from dump import to_pcap
 
+PROTOCOL='tcp'
+PORT=22
 import jinja2
-
 
 s = Spec()
 s.use_std_lib = False
 s.includes.append("\"custom_includes.h\"")
 s.includes.append("\"nyx.h\"")
 s.interpreter_user_data_type = "socket_state_t*"
-
 
 # TODO these might be fucky as fuck! check the count-X lines in those C files
 with open("send_code.include_pkt.c") as f:
@@ -91,18 +92,14 @@ def stream_to_bin(path,stream):
 
     for (ntype, content) in nodes:
         if ntype == "ssh-pkt":
-            b.packet(content)
             ins = TransmitInstruction(content)
             instructions.append(ins)
         elif ntype == "ssh-pkt-mac":
-            b.packet_mac(content)
             ins = TransmitInstruction(content)
             instructions.append(ins)
         elif ntype == "ssh-string":
-            b.string(content)
             ins = TransmitInstruction(content)
             instructions.append(ins)
-    b.write_to_file(path+".bin")
 
 def main():
     if len(sys.argv) != 3:
