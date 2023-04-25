@@ -77,7 +77,7 @@ def main():
         if not os.path.isfile(os.path.join(src, testcase)):
             continue
         b = Builder(s)
-        print('handle {}'.format(testcase))
+        print('handle {}'.format(os.path.join(src,testcase)))
         with open(os.path.join(src, testcase), mode='rb') as f:
             instructions.clear()
             stream_to_bin(os.path.join(src, testcase), f.read())
