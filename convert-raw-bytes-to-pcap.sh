@@ -53,12 +53,12 @@ for run in $(seq 0 4); do
 
     pushd ${working_dir}
 
-    echo python3 nyx_net_spec.py ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run}
-    echo python3 nyx_net_spec.py ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run}
-    echo python3 nyx_net_spec.py ${aflnet_no_state} ${dest_dir}/out-${target}-aflnet_no_state-00${run}
-    echo python3 nyx_net_spec.py ${nyx} ${dest_dir}/out-${target}-nyx-00${run}
-    echo python3 nyx_net_spec.py ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run}
-    echo python3 nyx_net_spec.py ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run}
+    echo python3.11 nyx_net_spec.py ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run}
+    echo python3.11 nyx_net_spec.py ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run}
+    echo python3.11 nyx_net_spec.py ${aflnet_no_state} ${dest_dir}/out-${target}-aflnet_no_state-00${run}
+    echo python3.11 nyx_net_spec.py ${nyx} ${dest_dir}/out-${target}-nyx-00${run}
+    echo python3.11 nyx_net_spec.py ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run}
+    echo python3.11 nyx_net_spec.py ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run}
 
     popd
 done
