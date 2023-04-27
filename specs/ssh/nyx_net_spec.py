@@ -2,7 +2,7 @@ import sys, os
 sys.path.insert(1, os.path.realpath('../..'))
 sys.path.insert(1, os.path.realpath('../../tango'))
 from tango.core import TransmitInstruction
-from dump import to_pcap
+from dump import to_pcap, split_aflnet_testcase
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
@@ -59,31 +59,34 @@ import pyshark
 import glob
 
 def split_packets(data, fuzzer):
-    i = 0
-    res = []
+    if fuzzer == 'aflnet':
+        return split_aflnet_testcase(data, 'openssh')
+    else:
+        i = 0
+        res = []
 
-    # print(type(data))
-    header_end = data.find("\x0d\x0a".encode(), 0, len(data)) + 2
-    res.append(["ssh-string", data[:header_end] ])
+        # print(type(data))
+        header_end = data.find("\x0d\x0a".encode(), 0, len(data)) + 2
+        res.append(["ssh-string", data[:header_end] ])
 
-    i = header_end
+        i = header_end
 
-    while i+6 <= len(data):
-        length,pad_length,msg = struct.unpack(">IBB",data[i:i+6])
-        content_len = length-2+6
-        if not (msg >= 20 and msg <= 49):
-            # print("add MAC length")
-            pkt = data[i:i+content_len+8]
-            # print(f"disecting: {repr((length,pad_length,msg,pkt))}" )
-            res.append( ["ssh-pkt-mac", pkt] )
-            i+=(content_len+8)
-        else:
-            # print("no MAC")
-            pkt = data[i:i+content_len]
-            # print(f"disecting: {repr((length,pad_length,msg,pkt))}" )
-            res.append( ["ssh-pkt", pkt] )
-            i+=(content_len)
-    return res
+        while i+6 <= len(data):
+            length,pad_length,msg = struct.unpack(">IBB",data[i:i+6])
+            content_len = length-2+6
+            if not (msg >= 20 and msg <= 49):
+                # print("add MAC length")
+                pkt = data[i:i+content_len+8]
+                # print(f"disecting: {repr((length,pad_length,msg,pkt))}" )
+                res.append( ["ssh-pkt-mac", pkt] )
+                i+=(content_len+8)
+            else:
+                # print("no MAC")
+                pkt = data[i:i+content_len]
+                # print(f"disecting: {repr((length,pad_length,msg,pkt))}" )
+                res.append( ["ssh-pkt", pkt] )
+                i+=(content_len)
+        return res
 
 instructions = []
 
@@ -115,7 +118,7 @@ def main():
         with open(os.path.join(src, testcase), mode='rb') as f:
             instructions.clear()
             stream_to_bin(os.path.join(src, testcase), f.read(), fuzzer)
-            to_pcap(os.path.join(dst, testcase), instructions)
+            to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
 
 if __name__ == '__main__':
     main()

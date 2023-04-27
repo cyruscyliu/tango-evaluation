@@ -2,7 +2,7 @@ import sys, os
 sys.path.insert(1, os.path.realpath('../..'))
 sys.path.insert(1, os.path.realpath('../../tango'))
 from tango.core import TransmitInstruction
-from dump import to_pcap
+from dump import to_pcap, split_aflnet_testcase
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
@@ -50,13 +50,16 @@ import glob
 import ipdb
 
 def split_packets(data, fuzzer):
-    i = 0
-    res = []
-    while i*6 < len(data):
-        tt,content_len = struct.unpack(">2sI",data[i:i+6])
-        res.append( ["dicom", data[i:i+content_len]] )
-        i+=(content_len+6)
-    return res
+    if fuzzer == 'aflnet':
+        return split_aflnet_testcase(data, 'dns')
+    else:
+        i = 0
+        res = []
+        while i*6 < len(data):
+            tt,content_len = struct.unpack(">2sI",data[i:i+6])
+            res.append( ["dicom", data[i:i+content_len]] )
+            i+=(content_len+6)
+        return res
 
 instructions = []
 

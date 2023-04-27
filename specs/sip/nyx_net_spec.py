@@ -2,7 +2,7 @@ import sys, os
 sys.path.insert(1, os.path.realpath('../..'))
 sys.path.insert(1, os.path.realpath('../../tango'))
 from tango.core import TransmitInstruction
-from dump import to_pcap
+from dump import to_pcap, split_aflnet_testcase
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
@@ -57,19 +57,20 @@ import pyshark
 import glob
 
 def split_sip_packets(data, fuzzer):
-    print(data)
-    data = data.split(b"\r\n")
-    print(data)
-    stream = []
-    new_stream = b""
-    for pkt in data:
-        if pkt.startswith(b"REGISTER") or pkt.startswith(b"INVITE") or pkt.startswith(b"ACK") or pkt.startswith(b"BYE"):
-            if len(new_stream) != 0:
-                stream.append(new_stream)
-            new_stream = b""
-        new_stream += pkt+b"\r\n"
-    print(len(stream))
-    return stream
+    if fuzzer == 'aflnet':
+        return split_aflnet_testcase(data, 'sip')
+    else:
+        data = data.split(b"\r\n")
+        stream = []
+        new_stream = b""
+        for pkt in data:
+            if pkt.startswith(b"REGISTER") or pkt.startswith(b"INVITE") or pkt.startswith(b"ACK") or pkt.startswith(b"BYE"):
+                if len(new_stream) != 0:
+                    stream.append(new_stream)
+                new_stream = b""
+            new_stream += pkt+b"\r\n"
+        print(len(stream))
+        return stream
 
 instructions = []
 

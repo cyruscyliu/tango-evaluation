@@ -2,7 +2,7 @@ import sys, os
 sys.path.insert(1, os.path.realpath('../..'))
 sys.path.insert(1, os.path.realpath('../../tango'))
 from tango.core import TransmitInstruction
-from dump import to_pcap
+from dump import to_pcap, split_aflnet_testcase
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
@@ -50,30 +50,31 @@ import pyshark
 import glob
 
 def split_packets(data, fuzzer):
-    i = 0
-    res = []
+    if fuzzer == 'aflnet':
+        return split_aflnet_testcase(data, 'tls')
+    else:
+        i = 0
+        res = []
 
-    while i+5 <= len(data):
-        content,version,length, = struct.unpack(">BHH",data[i:i+5])
-        pkt = data[i:i+length+5]
-        # print(f"disecting: {repr((content,version,length,pkt))}" )
-        res.append( ["tls", pkt] )
-        i+=(length+5)
-    return res
+        while i+5 <= len(data):
+            content,version,length, = struct.unpack(">BHH",data[i:i+5])
+            pkt = data[i:i+length+5]
+            # print(f"disecting: {repr((content,version,length,pkt))}" )
+            res.append( ["tls", pkt] )
+            i+=(length+5)
+        return res
 
 instructions = []
 
 def stream_to_bin(path, stream, fuzzer):
-    nodes = split_packets(stream)
+    nodes = split_packets(stream, fuzzer)
 
     for (ntype, content) in nodes:
         if ntype == "tls":
-            b.packet(content)
             ins = TransmitInstruction(content)
             instructions.append(ins)
         else:
             raise("WTF")
-    b.write_to_file(path+".bin")
 
 def main():
     if len(sys.argv) != 4:

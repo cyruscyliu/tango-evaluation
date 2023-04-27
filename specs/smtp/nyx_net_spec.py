@@ -2,7 +2,7 @@ import sys, os
 sys.path.insert(1, os.path.realpath('../..'))
 sys.path.insert(1, os.path.realpath('../../tango'))
 from tango.core import TransmitInstruction
-from dump import to_pcap
+from dump import to_pcap, split_aflnet_testcase
 
 from spec_lib.graph_spec import *
 from spec_lib.data_spec import *
@@ -61,13 +61,15 @@ import pyshark
 import glob
 
 def split_packets(data, fuzzer):
-    msgs = data.split(b"\r\n")
-    new_msgs = []
-    tmp = b""
-    for msg in msgs:
-        new_msgs.append(msg+b"\r\n")
-
-    return(new_msgs[:-1])
+    if fuzzer == 'aflnet':
+        return split_aflnet_testcase(data, 'smtp')
+    else:
+        msgs = data.split(b"\r\n")
+        new_msgs = []
+        tmp = b""
+        for msg in msgs:
+            new_msgs.append(msg+b"\r\n")
+        return(new_msgs[:-1])
 
 instructions = []
 

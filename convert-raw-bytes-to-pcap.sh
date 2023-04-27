@@ -44,9 +44,9 @@ dest_dir=$(realpath ./pcaps_to_replay/${target})
 
 # let's go
 for run in $(seq 0 4); do
-    aflnet=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-00${run}/queue)
+    aflnet=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-00${run}/replayable-queue)
     aflpp=$(realpath pfb-eval-afl-24h/out-${target}-aflpp-00${run}/default/queue)
-    aflnet_no_state=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-no-state-00${run}/queue)
+    aflnet_no_state=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-no-state-00${run}/replayable-queue)
     nyx=$(realpath pfb-eval-nyx-24h/out-${target}-00${run}/corpus/normal)
     nyx_aggressive=$(realpath pfb-eval-nyx-24h/out-${target}-aggressive-00${run}/corpus/normal)
     nyx_balanced=$(realpath pfb-eval-nyx-24h/out-${target}-00${run}/corpus/normal)
