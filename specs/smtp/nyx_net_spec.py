@@ -60,7 +60,7 @@ with open("nyx_net_spec.msgp","wb") as f:
 import pyshark
 import glob
 
-def split_packets(data):
+def split_packets(data, fuzzer):
     msgs = data.split(b"\r\n")
     new_msgs = []
     tmp = b""
@@ -71,21 +71,22 @@ def split_packets(data):
 
 instructions = []
 
-def stream_to_bin(path,stream):
+def stream_to_bin(path, stream, fuzzer):
     if stream == None:
         return
-    nodes = split_packets(stream)
+    nodes = split_packets(stream, fuzzer)
     for content in nodes:
         ins = TransmitInstruction(content)
         instructions.append(ins)
 
 def main():
-    if len(sys.argv) != 3:
-        print('missing the source of raw bytes and the destination directory')
+    if len(sys.argv) != 4:
+        print('missing the fuzzer, the source of raw bytes and the destination directory')
         exit(1)
 
-    src = sys.argv[1]
-    dst = sys.argv[2]
+    fuzzer = sys.argv[1]
+    src = sys.argv[2]
+    dst = sys.argv[3]
 
     for testcase in os.listdir(src):
         if not os.path.isfile(os.path.join(src, testcase)):
@@ -94,7 +95,7 @@ def main():
         print('handle {}'.format(os.path.join(src,testcase)))
         with open(os.path.join(src, testcase), mode='rb') as f:
             instructions.clear()
-            stream_to_bin(os.path.join(src, testcase), f.read())
+            stream_to_bin(os.path.join(src, testcase), f.read(), fuzzer)
             to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
 
 if __name__ == '__main__':
