@@ -2,3 +2,4 @@ pfb-eval-afl-24h
 pfb-eval-nyx-24h
 tango
 pcaps_to_replay
+__pycache__

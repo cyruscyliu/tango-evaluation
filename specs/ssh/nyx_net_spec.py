@@ -99,6 +99,9 @@ def stream_to_bin(path, stream, fuzzer):
         ins = TransmitInstruction(content)
         instructions.append(ins)
 
+def packet(data):
+    return data
+
 def main():
     if len(sys.argv) != 4:
         print('missing the fuzzer, the source of raw bytes and the destination directory')
@@ -109,11 +112,22 @@ def main():
     dst = sys.argv[3]
 
     for testcase in os.listdir(src):
+        if not os.path.isfile(os.path.join(src, testcase)):
+            continue
         b = Builder(s)
-        with open(os.path.join(src, testcase), mode='rb') as f:
+        print('handle {}'.format(os.path.join(src,testcase)))
+        if fuzzer == 'nyxnet':
             instructions.clear()
-            stream_to_bin(os.path.join(src, testcase), f.read(), fuzzer)
-            to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
+            with open(os.path.join(src, testcase), mode='r') as f:
+                for line in f:
+                    ins = TransmitInstruction(eval(line.strip()))
+                    instructions.append(ins)
+                to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
+        else:
+            with open(os.path.join(src, testcase), mode='rb') as f:
+                instructions.clear()
+                stream_to_bin(os.path.join(src, testcase), f.read(), fuzzer)
+                to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
 
 if __name__ == '__main__':
     main()

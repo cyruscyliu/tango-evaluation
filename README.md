@@ -22,7 +22,7 @@
 
 The test case of in AFLNet's `replayable-queue/` has a len-data format. The
 first four bytes indicates how long each packet is. However, I guess AFL++ takes
-one input as a whole packet.
+one input as a whole packet. NyxNet uses packet(data) to store packets.
 
-1. Download data into xxx and xxx.
-2. Run `convert-raw-bytes-to-pcap.sh TARGET`
+1. Download data into pfb-eval-afl-24h/ and pfb-eval-nyx-24h/.
+2. Run `convert-to-pcaps.sh TARGET`
