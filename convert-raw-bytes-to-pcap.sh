@@ -9,8 +9,8 @@ if [ -z ${target} ]; then
 fi
 
 if [ ${target} == 'forked-daapd' ]; then
-    working_dir=specs/daapd
-elif [ ${target} == 'tinydtlS' ]; then
+    working_dir=specs/daap
+elif [ ${target} == 'tinydtls' ]; then
     working_dir=specs/dtls
 elif [ ${target} == 'bftpd' ]; then
     working_dir=specs/ftp

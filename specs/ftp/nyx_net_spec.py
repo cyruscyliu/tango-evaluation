@@ -70,7 +70,7 @@ def split_packets(data, fuzzer):
 
 instructions = []
 
-def stream_to_bin2(path, stream, fuzzer):
+def stream_to_bin(path, stream, fuzzer):
     nodes = split_packets(stream, fuzzer)
 
     for (ntype, content) in nodes:

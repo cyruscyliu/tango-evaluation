@@ -10,7 +10,11 @@ class FMT(object):
 
 def to_pcap(pathname, protocol, port, inp):
     new_inp = PCAPInput(file=pathname, fmt=FMT(protocol, port))
-    new_inp.dumpi(inp)
+    try:
+        new_inp.dumpi(inp)
+    except struct.error:
+        pass
+    new_inp._file.close()
     print('dump to {}'.format(pathname))
 
 def split_aflnet_testcase(data, label):
