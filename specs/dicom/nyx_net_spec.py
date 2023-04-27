@@ -54,6 +54,8 @@ import glob
 def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'dicom')
+    elif fuzzer == 'aflpp':
+        return [['dicom', data]]
     else:
         i = 0
         res = []

@@ -63,6 +63,8 @@ import glob
 def split_packets(data, fuzzer):
     if fuzzer == 'fuzzer':
         return split_aflnet_testcase(data, 'ftp')
+    elif fuzzer == 'aflpp':
+        return [['ftp', data]]
     else:
         return [["ftp_packet", d] for d in data.split(b"\r\n") if len(d) > 0]
 

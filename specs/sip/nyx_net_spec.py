@@ -59,6 +59,8 @@ import glob
 def split_sip_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'sip')
+    elif fuzzer == 'aflpp':
+        return [['sip', data]]
     else:
         data = data.split(b"\r\n")
         stream = []

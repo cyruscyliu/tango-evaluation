@@ -127,6 +127,8 @@ import glob
 def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'rtsp')
+    elif fuzzer == 'aflpp':
+        return [['rtsp', data]]
     else:
         return [["rtsp_packet", d] for d in data.split(b"\r\n\r\n") if len(d) > 0]
 

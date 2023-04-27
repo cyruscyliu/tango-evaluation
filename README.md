@@ -21,7 +21,8 @@
 ## Convert aflnet/aflpp/nyxnet raw bytes to pcaps
 
 The test case of in AFLNet's `replayable-queue/` has a len-data format. The
-first four bytes indicates how long each packet is.
+first four bytes indicates how long each packet is. However, I guess AFL++ takes
+one input as a whole packet.
 
 1. Download data into xxx and xxx.
 2. Run `convert-raw-bytes-to-pcap.sh TARGET`

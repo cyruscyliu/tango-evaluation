@@ -51,6 +51,8 @@ import ipdb
 def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'dtls')
+    elif fuzzer == 'aflpp':
+        return [['dtls', data]]
     else:
         i = 0
         res = []

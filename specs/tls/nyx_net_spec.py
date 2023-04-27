@@ -52,6 +52,8 @@ import glob
 def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'tls')
+    elif fuzzer == 'aflpp':
+        return [['openssh', data]]
     else:
         i = 0
         res = []
@@ -70,11 +72,8 @@ def stream_to_bin(path, stream, fuzzer):
     nodes = split_packets(stream, fuzzer)
 
     for (ntype, content) in nodes:
-        if ntype == "tls":
-            ins = TransmitInstruction(content)
-            instructions.append(ins)
-        else:
-            raise("WTF")
+        ins = TransmitInstruction(content)
+        instructions.append(ins)
 
 def main():
     if len(sys.argv) != 4:
