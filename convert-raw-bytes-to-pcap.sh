@@ -39,8 +39,8 @@ else
     exit 1
 fi
 
-rm -rf pcaps_to_replay && mkdir pcaps_to_replay
-dest_dir=$(realpath ./pcaps_to_replay)
+rm -rf pcaps_to_replay/${target} && mkdir -p pcaps_to_replay/${target}
+dest_dir=$(realpath ./pcaps_to_replay/${target})
 
 # let's go
 for run in $(seq 0 4); do
