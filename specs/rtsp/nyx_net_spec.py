@@ -69,6 +69,8 @@ import glob
 def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'rtsp')
+    elif fuzzer == 'aflpp':
+        return [['rtsp', data]]
     else:
         return [["rtsp_packet", d] for d in data.split(b"\r\n\r\n") if len(d) > 0]
 
@@ -80,6 +82,9 @@ def stream_to_bin(path, stream, fuzzer):
     for (ntype, content) in nodes:
         ins = TransmitInstruction(content+b'\r\n\r\n')
         instructions.append(ins)
+
+def packet(data):
+    return data
 
 def main():
     if len(sys.argv) != 4:
@@ -95,10 +100,18 @@ def main():
             continue
         b = Builder(s)
         print('handle {}'.format(os.path.join(src,testcase)))
-        with open(os.path.join(src, testcase), mode='rb') as f:
+        if fuzzer == 'nyxnet':
             instructions.clear()
-            stream_to_bin(os.path.join(src, testcase), f.read(), fuzzer)
-            to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
+            with open(os.path.join(src, testcase), mode='r') as f:
+                for line in f:
+                    ins = TransmitInstruction(eval(line.strip()))
+                    instructions.append(ins)
+                to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
+        else:
+            with open(os.path.join(src, testcase), mode='rb') as f:
+                instructions.clear()
+                stream_to_bin(os.path.join(src, testcase), f.read(), fuzzer)
+                to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
 
 if __name__ == '__main__':
     main()
