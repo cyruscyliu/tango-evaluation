@@ -10,3 +10,4 @@
 ./convert-to-pcaps.sh dnsmasq
 ./convert-to-pcaps.sh openssh
 ./convert-to-pcaps.sh exim
+./convert-to-pcaps.sh forked-daapd
