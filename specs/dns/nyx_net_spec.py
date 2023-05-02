@@ -81,7 +81,8 @@ def main():
         exit(1)
 
     fuzzer = sys.argv[1]
-    src = sys.argv[2] dst = sys.argv[3]
+    src = sys.argv[2]
+    dst = sys.argv[3]
 
     for testcase in os.listdir(src):
         if not os.path.isfile(os.path.join(src, testcase)):
