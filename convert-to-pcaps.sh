@@ -26,7 +26,7 @@ elif [ ${target} == 'kamailio' ]; then
     working_dir=specs/sip
 elif [ ${target} == 'lightftp' ]; then
     working_dir=specs/ftp
-elif [ ${target} == 'pureftpd' ]; then
+elif [ ${target} == 'pure-ftpd' ]; then
     working_dir=specs/ftp
 elif [ ${target} == 'dnsmasq' ]; then
     working_dir=specs/dns

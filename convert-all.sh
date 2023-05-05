@@ -6,7 +6,7 @@
 ./convert-to-pcaps.sh dcmtk
 ./convert-to-pcaps.sh kamailio
 ./convert-to-pcaps.sh lightftp
-./convert-to-pcaps.sh pureftpd
+./convert-to-pcaps.sh pure-ftpd
 ./convert-to-pcaps.sh dnsmasq
 ./convert-to-pcaps.sh openssh
 ./convert-to-pcaps.sh exim
