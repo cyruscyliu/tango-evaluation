@@ -238,6 +238,11 @@
 ...  974... pcaps_to_replay/live555/out-live555-nyx_balanced-002
 ...  873... pcaps_to_replay/live555/out-live555-nyx_balanced-003
 ...  936... pcaps_to_replay/live555/out-live555-nyx_balanced-004
+... 3284... pcaps_to_replay/live555/out-live555-sgfuzz-000
+... 6415... pcaps_to_replay/live555/out-live555-sgfuzz-001
+... 5181... pcaps_to_replay/live555/out-live555-sgfuzz-002
+... 4871... pcaps_to_replay/live555/out-live555-sgfuzz-003
+... 3571... pcaps_to_replay/live555/out-live555-sgfuzz-004
 ... 1563... pcaps_to_replay/openssh/out-openssh-aflnet-000
 ... 1554... pcaps_to_replay/openssh/out-openssh-aflnet-001
 ... 1242... pcaps_to_replay/openssh/out-openssh-aflnet-002
@@ -298,6 +303,11 @@
 ...  296... pcaps_to_replay/openssl/out-openssl-nyx_balanced-002
 ...  340... pcaps_to_replay/openssl/out-openssl-nyx_balanced-003
 ...  293... pcaps_to_replay/openssl/out-openssl-nyx_balanced-004
+... 1875... pcaps_to_replay/openssl/out-openssl-sgfuzz-000
+... 1690... pcaps_to_replay/openssl/out-openssl-sgfuzz-001
+... 1486... pcaps_to_replay/openssl/out-openssl-sgfuzz-002
+... 1581... pcaps_to_replay/openssl/out-openssl-sgfuzz-003
+... 1495... pcaps_to_replay/openssl/out-openssl-sgfuzz-004
 ... 2958... pcaps_to_replay/proftpd/out-proftpd-aflnet-000
 ... 2732... pcaps_to_replay/proftpd/out-proftpd-aflnet-001
 ... 2872... pcaps_to_replay/proftpd/out-proftpd-aflnet-002
