@@ -49,7 +49,7 @@ for run in $(seq 0 4); do
     aflnet_no_state=$(realpath pfb-eval-afl-24h/out-${target}-aflnet-no-state-00${run}/replayable-queue)
     nyx=$(realpath pfb-eval-nyx-24h/out-${target}-00${run}/reproducible)
     nyx_aggressive=$(realpath pfb-eval-nyx-24h/out-${target}-aggressive-00${run}/reproducible)
-    nyx_balanced=$(realpath pfb-eval-nyx-24h/out-${target}-00${run}/reproducible)
+    nyx_balanced=$(realpath pfb-eval-nyx-24h/out-${target}-balanced-00${run}/reproducible)
 
     pushd ${working_dir}
 
