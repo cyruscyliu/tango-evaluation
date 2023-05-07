@@ -13,9 +13,9 @@
 ...   13... pcaps_to_replay/bftpd/out-bftpd-aflpp-002
 ...   13... pcaps_to_replay/bftpd/out-bftpd-aflpp-003
 ...   13... pcaps_to_replay/bftpd/out-bftpd-aflpp-004
-...    0... pcaps_to_replay/bftpd/out-bftpd-nyx-000
-...    0... pcaps_to_replay/bftpd/out-bftpd-nyx-001
-...    0... pcaps_to_replay/bftpd/out-bftpd-nyx-002
+...  133... pcaps_to_replay/bftpd/out-bftpd-nyx-000
+...  118... pcaps_to_replay/bftpd/out-bftpd-nyx-001
+...  134... pcaps_to_replay/bftpd/out-bftpd-nyx-002
 ...  127... pcaps_to_replay/bftpd/out-bftpd-nyx-003
 ...  127... pcaps_to_replay/bftpd/out-bftpd-nyx-004
 ...  134... pcaps_to_replay/bftpd/out-bftpd-nyx_aggressive-000
@@ -58,13 +58,13 @@
 ...  102... pcaps_to_replay/dcmtk/out-dcmtk-nyx_balanced-002
 ...   94... pcaps_to_replay/dcmtk/out-dcmtk-nyx_balanced-003
 ...  101... pcaps_to_replay/dcmtk/out-dcmtk-nyx_balanced-004
-...    1... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-000
-...    1... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-001
-...    1... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-002
-...    1... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-003
-...    1... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-004
-...    1... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet_no_state-000
-...    1... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet_no_state-001
+...  378... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-000
+...  395... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-001
+...  350... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-002
+...  462... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-003
+...  407... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet-004
+...  443... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet_no_state-000
+...  383... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet_no_state-001
 ...  271... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet_no_state-002
 ...  434... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet_no_state-003
 ...  481... pcaps_to_replay/dnsmasq/out-dnsmasq-aflnet_no_state-004
@@ -239,8 +239,8 @@
 ...  873... pcaps_to_replay/live555/out-live555-nyx_balanced-003
 ...  936... pcaps_to_replay/live555/out-live555-nyx_balanced-004
 ... 3284... pcaps_to_replay/live555/out-live555-sgfuzz-000
-... 6415... pcaps_to_replay/live555/out-live555-sgfuzz-001
-... 5181... pcaps_to_replay/live555/out-live555-sgfuzz-002
+...13646... pcaps_to_replay/live555/out-live555-sgfuzz-001
+...11321... pcaps_to_replay/live555/out-live555-sgfuzz-002
 ... 4871... pcaps_to_replay/live555/out-live555-sgfuzz-003
 ... 3571... pcaps_to_replay/live555/out-live555-sgfuzz-004
 ... 1563... pcaps_to_replay/openssh/out-openssh-aflnet-000
@@ -343,7 +343,7 @@
 ...  848... pcaps_to_replay/pure-ftpd/out-pure-ftpd-aflnet-002
 ...  825... pcaps_to_replay/pure-ftpd/out-pure-ftpd-aflnet-003
 ... 1137... pcaps_to_replay/pure-ftpd/out-pure-ftpd-aflnet-004
-...   13... pcaps_to_replay/pure-ftpd/out-pure-ftpd-aflnet_no_state-000
+... 1491... pcaps_to_replay/pure-ftpd/out-pure-ftpd-aflnet_no_state-000
 ... 1277... pcaps_to_replay/pure-ftpd/out-pure-ftpd-aflnet_no_state-001
 ... 1308... pcaps_to_replay/pure-ftpd/out-pure-ftpd-aflnet_no_state-002
 ... 1357... pcaps_to_replay/pure-ftpd/out-pure-ftpd-aflnet_no_state-003
