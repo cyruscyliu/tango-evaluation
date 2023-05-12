@@ -95,12 +95,14 @@ def main():
                 for line in f:
                     ins = TransmitInstruction(eval(line.strip()))
                     instructions.append(ins)
-                to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
+                mtime = os.stat(os.path.join(src, testcase)).st_mtime_ns / 1000000000
+                to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions, mtime)
         else:
             with open(os.path.join(src, testcase), mode='rb') as f:
                 instructions.clear()
                 stream_to_bin(os.path.join(src, testcase), f.read(), fuzzer)
-                to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions)
+                mtime = os.stat(os.path.join(src, testcase)).st_mtime_ns / 1000000000
+                to_pcap(os.path.join(dst, testcase), PROTOCOL, PORT, instructions, mtime)
 
 if __name__ == '__main__':
     main()

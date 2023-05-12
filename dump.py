@@ -1,5 +1,6 @@
 from tango.net import PCAPInput
 
+import os
 import struct
 
 class FMT(object):
@@ -8,7 +9,7 @@ class FMT(object):
         self.protocol = protocol
         self.port = port
 
-def to_pcap(pathname, protocol, port, inp):
+def to_pcap(pathname, protocol, port, inp, mtime):
     new_inp = PCAPInput(file=pathname, fmt=FMT(protocol, port))
     try:
         new_inp.dumpi(inp)
@@ -16,6 +17,8 @@ def to_pcap(pathname, protocol, port, inp):
         pass
     new_inp._file.close()
     print('dump to {}'.format(pathname))
+    os.utime(pathname, (mtime, mtime))
+
 
 def split_aflnet_testcase(data, label):
     i = 0
