@@ -51,20 +51,39 @@ for run in $(seq 0 4); do
     nyx_aggressive=$(realpath pfb-eval-nyx-24h/out-${target}-aggressive-00${run}/reproducible)
     nyx_balanced=$(realpath pfb-eval-nyx-24h/out-${target}-balanced-00${run}/reproducible)
 
-    pushd ${working_dir}
+    echo "pushd ${working_dir} && \
+        rm -rf ${dest_dir}/out-${target}-aflnet-00${run}/queue && \
+        mkdir -p ${dest_dir}/out-${target}-aflnet-00${run}/queue && \
+        python3.11 nyx_net_spec.py aflnet ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run} && \
+        popd"
 
-    mkdir -p ${dest_dir}/out-${target}-aflnet-00${run}
-    python3.11 nyx_net_spec.py aflnet ${aflnet} ${dest_dir}/out-${target}-aflnet-00${run}
-    mkdir -p ${dest_dir}/out-${target}-aflpp-00${run}
-    python3.11 nyx_net_spec.py aflpp ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run}
-    mkdir -p ${dest_dir}/out-${target}-aflnet_no_state-00${run}
-    python3.11 nyx_net_spec.py aflnet ${aflnet_no_state} ${dest_dir}/out-${target}-aflnet_no_state-00${run}
-    mkdir -p ${dest_dir}/out-${target}-nyx-00${run}
-    python3.11 nyx_net_spec.py nyxnet ${nyx} ${dest_dir}/out-${target}-nyx-00${run}
-    mkdir -p ${dest_dir}/out-${target}-nyx_aggressive-00${run}
-    python3.11 nyx_net_spec.py nyxnet ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run}
-    mkdir -p ${dest_dir}/out-${target}-nyx_balanced-00${run}
-    python3.11 nyx_net_spec.py nyxnet ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run}
+    echo "pushd ${working_dir} && \
+        rm -rf ${dest_dir}/out-${target}-aflpp-00${run}/queue && \
+        mkdir -p ${dest_dir}/out-${target}-aflpp-00${run}/queue && \
+        python3.11 nyx_net_spec.py aflpp ${aflpp} ${dest_dir}/out-${target}-aflpp-00${run} && \
+        popd"
 
-    popd
+    echo "pushd ${working_dir} && \
+        rm -rf ${dest_dir}/out-${target}-aflnet_no_state-00${run}/queue && \
+        mkdir -p ${dest_dir}/out-${target}-aflnet_no_state-00${run}/queue && \
+        python3.11 nyx_net_spec.py aflnet ${aflnet_no_state} ${dest_dir}/out-${target}-aflnet_no_state-00${run} && \
+        popd"
+
+    echo "pushd ${working_dir} && \
+        rm -rf ${dest_dir}/out-${target}-nyx-00${run}/queue && \
+        mkdir -p ${dest_dir}/out-${target}-nyx-00${run}/queue && \
+        python3.11 nyx_net_spec.py nyxnet ${nyx} ${dest_dir}/out-${target}-nyx-00${run} && \
+        popd"
+
+    echo "pushd ${working_dir} && \
+        rm -rf ${dest_dir}/out-${target}-nyx_aggressive-00${run}/queue && \
+        mkdir -p ${dest_dir}/out-${target}-nyx_aggressive-00${run}/queue && \
+        python3.11 nyx_net_spec.py nyxnet ${nyx_aggressive} ${dest_dir}/out-${target}-nyx_aggressive-00${run} && \
+        popd"
+
+    echo "pushd ${working_dir} && \
+        rm -rf ${dest_dir}/out-${target}-nyx_balanced-00${run}/queue && \
+        mkdir -p ${dest_dir}/out-${target}-nyx_balanced-00${run}/queue && \
+        python3.11 nyx_net_spec.py nyxnet ${nyx_balanced} ${dest_dir}/out-${target}-nyx_balanced-00${run} && \
+        popd"
 done

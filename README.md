@@ -25,11 +25,11 @@ first four bytes indicates how long each packet is. However, AFL++/SGFuzz takes
 one input as a whole packet. NyxNet uses packet(data) to store packets.
 
 1. Download data into pfb-eval-afl-24h/ and pfb-eval-nyx-24h/.
-2. Run `convert-to-pcaps.sh TARGET`
+2. Run `convert-to-pcaps.sh TARGET` or run `parallel -j8 --bar < convert-all.sh`.
 
 ## Convert aflnet/aflpp/nyxnet/sgfuzz pcaps to coverage data (to Duo)
 
-1. Put them under tango/targets/openssl/XXXXXXXXX/queue
+1. Put them under tango/targets/openssl/XXXXXXXXX/queue.
 2. Build each target without TANGOLIB.
 
 ```
