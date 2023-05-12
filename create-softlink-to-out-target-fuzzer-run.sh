@@ -30,8 +30,7 @@ for target in `ls pcaps_to_replay`; do
         # echo "Not supported yet"
        	continue
     elif [ ${target} == 'dnsmasq' ]; then
-        # echo "Not supported yet"
-       	continue
+        working_dir=targets/dnsmasq
     elif [ ${target} == 'openssh' ]; then
         working_dir=targets/openssh
     elif [ ${target} == 'exim' ]; then
