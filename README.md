@@ -47,4 +47,4 @@ one input as a whole packet. NyxNet uses packet(data) to store packets.
 bash -x to_coverage_data.sh
 ```
 
-4. Check results in `tango/targets/openssl/XXXXXXXXX/shared`.
+4. Check results by `find -name cov_info.json | sort`.
