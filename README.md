@@ -29,17 +29,22 @@ one input as a whole packet. NyxNet uses packet(data) to store packets.
 
 ## Convert aflnet/aflpp/nyxnet/sgfuzz pcaps to coverage data (to Duo)
 
-1. Put them under tango/targets/openssl/XXXXXXXXX/queue.
+1. Put them under tango/targets.
+
+```
+./create-softlink-to-out-target-fuzzer-run.sh > to_coverage_data.sh
+```
+
 2. Build each target without TANGOLIB.
 
 ```
-USE_ASAN=1 DISABLE_TANGOLIB=1 make openssl/
+./build-tango-target.sh
 ```
+
 3. Run the following command line.
 
 ```
-cd tango
-PYSCRIPT=gen_cov.py ./run.sh targets/openssl/fuzz.json targets/openssl/XXXXXXXXX
+bash -x to_coverage_data.sh
 ```
 
-4. Check results in `tango/targets/openssl/XXXXXXXXX/shared`.
+4. Check results by `find -name cov_info.json | sort`.

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+pushd tango/targets
+
+USE_ASAN=1 DISABLE_TANGOLIB=1 make dcmtk/
+USE_ASAN=1 DISABLE_TANGOLIB=1 make dnsmasq/
+USE_ASAN=1 DISABLE_TANGOLIB=1 make exim/
+USE_ASAN=1 DISABLE_TANGOLIB=1 make openssh/
+USE_ASAN=1 DISABLE_TANGOLIB=1 make openssl/
+
+popd
