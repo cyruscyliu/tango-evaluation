@@ -10,7 +10,7 @@ from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
 
 PROTOCOL='udp'
-PORT=5353
+PORT=5354
 import jinja2
 
 s = Spec()
@@ -73,7 +73,7 @@ def stream_to_bin(path, stream, fuzzer):
         instructions.append(ins)
 
 def packet(data):
-    return data
+    return bytes(data, 'latin-1')
 
 def main():
     if len(sys.argv) != 4:

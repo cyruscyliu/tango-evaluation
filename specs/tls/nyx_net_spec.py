@@ -76,7 +76,7 @@ def stream_to_bin(path, stream, fuzzer):
         instructions.append(ins)
 
 def packet(data):
-    return data
+    return bytes(data, 'latin-1')
 
 def main():
     if len(sys.argv) != 4:
