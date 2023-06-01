@@ -70,7 +70,10 @@ def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'rtsp')
     elif fuzzer == 'aflpp':
-        return [['rtsp', data]]
+        res = []
+        for i in range(0, len(data), 1500):
+            res.append(['rtsp', data[i: i+1500]])
+        return res
     else:
         return [["rtsp_packet", d] for d in data.split(b"\r\n\r\n") if len(d) > 0]
 

@@ -52,7 +52,10 @@ def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'dtls')
     elif fuzzer == 'aflpp':
-        return [['dtls', data]]
+        res = []
+        for i in range(0, len(data), 1500):
+            res.append(['dtls', data[i: i+1500]])
+        return res
     else:
         i = 0
         res = []
