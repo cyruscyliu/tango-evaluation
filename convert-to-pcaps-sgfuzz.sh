@@ -24,10 +24,10 @@ for run in $(seq 0 4); do
     sgfuzz=$(realpath pfb-eval-sgfuzz-24h/out-sgfuzz-${target}-00${run})
 
     pushd ${working_dir}
-
-    mkdir -p ${dest_dir}/out-${target}-sgfuzz-00${run}
+    rm -rf ${dest_dir}/out-${target}-sgfuzz-00${run}
+    mkdir -p ${dest_dir}/out-${target}-sgfuzz-00${run}/queue
     # raw bytes like aflpp
-    python3.11 nyx_net_spec.py aflpp ${sgfuzz} ${dest_dir}/out-${target}-sgfuzz-00${run}
+    python3.11 nyx_net_spec.py aflpp ${sgfuzz} ${dest_dir}/out-${target}-sgfuzz-00${run}/queue
 
     popd
 done
