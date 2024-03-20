@@ -17,25 +17,26 @@ args.step = 60
 args.verbose = 0
 args.exclude_dirs = [
     'cache',
-    'tango_inference_control_50/dcmtk/dcmqrscp/0', # didn't complete
-    'tango_inference_all_50/dnsmasq/dnsmasq/2', # didn't complete
-    'tango_inference_all_100/openssh/sshd/0', # didn't complete
+    'tango_inference_control_50/dcmtk/dcmqrscp/0', # 1560.964364 DATA MISSING!!!
+    'tango_inference_all_20/bftpd/bftpd/0/workdir/0', # 5220.813821 DATA MISSING!!!
     'tango_inference_control',
     'tango_inference_validate',
     'tango_inference_extend_on_groups_50',
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
-    'sip', 'dtls',
-    'lightftp', 'pureftpd', 'yajl', 'bftpd', 'daap', 'proftdp'
+    'yajl', 'daap',
+    '100'
 ]
 
 args.exclude_runs = ['3', '4', '5']
 args.include_targets = [
     'expat', 'exim', 'dcmtk', 'openssh',
     'openssl', 'dnsmasq', 'llhttp', 'rtsp',
-    # 'sip', 'dtls',
-    # 'lightftp', 'pureftpd', 'yajl', 'bftpd', 'daap', 'proftdp'
+    'sip', 'dtls',
+    'lightftp', 'pureftpd', 'bftpd', 'proftpd'
+    # 'daap', 'yajl',
 ]
+args.mission = 'crosstesting'
 configure_verbosity(args.verbose)
 
 feval = Evaluation(args)
@@ -50,7 +51,10 @@ from matplotlib.colors import Normalize
 
 def calculate_reduction_ratio(row):
     if row['states'] == 0.0:
-        return '0'
+        if row['snapshots'] < row['batch_size'] :
+            return 'N/A'
+        else:
+            return '0'
     else:
         r = round((1 - row['states'] / row['snapshots']) * 100, 2)
         st = round(row['states'], 0)

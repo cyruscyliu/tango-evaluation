@@ -11,31 +11,22 @@ matplotlib.rcParams['font.size'] = 12
 matplotlib.rcParams['figure.dpi'] = 300
 
 args = Namespace()
-args.ar = Path('../eurosp_data/workdir_tango_inference')
+args.ar = Path('../eurosp_data//old_data_for_cov_qiang/workdir_nyxnet')
 args.duration = 24*3600
 args.step = 60
-args.verbose = 0
+args.verbose = 1
 args.exclude_dirs = [
-    'cache',
-    'tango_inference_control_50/dcmtk/dcmqrscp/0', # 1560.964364 DATA MISSING!!!
-    'tango_inference_all_20/bftpd/bftpd/0/workdir/0', # 5220.813821 DATA MISSING!!!
-    'tango_inference_validate',
-    'tango_inference_extend_on_groups_50',
-    'tango_inference_dt_predict_50',
-    'tango_inference_dt_extrapolate_50',
-    'yajl', 'daap',
-    '100'
+    'pfb',
+    'workdir_tango_inference',
+    'crosstest_0.csv'
 ]
 
-args.exclude_runs = ['3', '4', '5']
+args.exclude_runs = [str(i) for i in range(3, 20)]
 args.include_targets = [
-    'expat', 'exim', 'dcmtk', 'openssh',
-    'openssl', 'dnsmasq', 'llhttp', 'rtsp',
-    'sip', 'dtls',
-    'lightftp', 'pureftpd', 'bftpd', 'proftpd'
-    # 'daap', 'yajl',
+    'expat', 'dcmtk', 'openssh', 'openssl',
+    'dnsmasq', 'llhttp', 'rtsp', 'sip', 'dtls',
+    'lightftp', 'pureftpd', 'yajl', 'bftpd', 'proftdp'
 ]
-args.mission = "crosstesting"
 configure_verbosity(args.verbose)
 
 feval = Evaluation(args)
@@ -49,7 +40,7 @@ import numpy as np
 from matplotlib.colors import Normalize
 
 def calculate_percentage(row):
-    if row['time_elapsed'] == 0.0: # first row
+    if row['time_elapsed'] == 0.0:
         return np.nan
     else:
         return row['time_crosstest'] / row['time_elapsed'] * 100
@@ -99,19 +90,19 @@ def ploooooooot(tt, pathname, show_snapshots=True):
         ax.set_yticks([0, 25, 50, 75, 100], ['0', '25%', '50%', '75%', '100%'])
         ax.set_ylabel('Time of cross-testing')
 
-        # try:
-            # a = tt_by_batch[tt_by_batch['label'] == 'w/ opt'].filter(
-                # items=['time_step', 'percentage'])
-            # a = a[a['time_step'] == 3600.0 *  4]
-            # a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
-            # ax.text(a_x, a_y, str(f'{round(a_y)}%'), ha='center', va='bottom')
-            # a = tt_by_batch[tt_by_batch['label'] == 'w/o opt'].filter(
-                # items=['time_step', 'percentage'])
-            # a = a[a['time_step'] == 3600.0 *  4]
-            # a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
-            # ax.text(a_x, a_y, str(f'{round(a_y)}%'), ha='center', va='bottom')
-        # except IndexError as ax:
-            # print('adding text', ax)
+        try:
+            a = tt_by_batch[tt_by_batch['label'] == 'w/ opt'].filter(
+                items=['time_step', 'percentage'])
+            a = a[a['time_step'] == 3600.0 *  4]
+            a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
+            ax.text(a_x, a_y, str(f'{round(a_y)}%'), ha='center', va='bottom')
+            a = tt_by_batch[tt_by_batch['label'] == 'w/o opt'].filter(
+                items=['time_step', 'percentage'])
+            a = a[a['time_step'] == 3600.0 *  4]
+            a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
+            ax.text(a_x, a_y, str(f'{round(a_y)}%'), ha='center', va='bottom')
+        except IndexError as ax:
+            print('adding text', ax)
 
         try:
             a = tt_by_batch[tt_by_batch['label'] == 'w/o opt'].iloc[-1]['snapshots']
@@ -135,19 +126,15 @@ def ploooooooot(tt, pathname, show_snapshots=True):
 
 # for i in feval.all_experiments:
     # print('Loaded', i)
-df = feval.df_crosstest
+df = feval.df_coverage
+print(df)
+exit()
 
 # theoretical_ct_x = [i for i in range(1, 86400)]
 # theoretical_ct_y = [np.square(np.log10(i)) / i * 100 for i in theoretical_ct_x]
 
-df['percentage'] = df.apply(calculate_percentage, axis=1)
-df = df.filter(items=[
-    'time_step', 'time_elapsed', 'time_crosstest', 'percentage', 'snapshots'])
-
-# average
-tt = df.groupby(cs).agg({'percentage': 'mean', 'snapshots': 'mean'}).reset_index().groupby(
-    cs2).agg({'percentage': 'median', 'snapshots': 'median'}).reset_index()
-ploooooooot(tt, '../TangoFuzz-paper/media/time-average', show_snapshots=False)
+# df = df.filter(items=[
+ #    'time_step', 'time_elapsed', 'time_crosstest', 'percentage', 'snapshots'])
 
 # by targets
 targets = df.index.get_level_values('target').unique()

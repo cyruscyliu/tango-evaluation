@@ -10,7 +10,7 @@ from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
 
 PROTOCOL='udp'
-PORT=5354
+PORT=5355
 import jinja2
 
 s = Spec()

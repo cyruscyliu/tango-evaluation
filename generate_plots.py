@@ -76,13 +76,20 @@ class Evaluation:
             map(Experiment, self.find_experiments(self.args.ar))
         )
         logging.info(f"Found {len(self.all_experiments)} experiments")
-        self.df_crosstest = self.get_master_df(
-            filename="crosstest_0.csv",
-            upper_bound=self.args.duration,
-            time_step=self.args.step,
-        )
+        if self.args.mission == 'crosstesting':
+            self.df_crosstest = self.get_master_df(
+                filename="crosstest_0.csv",
+                upper_bound=self.args.duration,
+                time_step=self.args.step,
+            )
         # self.df_inference = self.get_master_df(
         #     filename='inference.json')
+        if self.args.mission == 'coverage':
+            self.df_coverage = self.get_master_df(
+                filename="pc_cov_cnts.csv",
+                upper_bound=self.args.duration,
+                time_step=self.args.step,
+            )
 
     def find_experiments(self, path) -> Iterable[Path]:
         logging.info("Finding experiments ...")
@@ -232,6 +239,52 @@ class TimeSeriesResamplerMixin:
         df = df.rename_axis("time_step").reset_index()
         return df
 
+class Coverage(TimeSeriesResamplerMixin, Recording, filename="pc_cov_cnts.csv"):
+    def __init__(self, *, path: Path, delimiter: str = ",", **kwargs):
+        df = pd.read_csv(path, delimiter=delimiter)
+        time_elapsed = df.iloc[-1]['time_elapsed']
+        if time_elapsed < 80000:
+            logging.warning(f'{path} {time_elapsed} DATA MISSING!!!')
+        super().__init__(df=df, time_column="time_elapsed", **kwargs)
+        df = self.resample()
+        # interpolate initial time and counter stats
+        interp_linear = ["time_elapsed", "pc_cov_cnt"]
+        interp_pad = df.columns.difference([*interp_linear, "time_step"])
+        interp_all = [*interp_linear, *interp_pad]
+        # df = df.groupby(df.index.names, as_index=False).apply(
+        # self._interpolate, interp_linear, interp_pad, interp_all)
+        try:
+            _df = self._interpolate(df, interp_linear, interp_pad, interp_all)
+            self.df = _df
+        except TypeError:
+            self.df = df
+        logging.info(f"Loaded {path}")
+
+    def _interpolate(self, df, interp_linear, interp_pad, interp_all):
+        df.loc[df[interp_all].duplicated(), interp_all] = np.nan
+        df.loc[df["time_step"] == 0.0, interp_all] = 0
+        df[interp_linear] = df[interp_linear].interpolate("linear")
+        df[interp_pad] = df[interp_pad].interpolate("pad")
+        return df
+
+    def annotate(self, **kwargs) -> DataFrame:
+        logging.info("Annotating in Crosstest")
+        df = super().annotate(**kwargs)
+        fuzzer = self.experiment.parameters.fuzzer
+        parameters = self.FUZZER_PARAMETERS[fuzzer]
+        logging.info(f"Droping index (row labels) fuzzer -> {fuzzer}")
+        df = df.droplevel("fuzzer")
+        old_index = df.index.copy()
+        for param, value in parameters.items():
+            df[param] = value
+            logging.info(f"Indexing (row labels) {param} -> {value}")
+            df = (
+                df.set_index(param, append=True, inplace=kwargs.get("inplace", False))
+                or df
+            )
+        df = df.reorder_levels(list(parameters.keys()) + old_index.names)
+        logging.info("Annotating in Crosstest: Done")
+        return df
 
 class Crosstest(TimeSeriesResamplerMixin, Recording, filename="crosstest_0.csv"):
     FUZZER_PARAMETERS = {

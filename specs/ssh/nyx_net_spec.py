@@ -10,7 +10,7 @@ from spec_lib.graph_builder import *
 from spec_lib.generators import opts,flags,limits,regex
 
 PROTOCOL='tcp'
-PORT=22
+PORT=2022
 import jinja2
 
 s = Spec()
