@@ -53,7 +53,10 @@ def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'tls')
     elif fuzzer == 'aflpp':
-        return [['openssh', data]]
+        res = []
+        for i in range(0, len(data), 1500):
+            res.append(['openssl', data[i: i+1500]])
+        return res
     else:
         i = 0
         res = []

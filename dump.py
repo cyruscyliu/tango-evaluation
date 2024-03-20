@@ -13,8 +13,8 @@ def to_pcap(pathname, protocol, port, inp, mtime):
     new_inp = PCAPInput(file=pathname, fmt=FMT(protocol, port))
     try:
         new_inp.dumpi(inp)
-    except struct.error:
-        pass
+    except struct.error as e:
+        print(e)
     new_inp._file.close()
     print('dump to {}'.format(pathname))
     os.utime(pathname, (mtime, mtime))

@@ -64,7 +64,10 @@ def split_packets(data, fuzzer):
     if fuzzer == 'fuzzer':
         return split_aflnet_testcase(data, 'ftp')
     elif fuzzer == 'aflpp':
-        return [['ftp', data]]
+        res = []
+        for i in range(0, len(data), 1500):
+            res.append(['ftp', data[i: i+1500]])
+        return res
     else:
         return [["ftp_packet", d] for d in data.split(b"\r\n") if len(d) > 0]
 

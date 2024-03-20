@@ -60,7 +60,10 @@ def split_sip_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'sip')
     elif fuzzer == 'aflpp':
-        return [['sip', data]]
+        res = []
+        for i in range(0, len(data), 1500):
+            res.append(['sip', data[i: i+1500]])
+        return res
     else:
         data = data.split(b"\r\n")
         stream = []

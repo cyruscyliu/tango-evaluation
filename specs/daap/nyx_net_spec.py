@@ -61,7 +61,10 @@ def split_packets(data, fuzzer):
     if fuzzer == 'aflnet':
         return split_aflnet_testcase(data, 'daap')
     elif fuzzer == 'aflpp':
-        return [['daap', data]]
+        res = []
+        for i in range(0, len(data), 1500):
+            res.append(['daap', data[i: i+1500]])
+        return res
     else:
         return [["sip_packet", d] for d in data.split(b"\r\n\r\n")][:-1]
 
