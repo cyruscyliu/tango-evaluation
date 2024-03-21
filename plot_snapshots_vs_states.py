@@ -19,16 +19,16 @@ args.exclude_dirs = [
     'cache',
     'tango_inference_control_50/dcmtk/dcmqrscp/0', # 1560.964364 DATA MISSING!!!
     'tango_inference_all_20/bftpd/bftpd/0/workdir/0', # 5220.813821 DATA MISSING!!!
-    'tango_inference_control',
+    'tango_inference_control_100/lightftp/lightftp/0', # 3900.586574 DATA MISSING!!!'
+    'tango_inference_all',
     'tango_inference_validate',
     'tango_inference_extend_on_groups_50',
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
     'yajl', 'daap',
-    '100'
 ]
 
-args.exclude_runs = ['3', '4', '5']
+args.exclude_runs = ['3', '4']
 args.include_targets = [
     'expat', 'exim', 'dcmtk', 'openssh',
     'openssl', 'dnsmasq', 'llhttp', 'rtsp',

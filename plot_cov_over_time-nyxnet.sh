@@ -69,6 +69,11 @@ for out_dir in "${out_dirs[@]}"; do
     target_index=$((${#parts[@]} - 4))
     target="${parts[target_index]}"
 
+    # currently, pureftpd is not compatible with ASAN
+    if [ "$target" == 'pureftpd' ]; then
+        continue
+    fi
+
     working_dir=$(find_working_dir "$target")
     out_dir=$(realpath "$out_dir")
 
@@ -77,10 +82,9 @@ for out_dir in "${out_dirs[@]}"; do
     echo "pushd $working_dir && rm -rf $pcaps_to_replay && mkdir -p $pcaps_to_replay && \
           python nyx_net_spec.py nyxnet $nyx_balanced $pcaps_to_replay && popd" >> convert-to-pcaps-nyxnet.sh
 
-    touch "$out_dir"/replay.sh
     echo "pushd /home/tango && python gen_cov.py -C targets/$target/fuzz.json \
          -W $pcaps_to_replay/.. -c /home/tango/targets/$target/ -vv && \
-         mv $pcaps_to_replay/../pc_cov_cnts.csv $pcaps_to_replay/../../workdir" >> replay-and-dump-coverage-nyxnet.sh
+         mv $pcaps_to_replay/../pc_cov_cnts.csv $pcaps_to_replay/../../workdir && popd" >> replay-and-dump-coverage-nyxnet.sh
 done
 
 pushd /home/tango

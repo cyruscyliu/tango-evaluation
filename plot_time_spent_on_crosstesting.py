@@ -14,20 +14,20 @@ args = Namespace()
 args.ar = Path('../eurosp_data/workdir_tango_inference')
 args.duration = 24*3600
 args.step = 60
-args.verbose = 0
+args.verbose = 1
 args.exclude_dirs = [
     'cache',
     'tango_inference_control_50/dcmtk/dcmqrscp/0', # 1560.964364 DATA MISSING!!!
     'tango_inference_all_20/bftpd/bftpd/0/workdir/0', # 5220.813821 DATA MISSING!!!
+    'tango_inference_control_100/lightftp/lightftp/0', # 3900.586574 DATA MISSING!!!'
     'tango_inference_validate',
     'tango_inference_extend_on_groups_50',
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
     'yajl', 'daap',
-    '100'
 ]
 
-args.exclude_runs = ['3', '4', '5']
+args.exclude_runs = ['3', '4']
 args.include_targets = [
     'expat', 'exim', 'dcmtk', 'openssh',
     'openssl', 'dnsmasq', 'llhttp', 'rtsp',
@@ -77,7 +77,6 @@ cs2 = ['type', 'batch_size',
 def ploooooooot(tt, pathname, show_snapshots=True):
     # add more columns for plotting
     tt['label'] = tt.apply(to_label, axis=1)
-    # tt = tt.fillna(0)
 
     fig, axes = plt.subplots(2, 2, sharex=True, sharey=True, layout='constrained')
     axes = axes.flatten()
@@ -99,19 +98,21 @@ def ploooooooot(tt, pathname, show_snapshots=True):
         ax.set_yticks([0, 25, 50, 75, 100], ['0', '25%', '50%', '75%', '100%'])
         ax.set_ylabel('Time of cross-testing')
 
-        # try:
-            # a = tt_by_batch[tt_by_batch['label'] == 'w/ opt'].filter(
-                # items=['time_step', 'percentage'])
-            # a = a[a['time_step'] == 3600.0 *  4]
-            # a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
+        try:
+            a = tt_by_batch[tt_by_batch['label'] == 'w/ opt'].filter(
+                items=['time_step', 'percentage'])
+            a = a[a['time_step'] == 3600.0 *  4]
+            a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
+            print(a_x, a_y, round(a_y))
             # ax.text(a_x, a_y, str(f'{round(a_y)}%'), ha='center', va='bottom')
-            # a = tt_by_batch[tt_by_batch['label'] == 'w/o opt'].filter(
-                # items=['time_step', 'percentage'])
-            # a = a[a['time_step'] == 3600.0 *  4]
-            # a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
+            a = tt_by_batch[tt_by_batch['label'] == 'w/o opt'].filter(
+                items=['time_step', 'percentage'])
+            a = a[a['time_step'] == 3600.0 *  4]
+            a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
             # ax.text(a_x, a_y, str(f'{round(a_y)}%'), ha='center', va='bottom')
-        # except IndexError as ax:
-            # print('adding text', ax)
+            print(a_x, a_y, round(a_y))
+        except IndexError as ax:
+            print('adding text', ax)
 
         try:
             a = tt_by_batch[tt_by_batch['label'] == 'w/o opt'].iloc[-1]['snapshots']

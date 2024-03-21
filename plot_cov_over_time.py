@@ -11,21 +11,29 @@ matplotlib.rcParams['font.size'] = 12
 matplotlib.rcParams['figure.dpi'] = 300
 
 args = Namespace()
-args.ar = Path('../eurosp_data//old_data_for_cov_qiang/workdir_nyxnet')
+args.ar = Path('../eurosp_data/old_data_for_cov_ahmad')
 args.duration = 24*3600
 args.step = 60
 args.verbose = 1
 args.exclude_dirs = [
     'pfb',
     'workdir_tango_inference',
-    'crosstest_0.csv'
+    'test',
+    'pfb-eval-afl-24h',
+    'pfb-eval-nyx-24h',
+    'pfb-eval-nyxloosen-24h',
+    'pfb-eval-sgfuzz-24h',
+    'new_data_for_cov_qiang',
+    'old_data_for_cov_qiang',
+    'nyxnet_with_inference',
+    'nyxnet_without_inference',
 ]
 
 args.exclude_runs = [str(i) for i in range(3, 20)]
 args.include_targets = [
     'expat', 'dcmtk', 'openssh', 'openssl',
     'dnsmasq', 'llhttp', 'rtsp', 'sip', 'dtls',
-    'lightftp', 'pureftpd', 'yajl', 'bftpd', 'proftdp'
+    'lightftp', 'pureftpd', 'yajl', 'bftpd', 'proftpd'
 ]
 args.mission = 'coverage'
 configure_verbosity(args.verbose)
@@ -52,9 +60,12 @@ def ploooooooot(tt, pathname, show_snapshots=True):
         data=tt, x='time_step', y='pc_cov_cnt', hue='fuzzer',
         style='fuzzer', palette='flare', ax=ax)
     ax.grid(True)
-    ax.set_xlim(0, 86400)
-    ax.set_xticks([3600, 3600 * 4, 86400], ['1h', '4h', '1d'])
+    ax.set_xlim(60, 86400)
+    ax.set_xscale('log')
+    ax.set_xticks([60, 3600, 3600 * 4, 86400], ['1m', '1h', '4h', '1d'])
+    ax.get_yaxis().get_major_formatter().set_scientific(False)
     ax.set_xlabel('Time')
+    ax.set_yscale('log')
     ax.set_ylabel('# of Edges')
     handles, labels = ax.get_legend_handles_labels()
     ax.legend().remove()

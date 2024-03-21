@@ -111,8 +111,6 @@ args.exclude_dirs = [
     'tango_inference_validate_all_10/exim/exim/0', # 900.461629 DATA MISSING!!!
     'tango_inference_validate_all_10/exim/exim/2', # 34.32229 DATA MISSING!!!
     'tango_inference_validate_all_10/exim/exim/1', # 33.59406 DATA MISSING!!!
-    '50/sip', '50/yajl', '50/daap',
-    '100', 'dt_extrapolate',
     'yajl', 'daap'
 ]
 
@@ -197,7 +195,7 @@ def ploooooooot_batch_size_50(tt, pathname):
         tt_by_batch = tt[tt['label'] == opts[i]]
         print(tt_by_batch)
         g = sns.scatterplot(
-            data=tt_by_batch, x='savings', y='accuracy', hue='target', 
+            data=tt_by_batch, x='savings', y='accuracy', hue='target',
             style='target', markers=marker_dict, palette=color_dict, ax=ax, sizes=[20])
         ax.grid(True)
         ax.set_title(f'Optimization: {opts[i]}')
@@ -232,6 +230,7 @@ def ploooooooot_optimization_bcd(tt, pathname):
     handles, labels = None, None
     for i, ax in enumerate(axes):
         tt_by_batch = tt[tt['batch_size'] == bs[i]]
+        print(tt_by_batch)
         g = sns.scatterplot(
             data=tt_by_batch, x='savings', y='accuracy', hue='target',
             style='target', markers=marker_dict, palette=color_dict, ax=ax, sizes=[20])
