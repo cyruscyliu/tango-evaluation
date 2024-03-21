@@ -268,21 +268,8 @@ class Coverage(TimeSeriesResamplerMixin, Recording, filename="pc_cov_cnts.csv"):
         return df
 
     def annotate(self, **kwargs) -> DataFrame:
-        logging.info("Annotating in Crosstest")
+        logging.info("Annotating in Coverage")
         df = super().annotate(**kwargs)
-        fuzzer = self.experiment.parameters.fuzzer
-        parameters = self.FUZZER_PARAMETERS[fuzzer]
-        logging.info(f"Droping index (row labels) fuzzer -> {fuzzer}")
-        df = df.droplevel("fuzzer")
-        old_index = df.index.copy()
-        for param, value in parameters.items():
-            df[param] = value
-            logging.info(f"Indexing (row labels) {param} -> {value}")
-            df = (
-                df.set_index(param, append=True, inplace=kwargs.get("inplace", False))
-                or df
-            )
-        df = df.reorder_levels(list(parameters.keys()) + old_index.names)
         logging.info("Annotating in Crosstest: Done")
         return df
 

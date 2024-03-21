@@ -79,7 +79,7 @@ for out_dir in "${out_dirs[@]}"; do
 
     touch "$out_dir"/replay.sh
     echo "pushd /home/tango && python gen_cov.py -C targets/$target/fuzz.json \
-         -W $pcaps_to_replay/.. -c /home/tango/targets/$target/ && \
+         -W $pcaps_to_replay/.. -c /home/tango/targets/$target/ -vv && \
          mv $pcaps_to_replay/../pc_cov_cnts.csv $pcaps_to_replay/../../workdir" >> replay-and-dump-coverage-nyxnet.sh
 done
 
@@ -101,4 +101,4 @@ python -m pip install psutil jinja2 \
 # step 1
 parallel -j12 --bar < convert-to-pcaps-nyxnet.sh
 # step 2 & 3
-parallel -j12 --bar < replay-and-dump-coverage-nyxnet.sh
+bash -x replay-and-dump-coverage-nyxnet.sh

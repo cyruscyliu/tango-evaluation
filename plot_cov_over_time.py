@@ -27,6 +27,7 @@ args.include_targets = [
     'dnsmasq', 'llhttp', 'rtsp', 'sip', 'dtls',
     'lightftp', 'pureftpd', 'yajl', 'bftpd', 'proftdp'
 ]
+args.mission = 'coverage'
 configure_verbosity(args.verbose)
 
 feval = Evaluation(args)
@@ -45,78 +46,19 @@ def calculate_percentage(row):
     else:
         return row['time_crosstest'] / row['time_elapsed'] * 100
 
-def to_label(row):
-    label = ''
-    if row['type'] == 'inference' and row['validate'] == False:
-        if row['extend_on_groups'] == False and \
-                row['dt_predict'] == False and \
-                row['dt_extrapolate'] == False:
-            label += 'w/o opt'
-        if row['extend_on_groups'] == True and \
-                row['dt_predict'] == True and \
-                row['dt_extrapolate'] == True :
-            label += 'w/ opt'
-    return label
-
-cs = ['type', 'batch_size',
-      'extend_on_groups', 'dt_predict', 'dt_extrapolate',
-      'target', 'program', 'validate', 'time_step']
-cs2 = ['type', 'batch_size',
-      'extend_on_groups', 'dt_predict', 'dt_extrapolate',
-      'validate', 'time_step']
-
 def ploooooooot(tt, pathname, show_snapshots=True):
-    # add more columns for plotting
-    tt['label'] = tt.apply(to_label, axis=1)
-    # tt = tt.fillna(0)
-
-    fig, axes = plt.subplots(2, 2, sharex=True, sharey=True, layout='constrained')
-    axes = axes.flatten()
-    bs = [10, 20, 50, 100]
-    for i, ax in enumerate(axes):
-        tt_by_batch = tt[tt['batch_size'] == bs[i]]
-        g = sns.lineplot(
-            data=tt_by_batch, x='time_step', y='percentage', hue='label',
-            style='label', palette='flare', ax=ax)
-        # ax.plot(theoretical_ct_x, theoretical_ct_y)
-        ax.grid(True)
-        ax.set_title(f'Batch size m={bs[i]}')
-        ax.set_xlim(60, 86400)
-        ax.set_xscale('log')
-        ax.set_xticks([60, 600, 3600, 3600 * 4, 86400], ['1m', '10m', '1h', '4h', '1d'])
-        ax.set_xlabel('Time')
-
-        ax.set_ylim(0, 100)
-        ax.set_yticks([0, 25, 50, 75, 100], ['0', '25%', '50%', '75%', '100%'])
-        ax.set_ylabel('Time of cross-testing')
-
-        try:
-            a = tt_by_batch[tt_by_batch['label'] == 'w/ opt'].filter(
-                items=['time_step', 'percentage'])
-            a = a[a['time_step'] == 3600.0 *  4]
-            a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
-            ax.text(a_x, a_y, str(f'{round(a_y)}%'), ha='center', va='bottom')
-            a = tt_by_batch[tt_by_batch['label'] == 'w/o opt'].filter(
-                items=['time_step', 'percentage'])
-            a = a[a['time_step'] == 3600.0 *  4]
-            a_x, a_y = a['time_step'].values[0], a['percentage'].values[0]
-            ax.text(a_x, a_y, str(f'{round(a_y)}%'), ha='center', va='bottom')
-        except IndexError as ax:
-            print('adding text', ax)
-
-        try:
-            a = tt_by_batch[tt_by_batch['label'] == 'w/o opt'].iloc[-1]['snapshots']
-            b = tt_by_batch[tt_by_batch['label'] == 'w/ opt'].iloc[-1]['snapshots']
-            labels = [str(round(a, 2)), str(round(b, 2))]
-            handles, _ = ax.get_legend_handles_labels()
-            ax.legend(handles, labels)
-            if not show_snapshots:
-                ax.legend().remove()
-        except IndexError as ax:
-            print('updating legends', ax)
-
-    fig.legend(reversed(handles), reversed(['Optimizations = None', 'Optimizations = All']),
-               loc='outside lower center', ncols=2)
+    fig, ax = plt.subplots(1, 1, sharex=True, sharey=True, layout='constrained')
+    g = sns.lineplot(
+        data=tt, x='time_step', y='pc_cov_cnt', hue='fuzzer',
+        style='fuzzer', palette='flare', ax=ax)
+    ax.grid(True)
+    ax.set_xlim(0, 86400)
+    ax.set_xticks([3600, 3600 * 4, 86400], ['1h', '4h', '1d'])
+    ax.set_xlabel('Time')
+    ax.set_ylabel('# of Edges')
+    handles, labels = ax.get_legend_handles_labels()
+    ax.legend().remove()
+    fig.legend(handles, labels, loc='outside lower center', ncols=2)
     print(f'Saving {pathname}')
     try:
         plt.savefig(f'{pathname}.png')
@@ -127,21 +69,13 @@ def ploooooooot(tt, pathname, show_snapshots=True):
 # for i in feval.all_experiments:
     # print('Loaded', i)
 df = feval.df_coverage
-print(df)
-exit()
 
-# theoretical_ct_x = [i for i in range(1, 86400)]
-# theoretical_ct_y = [np.square(np.log10(i)) / i * 100 for i in theoretical_ct_x]
-
-# df = df.filter(items=[
- #    'time_step', 'time_elapsed', 'time_crosstest', 'percentage', 'snapshots'])
-
+cs = ['fuzzer', 'target', 'program', 'time_step']
 # by targets
 targets = df.index.get_level_values('target').unique()
 for target in targets:
     # get data of each target
-    tt = df.iloc[df.index.get_level_values('target') == target].filter(
-        items=['time_step', 'time_elapsed', 'time_crosstest', 'percentage', 'snapshots'])
+    tt = df.iloc[df.index.get_level_values('target') == target]
     # calculate the average percentage of 3 runs
-    tt = tt.groupby(cs).agg({'percentage': 'mean', 'snapshots': 'mean'}).reset_index()
-    ploooooooot(tt, f'../TangoFuzz-paper/media/time-{target}')
+    tt = tt.groupby(cs).agg({'pc_cov_cnt': 'mean'}).reset_index()
+    ploooooooot(tt, f'../TangoFuzz-paper/media/coverage-{target}')

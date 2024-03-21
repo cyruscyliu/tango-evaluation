@@ -122,7 +122,7 @@ args.include_targets = [
     'openssl', 'dnsmasq', 'llhttp', 'rtsp',
     'sip', 'dtls',
     'lightftp', 'pureftpd', 'bftpd', 'proftdp'
-    'yajl', 'daap',
+    # 'yajl', 'daap',
 ]
 args.mission = 'crosstesting'
 configure_verbosity(args.verbose)
@@ -142,9 +142,6 @@ cs = ['type', 'batch_size',
       'target', 'program', 'validate', 'time_step']
 
 def calculate_accuracy(row):
-    # no cross-testing -> no validation
-    if row['snapshots'] < row.name[cs.index('batch_size')]:
-        return np.nan
     s = row['total_misses'] + row['total_hits']
     if s == 0.0:
         return np.nan # invalid data
@@ -179,6 +176,16 @@ def to_label(row):
             print(row)
     return label
 
+marker_dict = {
+    'expat': 'o', 'exim': 'v', 'dcmtk': '^', 'openssh': '<', 'openssl': '>',
+    'dnsmasq': 's', 'llhttp': 'p', 'rtsp': '*', 'sip': 'h', 'dtls': 'D',
+    'lightftp': 'd', 'pureftpd': 'P', 'bftpd': 'X', 'proftdp': '8'
+}
+color_dict = {
+    'expat': 'blue', 'exim': 'green', 'dcmtk': 'red', 'openssh': 'cyan', 'openssl': 'magenta',
+    'dnsmasq': 'yellow', 'llhttp': 'black', 'rtsp': 'orange', 'sip': 'pink', 'dtls': 'purple',
+    'lightftp': 'brown', 'pureftpd': 'grey', 'bftpd': 'lime', 'proftpd': 'olive'}
+
 def ploooooooot_batch_size_50(tt, pathname):
     tt = tt[tt['batch_size'] == 50]
 
@@ -188,12 +195,10 @@ def ploooooooot_batch_size_50(tt, pathname):
     handles, labels = None, None
     for i, ax in enumerate(axes):
         tt_by_batch = tt[tt['label'] == opts[i]]
-        markers = ['${:x}$'.format(i) for i in range(0, 16)]
-        palette = ['black' for i in range(0, 16)]
         print(tt_by_batch)
         g = sns.scatterplot(
-            data=tt_by_batch, x='savings', y='accuracy',
-            hue='target', style='target', ax=ax, sizes=[20])
+            data=tt_by_batch, x='savings', y='accuracy', hue='target', 
+            style='target', markers=marker_dict, palette=color_dict, ax=ax, sizes=[20])
         ax.grid(True)
         ax.set_title(f'Optimization: {opts[i]}')
         ax.set_xlim(-5, 105)
@@ -227,12 +232,9 @@ def ploooooooot_optimization_bcd(tt, pathname):
     handles, labels = None, None
     for i, ax in enumerate(axes):
         tt_by_batch = tt[tt['batch_size'] == bs[i]]
-        markers = ['${:x}$'.format(i) for i in range(0, 16)]
-        palette = ['black' for i in range(0, 16)]
-        print(tt_by_batch)
         g = sns.scatterplot(
             data=tt_by_batch, x='savings', y='accuracy', hue='target',
-            style='target', ax=ax, sizes=[20])
+            style='target', markers=marker_dict, palette=color_dict, ax=ax, sizes=[20])
         ax.grid(True)
         ax.set_title(f'Batch size: {bs[i]}')
         ax.set_xlim(-5, 105)
@@ -264,7 +266,10 @@ df = feval.df_crosstest
 
 # remove the rows where the snapshot is less than batch_size
 # no cross-testing is executed then no validation is performed
-# df = df.loc[df['snapshots'] >= df.index.get_level_values('batch_size')]
+df = df.loc[df['snapshots'] >= df.index.get_level_values('batch_size')]
+# remove the rows where the total savings is zero, which may be due to
+# the bug in Tango validation
+df = df.loc[df['total_savings'] != 0.0]
 
 # calculate savings and accuracy
 df['savings'] = df['total_savings']
