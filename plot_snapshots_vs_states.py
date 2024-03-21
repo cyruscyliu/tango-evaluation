@@ -51,15 +51,12 @@ from matplotlib.colors import Normalize
 
 def calculate_reduction_ratio(row):
     if row['states'] == 0.0:
-        if row['snapshots'] < row['batch_size'] :
-            return 'N/A'
-        else:
-            return '0'
+        return 0, '0'
     else:
         r = round((1 - row['states'] / row['snapshots']) * 100, 2)
         st = round(row['states'], 0)
         sn = round(row['snapshots'], 0)
-        return f"{st} ({r}%)"
+        return r, f"{st} ({r}%)"
 
 def to_label(row):
     label = ''
@@ -80,6 +77,14 @@ cs = ['type', 'batch_size',
 cs2 = ['type', 'batch_size',
       'extend_on_groups', 'dt_predict', 'dt_extrapolate',
       'target', 'program', 'validate']
+
+targets = [
+    'bftpd', 'dcmtk', 'dnsmasq', 'dtls',
+    'exim', 'expat', 'lightftp', 'llhttp',
+    'openssh', 'openssl',
+    'proftpd', 'pureftpd', 'rtsp', 'sip'
+    # 'daap', 'yajl',
+]
 
 def ploooooooot(tt, pathname):
     # add more columns for plotting
@@ -103,9 +108,15 @@ def ploooooooot(tt, pathname):
         # ax.set_yticks([0, 25, 50, 75, 100], ['0', '25%', '50%', '75%', '100%'])
         ax.set_ylabel(None)
 
-        for index, value in enumerate(tt_by_batch['snapshots']):
-            label = calculate_reduction_ratio(tt_by_batch.iloc[index])
+        s = []
+        for _, row in tt_by_batch.iterrows():
+            value = row['snapshots']
+            target = row['target']
+            r, label = calculate_reduction_ratio(row)
+            s.append(r)
+            index = targets.index(target)
             ax.text(value, index, label, ha='left', va='center')
+        print(f"average r={np.mean(s)}")
 
     print(f'Saving {pathname}')
     try:
@@ -117,6 +128,10 @@ def ploooooooot(tt, pathname):
 # for i in feval.all_experiments:
     # print('Loaded', i)
 df = feval.df_crosstest
+# remove the rows where the snapshot is less than batch_size
+# no cross-testing is executed then no validation is performed
+df = df.loc[df['snapshots'] >= df.index.get_level_values('batch_size')]
+
 df = df.groupby(cs).agg({'snapshots': 'mean', 'states': 'mean'}).reset_index()
 tt = df.groupby(cs2).tail(1)
 
