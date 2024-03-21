@@ -46,8 +46,8 @@ function find_working_dir() {
 #     |       |   |-- out-bftpd-balanced-000
 #     |       |   `-- pcaps_to_replay/queue
 nyxnet_dirs=(
-    "$eurosp_data"/old_data_for_cov_qiang/workdir_nyxnet/ar/
-    "$eurosp_data"/new_data_for_cov_qiang/workdir_tango_nyxnet/ar
+    "$eurosp_data"/data_for_cov/ar/nyxnet/
+    "$eurosp_data"/data_for_cov/ar/tango_nyxnet/
 )
 
 # step 1, convert to pcaps
@@ -55,7 +55,7 @@ nyxnet_dirs=(
 # bftpd  dcmtk  dnsmasq  dtls  lightftp  openssh  openssl  proftpd  pureftpd  rtsp  sip
 out_dirs=()
 for nyxnet_dir in "${nyxnet_dirs[@]}"; do
-    readarray -d '' ds < <(find "$nyxnet_dir" -type d -name "out-*-balanced-00[0,1,2]" -print0)
+    readarray -d '' ds < <(find "$nyxnet_dir" -type d -wholename "*[0,1,2]/out-*-balanced-00[0,1,2]" -print0)
     for d in "${ds[@]}"; do
         out_dirs+=("$d")
     done
@@ -84,6 +84,7 @@ for out_dir in "${out_dirs[@]}"; do
 
     echo "pushd /home/tango && python gen_cov.py -C targets/$target/fuzz.json \
          -W $pcaps_to_replay/.. -c /home/tango/targets/$target/ -vv && \
+         mkdir -p $pcaps_to_replay/../../workdir && \
          mv $pcaps_to_replay/../pc_cov_cnts.csv $pcaps_to_replay/../../workdir && popd" >> replay-and-dump-coverage-nyxnet.sh
 done
 
@@ -103,6 +104,6 @@ python -m pip install psutil jinja2 \
     scikit-learn cffi msgpack pyshark ipdb --upgrade
 
 # step 1
-parallel -j12 --bar < convert-to-pcaps-nyxnet.sh
+# parallel -j12 --bar < convert-to-pcaps-nyxnet.sh
 # step 2 & 3
-bash -x replay-and-dump-coverage-nyxnet.sh
+# bash -x replay-and-dump-coverage-nyxnet.sh
