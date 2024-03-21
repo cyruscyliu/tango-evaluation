@@ -11,22 +11,11 @@ matplotlib.rcParams['font.size'] = 12
 matplotlib.rcParams['figure.dpi'] = 300
 
 args = Namespace()
-args.ar = Path('../eurosp_data/old_data_for_cov_ahmad')
+args.ar = Path('../eurosp_data/data_for_cov')
 args.duration = 24*3600
 args.step = 60
 args.verbose = 1
 args.exclude_dirs = [
-    'pfb',
-    'workdir_tango_inference',
-    'test',
-    'pfb-eval-afl-24h',
-    'pfb-eval-nyx-24h',
-    'pfb-eval-nyxloosen-24h',
-    'pfb-eval-sgfuzz-24h',
-    'new_data_for_cov_qiang',
-    'old_data_for_cov_qiang',
-    'nyxnet_with_inference',
-    'nyxnet_without_inference',
 ]
 
 args.exclude_runs = [str(i) for i in range(3, 20)]
