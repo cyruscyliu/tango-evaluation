@@ -43,19 +43,30 @@ def calculate_percentage(row):
     else:
         return row['time_crosstest'] / row['time_elapsed'] * 100
 
+def to_label(row):
+    if row['fuzzer'] in ['nyxnet', 'afl_nyx']:
+        return 'w/o inference'
+    if row['fuzzer'] in ['tango_nyxnet', 'tango_afl_nyx']:
+        return 'w/ inference'
+
 def ploooooooot(tt, pathname, show_snapshots=True):
+    tt['label'] = tt.apply(to_label, axis=1)
     fig, ax = plt.subplots(1, 1, sharex=True, sharey=True, layout='constrained')
     g = sns.lineplot(
-        data=tt, x='time_step', y='pc_cov_cnt', hue='fuzzer',
-        style='fuzzer', palette='flare', ax=ax)
+        data=tt, x='time_step', y='pc_cov_cnt', hue='label',
+        style='label', palette='flare', ax=ax)
     ax.grid(True)
-    ax.set_xlim(60, 86400)
+    ax.set_xlim(1, 86400)
     ax.set_xscale('log')
-    ax.set_xticks([60, 3600, 3600 * 4, 86400], ['1m', '1h', '4h', '1d'])
-    ax.get_yaxis().get_major_formatter().set_scientific(False)
+    ax.set_xticks([1, 60, 3600, 3600 * 4, 86400], ['1s', '1m', '1h', '4h', '1d'])
+
+    mmmm = tt['pc_cov_cnt'].max()
+    nnnn = tt[tt['time_step'] >= 10.0]['pc_cov_cnt'].min()
+    ax.set_ylim(nnnn * 0.95, mmmm * 1.05)
     ax.set_xlabel('Time')
-    ax.set_yscale('log')
     ax.set_ylabel('# of Edges')
+    # ax.get_yaxis().get_major_formatter().set_scientific(False)
+
     handles, labels = ax.get_legend_handles_labels()
     ax.legend().remove()
     fig.legend(handles, labels, loc='outside lower center', ncols=2)

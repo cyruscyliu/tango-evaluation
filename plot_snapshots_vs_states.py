@@ -94,13 +94,14 @@ def ploooooooot(tt, pathname):
     for i, ax in enumerate(axes):
         tt_by_batch = tt[tt['batch_size'] == bs[i]]
         sns.barplot(data=tt_by_batch, y='target', x='snapshots',
-                    ax=ax, color='darkblue', dodge=False)
+                    ax=ax, color='darkblue', dodge=False, gap=0.1)
         sns.barplot(data=tt_by_batch, y='target', x='states',
-                    ax=ax, color='orange', dodge=False)
+                    ax=ax, color='orange', dodge=False, gap=0.1)
         # ax.plot(theoretical_ct_x, theoretical_ct_y)
         ax.grid(True)
+        ax.tick_params(axis='y', labelsize=10) 
         ax.set_title(f'Batch size: {bs[i]}')
-        ax.set_xlabel('# of states (reduction ratio)')
+        ax.set_xlabel(None)
         ax.set_xlim(0, 1500)
 
         # ax.set_yscale('log')
@@ -115,7 +116,7 @@ def ploooooooot(tt, pathname):
             r, label = calculate_reduction_ratio(row)
             s.append(r)
             index = targets.index(target)
-            ax.text(value, index, label, ha='left', va='center')
+            ax.text(value + 10, index, label, ha='left', va='center', fontsize=10)
         print(f"average r={np.mean(s)}")
 
     print(f'Saving {pathname}')
