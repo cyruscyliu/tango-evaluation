@@ -56,7 +56,7 @@ def calculate_reduction_ratio(row):
         r = round((1 - row['states'] / row['snapshots']) * 100, 2)
         st = round(row['states'], 0)
         sn = round(row['snapshots'], 0)
-        return r, f"{st} ({r}%)"
+        return r, f"{st} ({r:0.2f}%)"
 
 def to_label(row):
     label = ''
@@ -98,8 +98,7 @@ def ploooooooot(tt, pathname):
         sns.barplot(data=tt_by_batch, y='target', x='states',
                     ax=ax, color='orange', dodge=False, gap=0.1)
         # ax.plot(theoretical_ct_x, theoretical_ct_y)
-        ax.grid(True)
-        ax.tick_params(axis='y', labelsize=10) 
+        ax.tick_params(axis='y', labelsize=10)
         ax.set_title(f'Batch size: {bs[i]}')
         ax.set_xlabel(None)
         ax.set_xlim(0, 1500)
@@ -116,7 +115,7 @@ def ploooooooot(tt, pathname):
             r, label = calculate_reduction_ratio(row)
             s.append(r)
             index = targets.index(target)
-            ax.text(value + 10, index, label, ha='left', va='center', fontsize=10)
+            ax.text(1500, index, label, ha='right', va='center', fontsize=10)
         print(f"average r={np.mean(s)}")
 
     print(f'Saving {pathname}')
