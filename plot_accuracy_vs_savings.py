@@ -14,7 +14,7 @@ args = Namespace()
 args.ar = Path('../eurosp_data/workdir_tango_inference')
 args.duration = 24*3600
 args.step = 60
-args.verbose = 0
+args.verbose = 1
 args.exclude_dirs = [
     'cache',
     'tango_inference_control',
@@ -22,105 +22,30 @@ args.exclude_dirs = [
     'tango_inference_extend_on_groups_50',
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
-    'tango_inference_validate_all_20/dnsmasq/dnsmasq/0', # 540.367671 DATA MISSING!!!
-    'tango_inference_validate_all_20/dnsmasq/dnsmasq/2', # 60.179238 DATA MISSING!!!
-    'tango_inference_validate_all_20/dnsmasq/dnsmasq/1', # 120.104876 DATA MISSING!!!
-    'tango_inference_validate_all_20/bftpd/bftpd/0', # 1320.289727 DATA MISSING!!!
-    'tango_inference_validate_all_20/bftpd/bftpd/2', # 180.131102 DATA MISSING!!!
-    'tango_inference_validate_all_20/bftpd/bftpd/1', # 360.12788 DATA MISSING!!!
-    'tango_inference_validate_all_20/expat/xmlwf/0', # 81.246044 DATA MISSING!!!
-    'tango_inference_validate_all_20/expat/xmlwf/2', # 82.455139 DATA MISSING!!!
-    'tango_inference_validate_all_20/expat/xmlwf/1', # 47.665807 DATA MISSING!!!
-    'tango_inference_validate_all_20/openssh/sshd/2', # 120.185594 DATA MISSING!!!
-    'tango_inference_validate_all_20/openssh/sshd/1', # 120.100545 DATA MISSING!!!
-    'tango_inference_validate_all_20/openssl/openssl/1', # 840.616442 DATA MISSING!!!
-    'tango_inference_validate_all_20/lightftp/lightftp/0', # 2880.370138 DATA MISSING!!!
-    'tango_inference_validate_all_20/lightftp/lightftp/2', # 120.117279 DATA MISSING!!!
-    'tango_inference_validate_all_20/lightftp/lightftp/1', # 120.171241 DATA MISSING!!!
-    'tango_inference_validate_all_20/rtsp/live555/0', # 143.995341 DATA MISSING!!!
-    'tango_inference_validate_all_20/rtsp/live555/2', # 19.866367 DATA MISSING!!!
-    'tango_inference_validate_all_20/rtsp/live555/1', # 125.460986 DATA MISSING!!!
-    'tango_inference_validate_all_20/exim/exim/0', # 60.196857 DATA MISSING!!!
-    'tango_inference_validate_all_20/exim/exim/2', # 1140.54799 DATA MISSING!!!
-    'tango_inference_validate_all_20/exim/exim/1', # 840.345548 DATA MISSING!!!
-    'tango_inference_validate_all_100/dnsmasq/dnsmasq/0', # 10924.584836 DATA MISSING!!!
-    'tango_inference_validate_all_100/dnsmasq/dnsmasq/2', # 2521.114595 DATA MISSING!!!
-    'tango_inference_validate_all_100/dnsmasq/dnsmasq/1', # 600.383692 DATA MISSING!!!
-    'tango_inference_validate_all_100/expat/xmlwf/0', # 1020.547552 DATA MISSING!!!
-    'tango_inference_validate_all_100/expat/xmlwf/2', # 600.301337 DATA MISSING!!!
-    'tango_inference_validate_all_100/expat/xmlwf/1', # 840.49502 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/dnsmasq/dnsmasq/0', # 240.223824 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/dnsmasq/dnsmasq/2', # 2881.250844 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/dnsmasq/dnsmasq/1', # 240.167417 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/bftpd/bftpd/0', # 600.217067 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/bftpd/bftpd/2', # 2100.447888 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/expat/xmlwf/0', # 360.257795 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/expat/xmlwf/2', # 420.265998 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/expat/xmlwf/1', # 480.31497 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/lightftp/lightftp/2', # 4680.727698 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/lightftp/lightftp/1', # 780.205447 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/exim/exim/0', # 3481.497332 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/exim/exim/2', # 1440.726728 DATA MISSING!!!
-    'tango_inference_validate_dt_extrapolate_50/exim/exim/1', # 960.446341 DATA MISSING!!!
-    'tango_inference_validate_extend_on_groups_50/dnsmasq/dnsmasq/0', # 1020.571373 DATA MISSING!!!
-    'tango_inference_validate_extend_on_groups_50/dnsmasq/dnsmasq/2', # 840.468338 DATA MISSING!!!
-    'tango_inference_validate_extend_on_groups_50/bftpd/bftpd/1', # 6361.299155 DATA MISSING!!!
-    'tango_inference_validate_all_50/dnsmasq/dnsmasq/0', # 1200.645891 DATA MISSING!!!
-    'tango_inference_validate_all_50/dnsmasq/dnsmasq/2', # 900.447683 DATA MISSING!!!
-    'tango_inference_validate_all_50/dnsmasq/dnsmasq/1', # 1260.616751 DATA MISSING!!!
-    'tango_inference_validate_all_50/bftpd/bftpd/1', # 6001.268101 DATA MISSING!!!
-    'tango_inference_validate_all_50/expat/xmlwf/0', # 240.164633 DATA MISSING!!!
-    'tango_inference_validate_all_50/expat/xmlwf/2', # 180.192323 DATA MISSING!!!
-    'tango_inference_validate_all_50/expat/xmlwf/1', # 360.299037 DATA MISSING!!!
-    'tango_inference_validate_all_50/openssh/sshd/1', # 6200.328545 DATA MISSING!!!
-    'tango_inference_validate_all_50/lightftp/lightftp/2', # 2760.410002 DATA MISSING!!!
-    'tango_inference_validate_all_50/lightftp/lightftp/1', # 1680.304508 DATA MISSING!!!
-    'tango_inference_validate_all_50/exim/exim/2', # 1320.54144 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/dnsmasq/dnsmasq/2', # 2401.189135 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/dnsmasq/dnsmasq/1', # 4562.039682 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/expat/xmlwf/0', # 480.302481 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/expat/xmlwf/2', # 240.151617 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/expat/xmlwf/1', # 240.211075 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/openssh/sshd/0', # 3241.476018 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/openssh/sshd/1', # 3301.676492 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/lightftp/lightftp/2', # 7741.889433 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/exim/exim/2', # 1260.902727 DATA MISSING!!!
-    'tango_inference_validate_dt_predict_50/exim/exim/1', # 2040.987691 DATA MISSING!!!
-    'tango_inference_validate_all_10/dcmtk/dcmqrscp/0', # 60.179329 DATA MISSING!!!
-    'tango_inference_validate_all_10/dcmtk/dcmqrscp/1', # 60.14613 DATA MISSING!!!
-    'tango_inference_validate_all_10/dnsmasq/dnsmasq/0', # 120.111658 DATA MISSING!!!
-    'tango_inference_validate_all_10/dnsmasq/dnsmasq/2', # 8.164779 DATA MISSING!!!
-    'tango_inference_validate_all_10/dnsmasq/dnsmasq/1', # 60.134849 DATA MISSING!!!
-    'tango_inference_validate_all_10/bftpd/bftpd/0', # 69.65985 DATA MISSING!!!
-    'tango_inference_validate_all_10/bftpd/bftpd/2', # 5.90795 DATA MISSING!!!
-    'tango_inference_validate_all_10/expat/xmlwf/0', # 60.08609 DATA MISSING!!!
-    'tango_inference_validate_all_10/expat/xmlwf/2', # 69.761319 DATA MISSING!!!
-    'tango_inference_validate_all_10/expat/xmlwf/1', # 66.956375 DATA MISSING!!!
-    'tango_inference_validate_all_10/openssh/sshd/0', # 19.422725 DATA MISSING!!!
-    'tango_inference_validate_all_10/openssh/sshd/2', # 20.616002 DATA MISSING!!!
-    'tango_inference_validate_all_10/openssh/sshd/1', # 20.907295 DATA MISSING!!!
-    'tango_inference_validate_all_10/openssl/openssl/0', # 720.480112 DATA MISSING!!!
-    'tango_inference_validate_all_10/openssl/openssl/2', # 4682.537544 DATA MISSING!!!
-    'tango_inference_validate_all_10/openssl/openssl/1', # 60.177844 DATA MISSING!!!
-    'tango_inference_validate_all_10/lightftp/lightftp/0', # 2.562111 DATA MISSING!!!
-    'tango_inference_validate_all_10/lightftp/lightftp/2', # 660.199362 DATA MISSING!!!
-    'tango_inference_validate_all_10/lightftp/lightftp/1', # 2.533536 DATA MISSING!!!
-    'tango_inference_validate_all_10/rtsp/live555/0', # 360.281896 DATA MISSING!!!
-    'tango_inference_validate_all_10/rtsp/live555/2', # 240.20792 DATA MISSING!!!
-    'tango_inference_validate_all_10/rtsp/live555/1', # 13.470424 DATA MISSING!!!
-    'tango_inference_validate_all_10/exim/exim/0', # 900.461629 DATA MISSING!!!
-    'tango_inference_validate_all_10/exim/exim/2', # 34.32229 DATA MISSING!!!
-    'tango_inference_validate_all_10/exim/exim/1', # 33.59406 DATA MISSING!!!
-    'yajl', 'daap'
+    'tango_inference_validate_all_10/dcmtk', # no data, double check
+    'tango_inference_validate_all_50/live555', # no data
+    'tango_inference_validate_all_50/dcmtk', # no data
+    'tango_inference_validate_all_50/llhttp/parse/2', # no data
+    'tango_inference_validate_all_50/openssl', # no data
+    'tango_inference_validate_all_50/tinydtls', # no data
+    'tango_inference_validate_extend_on_groups_50/live555', # no data
+    'tango_inference_validate_extend_on_groups_50/dcmtk', # no data
+    'tango_inference_validate_extend_on_groups_50/llhttp', # no data, double check
+    'tango_inference_validate_extend_on_groups_50/openssh', # no data, double check
+    'tango_inference_validate_extend_on_groups_50/openssl',
+    'tango_inference_validate_extend_on_groups_50/tinydtls', # no data, double check
+    'tango_inference_validate_extend_on_groups_50/lightftp', # no data, double check
+    'tango_inference_validate_dt_predict_50',
+    'tango_inference_validate_dt_extrapolate_50',
 ]
 
 args.exclude_runs = ['3', '4']
 args.include_targets = [
     'expat', 'exim', 'dcmtk', 'openssh',
-    'openssl', 'dnsmasq', 'llhttp', 'rtsp',
-    'sip', 'dtls',
+    'openssl', 'dnsmasq', 'llhttp', 'live555',
+    'kamailio', 'tinydtls',
     'lightftp', 'pureftpd', 'bftpd', 'proftdp'
-    # 'yajl', 'daap',
+    'yajl', 'daapd',
 ]
 args.mission = 'crosstesting'
 configure_verbosity(args.verbose)
@@ -176,12 +101,12 @@ def to_label(row):
 
 marker_dict = {
     'expat': 'o', 'exim': 'v', 'dcmtk': '^', 'openssh': '<', 'openssl': '>',
-    'dnsmasq': 's', 'llhttp': 'p', 'rtsp': '*', 'sip': 'h', 'dtls': 'D',
+    'dnsmasq': 's', 'llhttp': 'p', 'live555': '*', 'kamailio': 'h', 'tinydtls': 'D',
     'lightftp': 'd', 'pureftpd': 'P', 'bftpd': 'X', 'proftdp': '8'
 }
 color_dict = {
     'expat': 'blue', 'exim': 'green', 'dcmtk': 'red', 'openssh': 'cyan', 'openssl': 'magenta',
-    'dnsmasq': 'yellow', 'llhttp': 'black', 'rtsp': 'orange', 'sip': 'pink', 'dtls': 'purple',
+    'dnsmasq': 'yellow', 'llhttp': 'black', 'live555': 'orange', 'kamailio': 'pink', 'tinydtls': 'purple',
     'lightftp': 'brown', 'pureftpd': 'grey', 'bftpd': 'lime', 'proftpd': 'olive'}
 
 def ploooooooot_batch_size_50(tt, pathname):
@@ -263,15 +188,11 @@ def ploooooooot_optimization_bcd(tt, pathname):
 #     print('Loaded', i)
 df = feval.df_crosstest
 
-# remove the rows where the snapshot is less than batch_size
-# no cross-testing is executed then no validation is performed
-df = df.loc[df['snapshots'] >= df.index.get_level_values('batch_size')]
-# remove the rows where the total savings is zero, which may be due to
-# the bug in Tango validation
-df = df.loc[df['total_savings'] != 0.0]
+# choose the last line
+df = df.loc[df['time_step'] == 86340.0]
 
 # calculate savings and accuracy
-df['savings'] = df['total_savings']
+df = df.rename(columns={'total_savings': 'savings'})
 df['accuracy'] = df.apply(calculate_accuracy, axis=1)
 df = df.filter(items=['time_step', 'savings', 'accuracy', 'snapshots'])
 df = df.groupby(cs).agg({'savings': 'mean', 'accuracy': 'mean', 'snapshots': 'mean'}).reset_index()

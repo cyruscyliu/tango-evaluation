@@ -227,7 +227,7 @@ class TimeSeriesResamplerMixin:
         self.df.at[0, self.time_column] = 0
         df = self.df.set_index(self.time_column, drop=False)
         df.index = pd.to_timedelta(df.index, unit="s")
-        df = df.resample(f"{self.time_step}S").ffill()
+        df = df.resample(f"{self.time_step}S", closed='right').ffill()
 
         if self.upper_bound:
             time_grid = np.arange(0, self.upper_bound, self.time_step)
