@@ -22,21 +22,45 @@ args.exclude_dirs = [
     'tango_inference_extend_on_groups_50',
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
-    'tango_inference_validate_all_10/dcmtk', # no data, double check
-    'tango_inference_validate_all_50/live555', # no data
+    'tango_inference_validate_all_10/dcmtk', # no data
+    'tango_inference_validate_all_20/dcmtk', # no data
     'tango_inference_validate_all_50/dcmtk', # no data
+    'tango_inference_validate_all_100/dcmtk', # no data
+    'tango_inference_validate_all_20/llhttp/parse/0', # no data
     'tango_inference_validate_all_50/llhttp/parse/2', # no data
+    'tango_inference_validate_all_100/llhttp', # no data
     'tango_inference_validate_all_50/openssl', # no data
-    'tango_inference_validate_all_50/tinydtls', # no data
+    'tango_inference_validate_all_100/openssl', # no data
+    'tango_inference_validate_all_50/tinydtls/dtls/0', # no data
+    'tango_inference_validate_all_50/tinydtls/dtls/2', # no data
+    'tango_inference_validate_all_100/tinydtls/dtls/2', # no data
+    'tango_inference_validate_all_50/live555', # no data
+    'tango_inference_validate_all_100/live555', # no data
+    'tango_inference_validate_all_100/bftpd', # no data
+    'tango_inference_validate_all_100/expat/xmlwf/2', # no data
+    'tango_inference_validate_all_100/expat/xmlwf/1', # no data
+    'tango_inference_validate_all_100/openssh/sshd/2', # no data
+    'tango_inference_validate_all_100/pureftpd/pureftpd', # no data
+    'tango_inference_validate_all_100/lightftp/lightftp/0', # no data
     'tango_inference_validate_extend_on_groups_50/live555', # no data
+    'tango_inference_validate_extend_on_groups_50/llhttp/parse/0', # no data
+    'tango_inference_validate_extend_on_groups_50/llhttp/parse/2', # no data
+    'tango_inference_validate_extend_on_groups_50/lightftp/lightftp/1', # no data
+    'tango_inference_validate_extend_on_groups_50/tinydtls/dtls/0', # no data
+    'tango_inference_validate_extend_on_groups_50/tinydtls/dtls/2', # no data
     'tango_inference_validate_extend_on_groups_50/dcmtk', # no data
-    'tango_inference_validate_extend_on_groups_50/llhttp', # no data, double check
-    'tango_inference_validate_extend_on_groups_50/openssh', # no data, double check
-    'tango_inference_validate_extend_on_groups_50/openssl',
-    'tango_inference_validate_extend_on_groups_50/tinydtls', # no data, double check
-    'tango_inference_validate_extend_on_groups_50/lightftp', # no data, double check
-    'tango_inference_validate_dt_predict_50',
-    'tango_inference_validate_dt_extrapolate_50',
+    'tango_inference_validate_extend_on_groups_50/openssl', # no data
+    'tango_inference_validate_dt_predict_50/live555', # no data
+    'tango_inference_validate_dt_predict_50/dcmtk', # no data
+    'tango_inference_validate_dt_predict_50/llhttp/parse/2', # no data
+    'tango_inference_validate_dt_predict_50/openssl', # no data
+    'tango_inference_validate_dt_predict_50/tinydtls/dtls/0', # no data
+    'tango_inference_validate_dt_predict_50/tinydtls/dtls/1', # no data
+    'tango_inference_validate_dt_predict_50/lightftp/lightftp/0', # no data
+    'tango_inference_validate_dt_extrapolate_50/live555', # no data
+    'tango_inference_validate_dt_extrapolate_50/dcmtk', # no data
+    'tango_inference_validate_dt_extrapolate_50/llhttp/parse/1', # no data
+    'tango_inference_validate_dt_extrapolate_50/daapd', # no data
 ]
 
 args.exclude_runs = ['3', '4']
@@ -44,7 +68,7 @@ args.include_targets = [
     'expat', 'exim', 'dcmtk', 'openssh',
     'openssl', 'dnsmasq', 'llhttp', 'live555',
     'kamailio', 'tinydtls',
-    'lightftp', 'pureftpd', 'bftpd', 'proftdp'
+    'lightftp', 'pureftpd', 'bftpd', 'proftpd',
     'yajl', 'daapd',
 ]
 args.mission = 'crosstesting'
@@ -102,12 +126,13 @@ def to_label(row):
 marker_dict = {
     'expat': 'o', 'exim': 'v', 'dcmtk': '^', 'openssh': '<', 'openssl': '>',
     'dnsmasq': 's', 'llhttp': 'p', 'live555': '*', 'kamailio': 'h', 'tinydtls': 'D',
-    'lightftp': 'd', 'pureftpd': 'P', 'bftpd': 'X', 'proftdp': '8'
+    'lightftp': 'd', 'pureftpd': 'P', 'bftpd': 'X', 'proftpd': '8', 'yajl': 'H'
 }
 color_dict = {
     'expat': 'blue', 'exim': 'green', 'dcmtk': 'red', 'openssh': 'cyan', 'openssl': 'magenta',
     'dnsmasq': 'yellow', 'llhttp': 'black', 'live555': 'orange', 'kamailio': 'pink', 'tinydtls': 'purple',
-    'lightftp': 'brown', 'pureftpd': 'grey', 'bftpd': 'lime', 'proftpd': 'olive'}
+    'lightftp': 'brown', 'pureftpd': 'grey', 'bftpd': 'lime', 'proftpd': 'olive', 'yajl': 'plum'}
+batch_size_color_dict = {10: 'red', 20: 'orange', 50: 'green', 100: 'blue'}
 
 def ploooooooot_batch_size_50(tt, pathname):
     tt = tt[tt['batch_size'] == 50]
@@ -137,7 +162,7 @@ def ploooooooot_batch_size_50(tt, pathname):
             handles, labels = _handles, _labels
         ax.legend().remove()
 
-    fig.legend(handles, labels, loc='outside lower center', ncols=4)
+    fig.legend(handles, labels, loc='outside lower center', ncols=3)
 
     print(f'Saving {pathname}')
     try:
@@ -174,7 +199,7 @@ def ploooooooot_optimization_bcd(tt, pathname):
             handles, labels = _handles, _labels
         ax.legend().remove()
 
-    fig.legend(handles, labels, loc='outside lower center', ncols=4)
+    fig.legend(handles, labels, loc='outside lower center', ncols=3)
 
     print(f'Saving {pathname}')
     try:
@@ -182,7 +207,6 @@ def ploooooooot_optimization_bcd(tt, pathname):
         plt.savefig(f'{pathname}.pdf')
     except ValueError as ex:
         print(ex)
-
 
 # for i in feval.all_experiments:
 #     print('Loaded', i)

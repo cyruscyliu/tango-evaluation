@@ -241,6 +241,8 @@ class TimeSeriesResamplerMixin:
 
 class Coverage(TimeSeriesResamplerMixin, Recording, filename="pc_cov_cnts.csv"):
     def __init__(self, *, path: Path, delimiter: str = ",", **kwargs):
+        if str(path).find("yajl") != -1:
+            print(path)
         df = pd.read_csv(path, delimiter=delimiter)
         time_elapsed = df.iloc[-1]['time_elapsed']
         if time_elapsed < 80000:
@@ -427,7 +429,12 @@ class Crosstest(TimeSeriesResamplerMixin, Recording, filename="crosstest_0.csv")
         if time_elapsed < 80000:
             logging.warning(f'{path} {time_elapsed} DATA MISSING!!!')
         super().__init__(df=df, time_column="time_elapsed", **kwargs)
+        has_only_one_line = (df.shape[0] == 1)
         df = self.resample()
+        if has_only_one_line:
+            self.df = df
+            logging.info(f"Loaded {path}")
+            return
         # interpolate initial time and counter stats
         interp_linear = ["time_elapsed", "time_crosstest"]
         interp_pad = df.columns.difference([*interp_linear, "time_step"])
