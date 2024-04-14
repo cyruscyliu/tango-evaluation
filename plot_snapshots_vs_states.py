@@ -25,16 +25,15 @@ args.exclude_dirs = [
     'tango_inference_extend_on_groups_50',
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
-    'yajl', 'daap',
+    'daapd',
 ]
 
 args.exclude_runs = ['3', '4']
 args.include_targets = [
     'expat', 'exim', 'dcmtk', 'openssh',
-    'openssl', 'dnsmasq', 'llhttp', 'rtsp',
-    'sip', 'dtls',
-    'lightftp', 'pureftpd', 'bftpd', 'proftpd'
-    # 'daap', 'yajl',
+    'openssl', 'dnsmasq', 'llhttp', 'live555',
+    'kamailio', 'tinydtls', 'lightftp', 'pureftpd',
+    'bftpd', 'proftpd', 'yajl'
 ]
 args.mission = 'crosstesting'
 configure_verbosity(args.verbose)
@@ -79,11 +78,10 @@ cs2 = ['type', 'batch_size',
       'target', 'program', 'validate']
 
 targets = [
-    'bftpd', 'dcmtk', 'dnsmasq', 'dtls',
-    'exim', 'expat', 'lightftp', 'llhttp',
-    'openssh', 'openssl',
-    'proftpd', 'pureftpd', 'rtsp', 'sip'
-    # 'daap', 'yajl',
+    'bftpd', 'dcmtk', 'dnsmasq', 'exim',
+    'expat', 'kamailio', 'lightftp', 'live555',
+    'llhttp', 'openssh', 'openssl', 'proftpd',
+    'pureftpd', 'tinydtls', 'yajl'
 ]
 
 def ploooooooot(tt, pathname):

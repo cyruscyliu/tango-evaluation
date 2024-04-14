@@ -24,16 +24,15 @@ args.exclude_dirs = [
     'tango_inference_extend_on_groups_50',
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
-    'yajl', 'daap',
+    'daapd',
 ]
 
 args.exclude_runs = ['3', '4']
 args.include_targets = [
     'expat', 'exim', 'dcmtk', 'openssh',
     'openssl', 'dnsmasq', 'llhttp', 'rtsp',
-    'sip', 'dtls',
-    'lightftp', 'pureftpd', 'bftpd', 'proftpd'
-    # 'daap', 'yajl',
+    'kamailio', 'tinydtls', 'lightftp', 'pureftpd',
+    'bftpd', 'proftpd', 'yajl',
 ]
 args.mission = "crosstesting"
 configure_verbosity(args.verbose)
