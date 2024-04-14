@@ -1,9 +1,0 @@
-GET / HTTP/1.1
-Host: localhost
-Dummy: x
-Content-Length: 23
-
-GET / HTTP/1.1
-Dummy: GET /admin HTTP/1.1
-Host: localhost
-
