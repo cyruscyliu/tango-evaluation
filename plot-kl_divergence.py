@@ -10,80 +10,30 @@ matplotlib.rcParams['text.usetex'] = False
 matplotlib.rcParams['font.size'] = 12
 matplotlib.rcParams['figure.dpi'] = 300
 
-def pp_time(time):
-    if np.isnan(time) :
-        return time
-    if time < 60:
-        return '%gs' % time
-    if time < (60 * 60):
-        return '%gm' % (time / 60)
-    if time < (24 * 60 * 60):
-        return '%gh' % (time / (60 * 60))
-    if time < (7 * 24 * 60 * 60):
-        return '%gd' % (time / (24 * 60 * 60))
-    if time < (30 * 24 * 60 * 60):
-        return '%gw' % (time / (7 * 24 * 60 * 60))
-    return '%gM' % (time / (30 * 24 * 60 * 60))
-
-def list_ticks(bound, *, logfactor=None, linterval=None):
-    if logfactor is not None:
-        DENOMINATIONS = [
-            1 * 60, # minutes
-#             15 * 60, # quarter-hour
-#             30 * 60, # half-hour
-            60 * 60, # hour
-#             12 * 60 * 60, # half-day
-            24 * 60 * 60, # day
-            7 * 24 * 60 * 60, # week
-            30 * 24 * 60 * 60, # month
-        ]
-        current_denom = 0
-        last_tick = min(DENOMINATIONS[current_denom], bound)
-        ticks = [last_tick]
-        while last_tick < bound:
-            last_tick *= logfactor
-            if (current_denom + 1) < len(DENOMINATIONS) \
-                and last_tick >= DENOMINATIONS[current_denom + 1]:
-                current_denom += 1
-                last_tick = DENOMINATIONS[current_denom]
-            ticks.append(last_tick)
-    elif linterval is not None:
-        if linterval <= 0:
-            linterval = bound // 10
-        last_tick = min(linterval, bound)
-        ticks = [last_tick]
-        while last_tick < bound:
-            last_tick += linterval
-            ticks.append(last_tick)
-    else:
-        raise ValueError("One of logfactor or linterval must be specified")
-    return ticks
-
 args = Namespace()
 args.ar = Path('../eurosp_data/workdir_tango_inference')
-args.duration = 24*3600
-args.step = 60
 args.verbose = 0
 args.exclude_dirs = [
     'tango_inference_control_50/dcmtk/dcmqrscp/0', # didn't complete
     'tango_inference_extend_on_groups_50',
     'tango_inference_control',
-    'tango_inference_all',
+    'tango_inference_all_10',
+    'tango_inference_all_20',
+    'tango_inference_all_100',
     'tango_inference_extend_on_groups_50',
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
-    'tango_inference_validate_dt_extrapolate_50',
-    '100',
-    'sip',
-    'yajl'
+    'tango_inference_validate',
 ]
 
 args.exclude_runs = ['3', '4']
 args.include_targets = [
     'lightftp', 'bftpd', 'exim', 'dcmtk',
     'openssh', 'openssl', 'dnsmasq', 'pureftpd',
-    'dtls', 'rtsp', 'sip', 'llhttp', 'yajl', 'expat'
+    'proftpd', 'tinydtls', 'live555', 'kamailio',
+    'llhttp', 'yajl', 'expat'
 ]
+args.mission = 'snapshots'
 configure_verbosity(args.verbose)
 
 feval = Evaluation(args)
@@ -122,13 +72,13 @@ def add_fuzzer_name(df):
     elif 'aflpp' in fuzzer:
         name = 'AFL++'
     elif 'tango' in fuzzer:
-        name = r'\mbox{\textsc{Tango}}'
+        name = 'Tango' # r'\mbox{\textsc{Tango}}'
     df['name'] = name
     order = ['name'] + df.index.names
     df = df.set_index('name', append=True).reorder_levels(order)
     return df
 
-df = feval.df_inference
+df = feval.df_snapshots
 df = df.iloc[df.index.get_level_values('fuzzer') != 'aflpp']
 df = df.groupby(df.index.names).filter(lambda g: g.counts.sum() > 5)
 
@@ -139,18 +89,18 @@ df = df.reset_index(['name', 'fuzzer', 'target']).reset_index(drop=True)
 
 ratios = df.groupby('name').apply(lambda g: g.groupby('target').ngroups).sort_values()
 
+print(df)
 g = sns.catplot(data=df, y='target', x='value', # hue='type',
-            color='white', linewidth=1, #linecolor='black',
+            color='white', linewidth=1, # linecolor='black',
             row='name', sharey=False, row_order=ratios.index.values,
-            showfliers=False, shownotches=True, #margin_titles=True,
-            kind='box', height=1.5, aspect=3,
+            showfliers=False, # shownotches=True, # margin_titles=True,
+            kind='box', height=3, aspect=2.5,
             facet_kws=dict(gridspec_kws=dict(height_ratios=ratios, hspace=0.4)))
 
 size_norm = Normalize(0, 1)
 def plot_datapoints(name, target, **kwargs):
     ax = plt.gca()
     my_df = df.set_index(['name']).xs(name.unique()[0]).reset_index()
-
     (
         so.Plot(data=my_df, y='target', x='value', pointsize='N')
         .add(
@@ -165,6 +115,9 @@ def plot_datapoints(name, target, **kwargs):
 
 g.map(plot_datapoints, 'name', 'target')
 
-g.set_axis_labels(x_var='Normalized Divergence', y_var='Target')
-g.set(xlim=(-0.1,1))
-g.set_titles(row_template=r'{row_name}')
+plt.xlim(-0.1, 1.1)
+plt.xlabel('Normalized Divergence')
+plt.ylabel('')
+pathname = '../TangoFuzz-paper/media/divergence'
+plt.savefig(f'{pathname}.png', bbox_inches='tight')
+plt.savefig(f'{pathname}.pdf', bbox_inches='tight')

@@ -82,8 +82,9 @@ class Evaluation:
                 upper_bound=self.args.duration,
                 time_step=self.args.step,
             )
-        # self.df_inference = self.get_master_df(
-        #     filename='inference.json')
+        if self.args.mission == 'snapshots':
+            self.df_snapshots = self.get_master_df(
+                filename='snapshots.json')
         if self.args.mission == 'coverage':
             self.df_coverage = self.get_master_df(
                 filename="pc_cov_cnts.csv",
@@ -493,7 +494,7 @@ class Crosstest(TimeSeriesResamplerMixin, Recording, filename="crosstest_0.csv")
         logging.info("Annotating in Crosstest: Done")
         return df
 
-class InferenceEntropy(Recording, filename="inference.json"):
+class InferenceEntropy(Recording, filename="snapshots.json"):
     def __init__(self, *, path: Path, **kwargs):
         with path.open() as f:
             data = json.load(f)
