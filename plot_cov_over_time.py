@@ -7,7 +7,7 @@ from pathlib import Path
 import pandas as pd
 import matplotlib
 matplotlib.rcParams['text.usetex'] = False
-matplotlib.rcParams['font.size'] = 12
+matplotlib.rcParams['font.size'] = 28
 matplotlib.rcParams['figure.dpi'] = 300
 
 args = Namespace()
@@ -64,7 +64,7 @@ def ploooooooot(tt, pathname, show_snapshots=True):
 
     handles, labels = ax.get_legend_handles_labels()
     ax.legend().remove()
-    fig.legend(handles, labels, loc='outside lower center', ncols=2)
+    # fig.legend(handles, labels, loc='outside lower center', ncols=2)
     print(f'Saving {pathname}')
     try:
         plt.savefig(f'{pathname}.png')

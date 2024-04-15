@@ -130,7 +130,7 @@ marker_dict = {
 }
 color_dict = {
     'expat': 'blue', 'exim': 'green', 'dcmtk': 'red', 'openssh': 'cyan', 'openssl': 'magenta',
-    'dnsmasq': 'yellow', 'llhttp': 'black', 'live555': 'orange', 'kamailio': 'pink', 'tinydtls': 'purple',
+    'dnsmasq': 'goldenrod', 'llhttp': 'black', 'live555': 'orange', 'kamailio': 'pink', 'tinydtls': 'purple',
     'lightftp': 'brown', 'pureftpd': 'grey', 'bftpd': 'lime', 'proftpd': 'olive', 'yajl': 'plum'}
 batch_size_color_dict = {10: 'red', 20: 'orange', 50: 'green', 100: 'blue'}
 
@@ -146,7 +146,7 @@ def ploooooooot_batch_size_50(tt, pathname):
         print(tt_by_batch)
         g = sns.scatterplot(
             data=tt_by_batch, x='savings', y='accuracy', hue='target',
-            style='target', markers=marker_dict, palette=color_dict, ax=ax, sizes=[20])
+            style='target', markers=marker_dict, palette=color_dict, ax=ax)
         ax.grid(True)
         ax.set_title(f'Optimization: {opts[i]}')
         ax.set_xlim(-5, 105)
@@ -183,7 +183,7 @@ def ploooooooot_optimization_bcd(tt, pathname):
         print(tt_by_batch)
         g = sns.scatterplot(
             data=tt_by_batch, x='savings', y='accuracy', hue='target',
-            style='target', markers=marker_dict, palette=color_dict, ax=ax, sizes=[20])
+            style='target', markers=marker_dict, palette=color_dict, ax=ax)
         ax.grid(True)
         ax.set_title(f'Batch size: {bs[i]}')
         ax.set_xlim(-5, 105)
