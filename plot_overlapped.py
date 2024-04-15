@@ -103,6 +103,7 @@ def calculate_percentage(row):
     return row
 df = df.apply(calculate_percentage, axis=1)
 df = df.groupby('target').agg({'w/o inference': 'mean', 'overlapping': 'mean', 'w/ inference': 'mean'}).reset_index()
+df = df.sort_values(by='target', ascending=False)
 print(df)
 
 fig, ax = plt.subplots(1, 1, sharex=True, sharey=True, layout='constrained')
