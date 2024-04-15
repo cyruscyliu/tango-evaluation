@@ -13,3 +13,4 @@ previously in ProFuzzBench. The data is well organized under `ar/`.
     build-tango-target.sh \
     convert-to-pcaps-nyxnet.sh replay-and-dump-coverage-nyxnet.sh \
     plot_cov_over_time.py -> fig 12
+- [OK] plot_overlapped.py -> fig 13
