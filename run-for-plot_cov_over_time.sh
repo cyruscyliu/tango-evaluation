@@ -1,7 +1,10 @@
+#!/bin/bash
+
+cd ../tango
 docker run \
-     -v "$PWD"/tango:/home/tango/ \
-     -v "$PWD/../eurosp_data/":/home/eurosp_data \
-     -v "$PWD":/home/evaluation \
+     -v "$PWD":/home/tango/ \
+     -v "$PWD"/../eurosp_data/:/home/eurosp_data \
+     -v "$PWD"/../evaluation:/home/evaluation \
      -w /home/evaluation \
      --entrypoint /bin/bash \
     --rm -it \

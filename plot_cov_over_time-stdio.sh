@@ -1,12 +1,12 @@
 #!/bin/bash
+# RUN IN A DOCKER CONTAINER
 
 # We leverage Tango's execution engine to dump the coverage. Specifically, we
 # first reply these seeds one by one to generate a sancov file for each seed;
 # next, we extract the edge coverage from the sancov files to generate an
 # accumulated edge coverage over time; last, we plot the figure for the paper.
 
-# eurosp_data/old_data_for_cov_ahmad/afl_without_inference/ar/afl_nyx/expat/xmlwf/0/default/queue
-# data
+
 
 eurosp_data=$(realpath '../eurosp_data')
 # afl_nyx

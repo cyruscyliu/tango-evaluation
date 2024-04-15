@@ -24,6 +24,8 @@ args.exclude_dirs = [
     'tango_inference_dt_predict_50',
     'tango_inference_dt_extrapolate_50',
     'tango_inference_validate',
+    'tango_afl_nyx',
+    'tango_nyxnet',
 ]
 
 args.exclude_runs = ['3', '4']
@@ -66,13 +68,13 @@ def calculate_diversity(df):
 def add_fuzzer_name(df):
     fuzzer = df.index.get_level_values('fuzzer')[0]
     if 'aflnet' in fuzzer:
-        name = 'AFLNet'
+        name = 'fuzzer'
     elif 'nyx' in fuzzer:
-        name = 'Nyx-Net'
+        name = 'fuzzer'
     elif 'aflpp' in fuzzer:
-        name = 'AFL++'
+        name = 'fuzzer'
     elif 'tango' in fuzzer:
-        name = 'Tango' # r'\mbox{\textsc{Tango}}'
+        name = 'fuzzer' # r'\mbox{\textsc{Tango}}'
     df['name'] = name
     order = ['name'] + df.index.names
     df = df.set_index('name', append=True).reorder_levels(order)
@@ -89,7 +91,8 @@ df = df.reset_index(['name', 'fuzzer', 'target']).reset_index(drop=True)
 
 ratios = df.groupby('name').apply(lambda g: g.groupby('target').ngroups).sort_values()
 
-print(df)
+df = df.sort_values(by='target')
+print(df.to_string())
 g = sns.catplot(data=df, y='target', x='value', # hue='type',
             color='white', linewidth=1, # linecolor='black',
             row='name', sharey=False, row_order=ratios.index.values,

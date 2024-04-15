@@ -21,8 +21,9 @@ args.exclude_dirs = [
 args.exclude_runs = [str(i) for i in range(3, 20)]
 args.include_targets = [
     'expat', 'dcmtk', 'openssh', 'openssl',
-    'dnsmasq', 'llhttp', 'rtsp', 'sip', 'dtls',
-    'lightftp', 'pureftpd', 'yajl', 'bftpd', 'proftpd'
+    'dnsmasq', 'llhttp', 'live555', 'kamailio',
+    'tinydtls', 'lightftp', 'pureftpd', 'yajl',
+    'bftpd', 'proftpd', 'exim', # 'daapd'
 ]
 args.mission = 'coverage'
 configure_verbosity(args.verbose)
@@ -36,12 +37,6 @@ import seaborn as sns
 import seaborn.objects as so
 import numpy as np
 from matplotlib.colors import Normalize
-
-def calculate_percentage(row):
-    if row['time_elapsed'] == 0.0:
-        return np.nan
-    else:
-        return row['time_crosstest'] / row['time_elapsed'] * 100
 
 def to_label(row):
     if row['fuzzer'] in ['nyxnet', 'afl_nyx']:
