@@ -110,7 +110,7 @@ fig, ax = plt.subplots(1, 1, sharex=True, sharey=True, layout='constrained')
 df.plot(x='target', kind='barh', stacked=True,
         color=['goldenrod', 'firebrick', 'indigo'], ax=ax, width=0.8, figsize=(4,3))
 ax.set_ylabel('')
-ax.set_xlabel('Percentage of infered stats')
+ax.set_xlabel('Percentage of infered states')
 handles, labels = ax.get_legend_handles_labels()
 ax.legend().remove()
 fig.legend(handles, labels, loc='outside upper right', ncols=3, handlelength=0.5, borderpad=0.2, handletextpad=0.1)
