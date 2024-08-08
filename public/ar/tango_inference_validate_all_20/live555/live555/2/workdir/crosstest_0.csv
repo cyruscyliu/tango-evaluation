@@ -1,0 +1,8 @@
+time_elapsed,time_crosstest,snapshots,states,inferred_snapshots,total_savings,total_misses,total_hits,eg_savings,eg_misses,eg_hits,dt_savings,dt_misses,dt_hits,dtex_savings,dtex_misses,dtex_hits,snapshot_cov,total_cov
+20.777103,8.354811,7,0,0,,,,,,,,,,,,,634,759
+33.057022,15.550152,3,13,20,,,,,,,,,,,,,397,759
+43.918167,22.084471,1,17,21,,,,,,,,,,,,,146,759
+57.110431,29.632531,3,19,21,,,,,,,,,,,,,401,759
+67.744544,36.073927,1,18,21,,,,,,,,,,,,,146,759
+77.835488,41.933061,1,17,21,,,,,,,,,,,,,146,759
+101.046736,59.415439,2,17,21,81.25,325,0,0.0,0,0,0.0,0,0,94.47674418604652,325,0,1101,759

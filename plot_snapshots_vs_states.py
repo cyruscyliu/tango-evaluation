@@ -11,7 +11,7 @@ matplotlib.rcParams['font.size'] = 12
 matplotlib.rcParams['figure.dpi'] = 300
 
 args = Namespace()
-args.ar = Path('../eurosp_data/workdir_tango_inference')
+args.ar = Path('public')
 args.duration = 24*3600
 args.step = 60
 args.verbose = 0

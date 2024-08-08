@@ -1,0 +1,3 @@
+time_elapsed,time_crosstest,snapshots,states,inferred_snapshots,total_savings,total_misses,total_hits,eg_savings,eg_misses,eg_hits,dt_savings,dt_misses,dt_hits,dtex_savings,dtex_misses,dtex_hits,snapshot_cov,total_cov
+447.779537,16.395713,11,0,0,,,,,,,,,,,,,154,759
+545.248863,70.19355,25,8,20,48.52320675105485,241,211,77.77777777777779,42,91,12.5,28,16,65.11627906976744,171,104,1121,759
